@@ -174,8 +174,12 @@
   html[lang="en"] .hero-copy{direction:ltr}
   .hero .sectors,.hero .scroll-cue{grid-column:1/-1}
   @media (max-width:940px){
-    .hero{grid-template-columns:1fr;padding-top:130px}
-    .hero::before{opacity:.16}
+    .hero{grid-template-columns:1fr;padding-top:126px;padding-bottom:34px}
+    .hero::before{display:none}
+    .hero::before{display:block;opacity:.16}
+    .hero .sectors{margin-top:34px;gap:8px 18px;font-size:11.5px}
+    .hero .sectors span:not(:last-child)::after{display:none}
+    .hero .scroll-cue{display:none}
   }
   .hero .mark{width:80px;height:auto;display:block;margin:0 auto 18px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.14))}
   .hero-copy .eyebrow{text-align:center}
@@ -280,13 +284,34 @@
   .pcenter{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:96px;height:96px;display:flex;align-items:center;justify-content:center;z-index:2}
   @supports (corner-shape:squircle){.pcenter{corner-shape:squircle}}
   .pcenter img{width:88px;height:88px;object-fit:contain;filter:drop-shadow(0 10px 24px rgba(0,0,0,.25))}
+  .pflow-links-m{display:none}
   @media (max-width:940px){
+    /* keep the connected 2×2 composition, move the copy into a readable list below */
     .pflow-links,.pcenter{display:none}
-    .pflow-grid{grid-template-columns:1fr;gap:48px}
-    .pstage{flex-direction:column !important;text-align:center;gap:22px}
-    .pstage .ptext{direction:rtl;text-align:center !important}
-    .pstage .pnum{justify-content:center;flex-direction:row !important}
-    .pline{display:none}
+    .pflow-links-m{display:block;position:absolute;top:0;left:0;width:100%;aspect-ratio:1;z-index:2;pointer-events:none}
+    .pflow-grid{grid-template-columns:1fr 1fr;column-gap:12px;row-gap:12px;direction:ltr}
+    .pstage{display:contents}
+    .pcircle{width:86%;justify-self:center;align-self:center}
+    .pstage.s1 .pcircle{grid-area:1/1}
+    .pstage.s2 .pcircle{grid-area:1/2}
+    .pstage.s3 .pcircle{grid-area:2/1}
+    .pstage.s4 .pcircle{grid-area:2/2}
+    .pstage .ptext{grid-column:1/span 2;direction:rtl;text-align:right !important;margin-bottom:6px;
+      display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:start}
+    html[lang="en"] .pstage .ptext{direction:ltr;text-align:left !important}
+    .pstage.s1 .ptext{grid-row:3;margin-top:30px}
+    .pstage.s2 .ptext{grid-row:4}
+    .pstage.s3 .ptext{grid-row:5}
+    .pstage.s4 .ptext{grid-row:6}
+    .pstage .pnum{grid-row:1/span 2;flex-direction:row !important;font-size:0;margin:0;
+      width:46px;height:46px;border-radius:16px;justify-content:center;align-items:center;
+      background:currentColor;color:inherit;position:relative}
+    .pstage .pnum::before{content:attr(data-n);position:absolute;color:#fff;font-size:17px;font-weight:800}
+    .pnum > *{display:none}
+    .ptext h3{grid-column:2;font-size:19px;margin-bottom:4px;align-self:center}
+    .ptext p{grid-column:2;font-size:14px;line-height:1.75}
+    .pbadge{width:40px;height:40px}
+    .pbadge svg{width:18px;height:18px}
   }
 
   /* ============ Quotes ============ */
@@ -438,8 +463,9 @@
   @media(max-width:900px){.pledges{grid-template-columns:repeat(2,1fr)}}
 
   /* ============ Rich service sections (from Claude Design) ============ */
-  .svc-secs{display:flex;flex-direction:column;gap:26px;margin-top:8px}
-  .svc-sec{background:var(--card);border:1px solid var(--hairline);border-radius:var(--r-lg);padding:44px 40px 40px;overflow:hidden}
+  .svc-secs{display:flex;flex-direction:column;gap:0;margin-top:8px}
+  .svc-sec{background:transparent;border:none;border-radius:0;padding:56px 0;overflow:hidden}
+  .svc-sec + .svc-sec{border-top:1px solid var(--hairline)}
   .ss-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;border-bottom:1px solid var(--hairline);padding-bottom:22px;margin-bottom:34px;flex-wrap:wrap}
   .ss-kicker{display:flex;align-items:center;gap:12px;margin-bottom:10px}
   .ss-num{font-size:13px;font-weight:700;color:var(--red)}
@@ -521,7 +547,7 @@
   @keyframes wv{from{opacity:0;transform:translateY(52px) scale(.97)}to{opacity:1;transform:none}}
   @keyframes wvx{from{opacity:0;transform:translateX(48px)}to{opacity:1;transform:none}}
   @media(max-width:900px){
-    .svc-sec{padding:28px 20px 26px}
+    .svc-sec{padding:38px 0}
     .ss-g1,.ss-ba,.ss-sys,.ss-ai{grid-template-columns:1fr}
     .shot-card.feat{height:260px}
     .shot-card.mini{height:170px}
@@ -961,10 +987,19 @@
       <path d="M392,438 C430,398 465,392 520,390"/>
       <path d="M520,390 C575,392 612,398 645,345"/>
     </svg>
+    <svg class="pflow-links-m" viewBox="0 0 340 340" aria-hidden="true">
+      <g fill="none" stroke="#8E8E93" stroke-width="2" stroke-dasharray="4 6" stroke-linecap="round" opacity=".65">
+        <path d="M132,132 L151,151"/>
+        <path d="M208,132 L189,151"/>
+        <path d="M132,208 L151,189"/>
+        <path d="M208,208 L189,189"/>
+      </g>
+      <image href="assets/logo-mark.png" x="144" y="142" width="52" height="56" preserveAspectRatio="xMidYMid meet"/>
+    </svg>
     <div class="pflow-grid">
       <div class="pstage s1">
         <div class="ptext" style="color:var(--red)">
-          <div class="pnum">01<span class="pline"></span><i class="pdot" style="background:var(--red)"></i></div>
+          <div class="pnum" data-n="01">01<span class="pline"></span><i class="pdot" style="background:var(--red)"></i></div>
           <h3 style="color:var(--ink,#1D1D1F)" data-i18n="step1_t">Discover</h3>
           <p data-i18n="step1_d">We analyze your needs and understand your vision to define opportunities and lay the right foundation.</p>
         </div>
@@ -981,14 +1016,14 @@
           <span class="pbadge b-top" style="background:var(--amber)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"><path d="M12 3l2.2 4.8L19 9l-4.8 2.2L12 16l-2.2-4.8L5 9l4.8-1.2z"/><line x1="12" y1="16" x2="12" y2="21" stroke-linecap="round"/></svg></span>
         </div>
         <div class="ptext" style="color:var(--amber)">
-          <div class="pnum">02<span class="pline"></span><i class="pdot" style="background:var(--amber)"></i></div>
+          <div class="pnum" data-n="02">02<span class="pline"></span><i class="pdot" style="background:var(--amber)"></i></div>
           <h3 style="color:var(--ink,#1D1D1F)" data-i18n="step2_t">Design</h3>
           <p data-i18n="step2_d">We turn ideas into smart designs and distinctive user experiences that reflect your brand.</p>
         </div>
       </div>
       <div class="pstage s3">
         <div class="ptext" style="color:var(--green)">
-          <div class="pnum">03<span class="pline"></span><i class="pdot" style="background:var(--green)"></i></div>
+          <div class="pnum" data-n="03">03<span class="pline"></span><i class="pdot" style="background:var(--green)"></i></div>
           <h3 style="color:var(--ink,#1D1D1F)" data-i18n="step3_t">Build</h3>
           <p data-i18n="step3_d">We develop and build professionally with the latest technologies to guarantee performance and quality.</p>
         </div>
@@ -1005,7 +1040,7 @@
           <span class="pbadge b-left" style="background:#1D1D1F"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="2"/><rect x="17" y="13" width="4" height="6" rx="2"/></svg></span>
         </div>
         <div class="ptext" style="color:#8E8E93">
-          <div class="pnum">04<span class="pline"></span><i class="pdot" style="background:#8E8E93"></i></div>
+          <div class="pnum" data-n="04">04<span class="pline"></span><i class="pdot" style="background:#8E8E93"></i></div>
           <h3 style="color:var(--ink,#1D1D1F)" data-i18n="step4_t">Scale</h3>
           <p data-i18n="step4_d">We launch your project with confidence and stay with you with continuous support for growth.</p>
         </div>
