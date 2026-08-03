@@ -605,13 +605,8 @@
     .ss-ba{gap:14px}
     /* اللوحات العريضة تُعرض بحجم مقروء وتُسحب أفقياً بدل تصغيرها لدرجة لا تُقرأ فيها */
     .ss-sys>*,.ss-ai>*,.sys-stage,.bframe,.frows{min-width:0}
-    .sys-dash-img,.ai-flow-img{aspect-ratio:auto;height:auto;width:100%;max-width:100%;
-      overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}
-    .sys-dash-img::-webkit-scrollbar,.ai-flow-img::-webkit-scrollbar{display:none}
-    .sys-dash-img .shot,.ai-flow-img .shot{width:auto;height:296px;max-width:none;object-fit:fill}
-    /* اللوحة صارت قابلة للسحب، فالجوال المتراكب عليها يحجب ما نريد للزائر أن يقرأه */
-    .sys-stage{padding-bottom:0}
-    .sys-phone{position:static;width:128px;margin:2px auto 0}
+    .sys-stage{padding-bottom:34px}
+    .sys-phone{position:absolute;bottom:0;inset-inline-end:8px;width:104px}
     .ss-sys{gap:26px}
     /* الخدمة 05 — رحلة الإطلاق كشريط أفقي */
     .jgrid{display:flex;grid-template-columns:none;gap:14px;align-items:start;
@@ -625,10 +620,10 @@
     .jline{display:none}
     .ss-fan{margin-inline:calc(-1*clamp(24px,5.5vw,92px));padding-inline:clamp(24px,5.5vw,92px)}
     .swipe-hint{display:flex}
-    .ai-phone-col{flex-direction:row;align-items:center;gap:18px;text-align:start;justify-self:stretch;margin-top:4px}
-    .ai-phone{width:140px;flex:none}
+    .ai-phone-col{flex-direction:row;align-items:center;gap:16px;text-align:start;justify-self:stretch;margin-top:0}
+    .ai-phone{width:118px;flex:none}
     .ai-cap b{margin-bottom:5px}
-    .ss-ai{gap:24px}
+    .ss-ai{gap:14px}
     .ss-bullets{gap:14px;flex-direction:column;align-items:flex-start}
   }
 
@@ -856,7 +851,6 @@
       <div class="sys-stage">
         <div data-wave>
           <div class="bframe"><div class="bbar"><i></i><i></i><i></i></div><div class="sys-dash-img"><img class="shot" src="assets/shots/sys-dash.webp" alt="" loading="lazy"></div></div>
-          <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
         </div>
         <div class="sys-phone" data-wave><div class="phone"><img class="shot" src="assets/shots/sys-mobile.webp" alt="" loading="lazy"><i class="pn"></i></div></div>
       </div>
@@ -917,7 +911,6 @@
       <div>
         <div data-wave>
           <div class="ai-flow-img"><img class="shot" src="assets/shots/ai-flow.webp" alt="" loading="lazy"></div>
-          <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
           <div class="ss-cap"><b data-i18n="ai_t">أتمتة تشتغل بدالك</b><span data-i18n="ai_s">من الطلب للفاتورة للتقرير — بلا نسخ ولصق</span></div>
         </div>
         <div class="frows" style="margin-top:22px">
