@@ -522,8 +522,35 @@
   .tagp.a{background:var(--tint-amber);color:var(--amber-ink)}
   .ss-sys{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:center}
   .sys-stage{position:relative;padding-bottom:56px}
-  .sys-dash-img{height:400px}
-  .phone{border-radius:26px;border:6px solid #1D1D1F;background:#fff;overflow:hidden;box-shadow:0 24px 46px -22px rgba(29,29,31,.5);aspect-ratio:9/19}
+  .sys-dash-img{aspect-ratio:1672/941;height:auto}
+  /* ---- realistic device frame ----
+     One component for every phone on the page.  .phone is only the container;
+     every visible part is a descendant so it can size itself in cqw (1cqw = 1%
+     of the device width).  A 104px phone and a 252px phone therefore get
+     identical proportions: brushed-metal band, black bezel, dynamic island with
+     a camera dot, and real side buttons. */
+  .phone{display:block;position:relative;container-type:inline-size;aspect-ratio:9/19.3;
+    background:none;border:none;overflow:visible;box-shadow:none}
+  /* metal body — sits just outside the screen so the screen keeps its declared width */
+  .phone::before{content:"";position:absolute;inset:-2.6cqw;z-index:0;border-radius:14.2cqw;
+    background:linear-gradient(147deg,#e2e5ea 0%,#6b6f78 5%,#2e3036 14%,#191a1e 32%,
+      #141519 50%,#202226 64%,#585b64 82%,#ccd0d8 92%,#3c3f46 100%);
+    box-shadow:0 26px 50px -22px rgba(18,18,22,.6),0 4px 12px -5px rgba(18,18,22,.4)}
+  /* screen: kept in normal flow.  An absolutely-positioned <img> with auto width
+     falls back to its INTRINSIC pixel size and ignores the insets, which blew the
+     frames up to full size the moment real screenshots were present. */
+  .phone>img,.phone>.scr{position:relative;z-index:2;display:block;width:100%;height:100%;
+    object-fit:cover;object-position:top;background:#fff;
+    border-radius:11.6cqw;box-shadow:0 0 0 1.4cqw #07080a}
+  /* dynamic island + camera dot */
+  .phone>.pn{position:absolute;z-index:3;top:4.8cqw;left:50%;transform:translateX(-50%);
+    width:25cqw;height:6.8cqw;border-radius:99px;background:#06070a;
+    box-shadow:inset -6.8cqw 0 0 -2.2cqw #16222e}
+  /* side buttons: one element plus shadow copies (3 left, power on the right) */
+  .phone::after{content:"";position:absolute;z-index:0;top:46cqw;left:-3.4cqw;
+    width:1cqw;height:12cqw;border-radius:1cqw;
+    background:linear-gradient(180deg,#9296a0,#3b3e46 45%,#26282e);
+    box-shadow:0 16cqw 0 0 #3b3e46, 0 -22cqw 0 0 #3b3e46, 105.8cqw 26cqw 0 0 #3b3e46}
   .sys-phone{position:absolute;bottom:0;inset-inline-end:26px;width:150px}
   .frows{display:flex;flex-direction:column;gap:18px}
   .frow{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.9;color:var(--ink-2)}
@@ -534,34 +561,74 @@
   .jstage{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
   .jbadge{display:flex;align-items:center;gap:10px;background:var(--tint-amber);color:var(--amber-ink);font-size:13px;font-weight:700;padding:6px 16px;border-radius:999px}
   .jbadge.go{background:var(--green);color:#fff}
-  .jphone{width:190px;border-radius:32px;border-width:7px}
-  .jphone.launch{border-color:var(--green);box-shadow:0 20px 44px -22px rgba(14,107,46,.5)}
+  .jphone{width:190px}
+  .jphone.launch::before{box-shadow:0 20px 44px -22px rgba(14,107,46,.55),0 0 0 2px rgba(14,107,46,.4)}
   .jcap b{display:block;font-size:16px;font-weight:600;margin-bottom:4px}
   .jcap span{font-size:13px;color:var(--gray);line-height:1.8}
   .ss-ai{display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:start}
-  .ai-flow-img{height:330px;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(29,29,31,.4)}
+  .ai-flow-img{aspect-ratio:1690/931;height:auto;border-radius:18px;overflow:hidden;box-shadow:0 18px 40px -24px rgba(29,29,31,.4)}
   .ai-phone-col{justify-self:center;display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
-  .ai-phone{width:252px;border-radius:38px;border-width:8px;box-shadow:0 30px 56px -26px rgba(14,107,46,.5)}
+  .ai-phone{width:252px}
+  .ai-phone::before{box-shadow:0 30px 56px -26px rgba(14,107,46,.5)}
   .ai-cap b{display:block;font-size:15px;font-weight:600}
   .ai-cap span{font-size:13px;color:var(--gray)}
+  .site-qr{display:none;align-items:center;gap:20px;margin-top:28px;padding-top:26px;border-top:1px solid var(--hairline)}
+  .site-qr img{width:138px;height:138px;flex:none;background:#fff;border-radius:16px;padding:7px;box-shadow:0 16px 34px -22px rgba(29,29,31,.55)}
+  .site-qr b{display:block;font-size:15.5px;font-weight:700;margin-bottom:6px}
+  .site-qr span{font-size:13px;color:var(--gray);line-height:1.9;display:block}
+  @media(min-width:961px){.site-qr{display:flex}}
+  .swipe-hint{display:none;align-items:center;justify-content:center;gap:8px;font-size:12.5px;font-weight:600;color:var(--gray);margin:-4px 0 4px}
+  .swipe-hint svg{width:15px;height:15px;animation:swx 1.8s var(--ease) infinite}
+  @keyframes swx{0%,100%{transform:translateX(0)}50%{transform:translateX(-7px)}}
   @keyframes wv{from{opacity:0;transform:translateY(52px) scale(.97)}to{opacity:1;transform:none}}
   @keyframes wvx{from{opacity:0;transform:translateX(48px)}to{opacity:1;transform:none}}
   @media(max-width:900px){
     .svc-sec{padding:38px 0}
-    .ss-g1,.ss-ba,.ss-sys,.ss-ai{grid-template-columns:1fr}
-    .shot-card.feat{height:260px}
-    .shot-card.mini{height:170px}
+    .ss-ba,.ss-sys,.ss-ai{grid-template-columns:1fr}
+    /* الخدمة 01 — معرض أفقي بالسحب بدل التكديس الطويل */
+    .ss-g1{display:flex;gap:14px;align-items:start;overflow-x:auto;scroll-snap-type:x mandatory;
+           overscroll-behavior-x:contain;scrollbar-width:none;
+           padding:2px 0 14px;margin-inline:calc(-1*clamp(24px,5.5vw,92px));
+           padding-inline:clamp(24px,5.5vw,92px);scroll-padding-inline:clamp(24px,5.5vw,92px)}
+    .ss-g1::-webkit-scrollbar{display:none}
+    .ss-col{display:contents}
+    .ss-g1>[data-wave],.ss-col>[data-wave]{flex:0 0 76%;min-width:0;scroll-snap-align:start}
+    .shot-card.feat,.shot-card.mini{height:238px}
+    .ss-g1>div>.ss-cap b{font-size:15.5px}
+    .ss-cap{margin-top:9px;gap:6px}
     .ss-fan{height:auto;display:flex;gap:14px;overflow-x:auto;padding:8px 2px 16px;scrollbar-width:thin}
     .ss-fan .f{position:static;transform:none !important;width:auto;flex:0 0 170px}
     .ba-arrow{transform:rotate(90deg)}
     html[dir="ltr"] .ba-arrow{transform:rotate(90deg) scaleX(-1)}
-    .ba-shot{height:220px}
-    .sys-dash-img{height:240px}
+    .ba-shot{height:152px}
+    .ba-slider{height:252px}
+    .ss-ba{gap:14px}
+    /* اللوحات العريضة تُعرض بحجم مقروء وتُسحب أفقياً بدل تصغيرها لدرجة لا تُقرأ فيها */
+    .ss-sys>*,.ss-ai>*,.sys-stage,.bframe,.frows{min-width:0}
+    .sys-dash-img,.ai-flow-img{aspect-ratio:auto;height:auto;width:100%;max-width:100%;
+      overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none}
+    .sys-dash-img::-webkit-scrollbar,.ai-flow-img::-webkit-scrollbar{display:none}
+    .sys-dash-img .shot,.ai-flow-img .shot{width:auto;height:296px;max-width:none;object-fit:fill}
+    /* اللوحة صارت قابلة للسحب، فالجوال المتراكب عليها يحجب ما نريد للزائر أن يقرأه */
     .sys-stage{padding-bottom:0}
-    .sys-phone{position:static;width:140px;margin:16px auto 0}
-    .jgrid{grid-template-columns:1fr;gap:32px}
+    .sys-phone{position:static;width:128px;margin:2px auto 0}
+    .ss-sys{gap:26px}
+    /* الخدمة 05 — رحلة الإطلاق كشريط أفقي */
+    .jgrid{display:flex;grid-template-columns:none;gap:14px;align-items:start;
+           overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+           scrollbar-width:none;padding:2px 0 14px;
+           margin-inline:calc(-1*clamp(24px,5.5vw,92px));padding-inline:clamp(24px,5.5vw,92px);
+           scroll-padding-inline:clamp(24px,5.5vw,92px)}
+    .jgrid::-webkit-scrollbar{display:none}
+    .jstage{flex:0 0 64%;min-width:0;scroll-snap-align:start;gap:12px}
+    .jphone{width:100%;max-width:168px}
     .jline{display:none}
-    .ai-flow-img{height:220px}
+    .ss-fan{margin-inline:calc(-1*clamp(24px,5.5vw,92px));padding-inline:clamp(24px,5.5vw,92px)}
+    .swipe-hint{display:flex}
+    .ai-phone-col{flex-direction:row;align-items:center;gap:18px;text-align:start;justify-self:stretch;margin-top:4px}
+    .ai-phone{width:140px;flex:none}
+    .ai-cap b{margin-bottom:5px}
+    .ss-ai{gap:24px}
     .ss-bullets{gap:14px;flex-direction:column;align-items:flex-start}
   }
 
@@ -583,8 +650,12 @@
   .dqr-logo{width:52px;height:52px;border-radius:14px;font-size:23px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:14px;position:relative;object-fit:cover;box-shadow:0 6px 16px -6px rgba(0,0,0,.35)}
   .dqr-t{font-size:21px;font-weight:700;margin-bottom:6px;position:relative}
   .dqr-s{font-size:12.5px;line-height:1.9;margin-bottom:22px;position:relative}
-  .dqr-code{width:170px;height:170px;background:#fff;border-radius:18px;position:relative;flex:none;box-shadow:0 16px 32px -16px rgba(0,0,0,.45)}
-  .dqr-url{margin-top:18px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 20px;font-size:12.5px;font-weight:600;letter-spacing:.3px;position:relative}
+  .dqr-scan{position:relative;display:block;line-height:0}
+  .dqr-code{width:192px;height:192px;background:#fff;border-radius:18px;padding:8px;display:block;flex:none;box-shadow:0 16px 32px -16px rgba(0,0,0,.45)}
+  .dqr-open{display:none;align-items:center;gap:9px;margin-top:4px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);border-radius:999px;padding:13px 26px;font-size:14px;font-weight:700;position:relative;transition:background .2s}
+  .dqr-open:hover{background:rgba(255,255,255,.26)}
+  .dqr-open svg{width:17px;height:17px}
+  .dqr-s-m{display:none}
   .dbody{position:relative;padding:42px 44px 38px}
   .dbadge-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
   .dbadge{font-size:11.5px;font-weight:700;padding:5px 14px;border-radius:999px}
@@ -597,22 +668,22 @@
   .dfeat-txt span{font-size:12px;line-height:1.8;display:block}
   .dline{flex:1;border-top:2px dashed;min-width:30px}
   .darr{width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-inline-start:0;flex:none}
-  .dphone{position:absolute;inset-inline-end:42px;top:76px;width:198px;border-radius:24px;border-style:solid;border-width:6px;display:block;box-shadow:0 26px 50px -22px rgba(29,29,31,.55)}
+  .dphone{position:absolute;inset-inline-end:42px;top:76px;width:198px}
   .dlap{position:absolute;inset-inline-end:40px;bottom:36px;width:420px;border-radius:16px;border-style:solid;border-width:5px;display:block;box-shadow:0 26px 50px -22px rgba(29,29,31,.5)}
-  .dq{position:absolute;background:var(--dqc)}
-  .dq.c{width:34px;height:34px;background:transparent;border:5px solid var(--dqc);border-radius:6px}
-  .dq.ci{width:12px;height:12px;border-radius:2px}
-  .dq.d{width:9px;height:9px}
   @media(max-width:960px){
     .dcard{grid-template-columns:1fr;min-height:0}
     .dfeats{padding-inline-end:0}
     .dline,.darr{display:none}
-    .dphone{position:static;margin:24px auto 0;width:190px}
+    .dqr-scan,.dqr-s-d{display:none}
+    .dqr-open{display:inline-flex}
+    .dqr-s-m{display:block}
+    .dqr{padding:34px 26px 30px}
+    /* must stay positioned: the metal body is an absolutely-positioned
+       pseudo-element and would otherwise size itself against the whole card */
+    .dphone{position:relative;inset:auto;margin:26px auto 4px;width:150px}
     .dlap{position:static;margin:24px auto 0;width:100%;max-width:420px}
     .dbody{padding:30px 24px 30px}
   }
-  a.dqr-url{color:inherit;text-decoration:none;display:inline-block}
-  a.dqr-url:hover{background:rgba(255,255,255,.28)}
 </style>
 </head>
 <body>
@@ -704,6 +775,7 @@
         </div>
       </div>
     </div>
+    <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
     <div class="ss-foot">
       <a class="ss-cta pressable" data-wa="svc1" href="#contact"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
       <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc1_p">300 د.إ</b> · <span data-i18n="svc1_tm">خلال 3 أيام كحد أقصى</span></div>
@@ -784,8 +856,9 @@
       <div class="sys-stage">
         <div data-wave>
           <div class="bframe"><div class="bbar"><i></i><i></i><i></i></div><div class="sys-dash-img"><img class="shot" src="assets/shots/sys-dash.webp" alt="" loading="lazy"></div></div>
+          <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
         </div>
-        <div class="sys-phone" data-wave><div class="phone"><img class="shot" src="assets/shots/sys-mobile.webp" alt="" loading="lazy"></div></div>
+        <div class="sys-phone" data-wave><div class="phone"><img class="shot" src="assets/shots/sys-mobile.webp" alt="" loading="lazy"><i class="pn"></i></div></div>
       </div>
       <div class="frows">
         <div class="frow" data-wave><span class="fdot"></span><div data-i18n="svc4_f1">مواعيد أو مخزون أو فواتير أو إدارة عملاء</div></div>
@@ -811,21 +884,22 @@
       <div class="jgrid">
         <div class="jstage" data-wave>
         <div class="jbadge" data-i18n="j1_b">١ · الأسبوع الأول</div>
-        <div class="phone jphone"><img class="shot" src="assets/shots/app-wireframe.webp" alt="" loading="lazy"></div>
+        <div class="phone jphone"><img class="shot" src="assets/shots/app-wireframe.webp" alt="" loading="lazy"><i class="pn"></i></div>
         <div class="jcap"><b data-i18n="j1_t">نثبّت الفكرة</b><span data-i18n="j1_s">شاشات ورقية + مسار المستخدم</span></div>
       </div>
         <div class="jstage" data-wave>
         <div class="jbadge" data-i18n="j2_b">٢ · الأسبوع الثاني</div>
-        <div class="phone jphone"><img class="shot" src="assets/shots/app-home.webp" alt="" loading="lazy"></div>
+        <div class="phone jphone"><img class="shot" src="assets/shots/app-home.webp" alt="" loading="lazy"><i class="pn"></i></div>
         <div class="jcap"><b data-i18n="j2_t">نصمم ونراجع معك</b><span data-i18n="j2_s">هوية تطبيقك على كل شاشة</span></div>
       </div>
         <div class="jstage" data-wave>
         <div class="jbadge go" data-i18n="j3_b">٣ · الأسبوع الثالث</div>
-        <div class="phone jphone launch"><img class="shot" src="assets/shots/app-launch.webp" alt="" loading="lazy"></div>
+        <div class="phone jphone launch"><img class="shot" src="assets/shots/app-launch.webp" alt="" loading="lazy"><i class="pn"></i></div>
         <div class="jcap"><b data-i18n="j3_t">نطلق على المتجرين</b><span data-i18n="j3_s">iOS وAndroid + تدريب كامل</span></div>
       </div>
       </div>
     </div>
+    <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
     <div class="ss-foot">
       <a class="ss-cta pressable" data-wa="svc5" href="#contact"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
       <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc5_p">2,500 د.إ</b> · <span data-i18n="svc5_tm">خلال 3 أسابيع كحد أقصى</span></div>
@@ -843,6 +917,7 @@
       <div>
         <div data-wave>
           <div class="ai-flow-img"><img class="shot" src="assets/shots/ai-flow.webp" alt="" loading="lazy"></div>
+          <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
           <div class="ss-cap"><b data-i18n="ai_t">أتمتة تشتغل بدالك</b><span data-i18n="ai_s">من الطلب للفاتورة للتقرير — بلا نسخ ولصق</span></div>
         </div>
         <div class="frows" style="margin-top:22px">
@@ -852,7 +927,7 @@
         </div>
       </div>
       <div class="ai-phone-col" data-wave>
-        <div class="phone ai-phone"><img class="shot" src="assets/shots/ai-chat.webp" alt="" loading="lazy"></div>
+        <div class="phone ai-phone"><img class="shot" src="assets/shots/ai-chat.webp" alt="" loading="lazy"><i class="pn"></i></div>
         <div class="ai-cap"><b data-i18n="ai_p1">البوت يرد خلال ثانية</b><span data-i18n="ai_p2">حتى وأنت نايم</span></div>
       </div>
     </div>
@@ -877,9 +952,10 @@
         <span class="blob1" style="background:rgba(200,155,60,.18)"></span><span class="blob2" style="background:rgba(200,155,60,.12)"></span>
         <img class="dqr-logo" src="assets/logo-diafa.webp" alt="شعار ضيافة" loading="lazy">
         <div class="dqr-t" data-i18n="dc1_qt">جرّب المنيو الآن</div>
-        <div class="dqr-s" style="color:#D9BE8F" data-i18n="dc1_qs">امسح الباركود بكاميرا جوالك —<br>بدون تحميل أي تطبيق</div>
-        <a href="demos/diafa.html" style="display:block"><div class="dqr-code" dir="ltr" style="--dqc:#3E2A1A"><i class="dq c" style="top:14px;left:14px"></i><i class="dq ci" style="top:25px;left:25px"></i><i class="dq c" style="top:14px;right:14px"></i><i class="dq ci" style="top:25px;right:25px"></i><i class="dq c" style="bottom:14px;left:14px"></i><i class="dq ci" style="bottom:25px;left:25px"></i><i class="dq d" style="top:18px;left:60px"></i><i class="dq d" style="top:32px;left:74px"></i><i class="dq d" style="top:18px;left:88px"></i><i class="dq d" style="top:46px;left:60px"></i><i class="dq d" style="top:60px;left:20px"></i><i class="dq d" style="top:60px;left:42px"></i><i class="dq d" style="top:74px;left:60px"></i><i class="dq d" style="top:60px;left:88px"></i><i class="dq d" style="top:74px;left:106px"></i><i class="dq d" style="top:60px;left:124px"></i><i class="dq d" style="top:88px;left:32px"></i><i class="dq d" style="top:88px;left:74px"></i><i class="dq d" style="top:102px;left:60px"></i><i class="dq d" style="top:102px;left:92px"></i><i class="dq d" style="top:116px;left:74px"></i><i class="dq d" style="top:130px;left:92px"></i><i class="dq d" style="top:116px;left:110px"></i><i class="dq d" style="top:130px;left:128px"></i><i class="dq d" style="top:88px;left:128px"></i><i class="dq d" style="top:140px;left:66px"></i></div></a>
-        <a class="dqr-url" dir="ltr" href="demos/diafa.html">diafa-demo.ae</a>
+        <div class="dqr-s dqr-s-d" style="color:#D9BE8F" data-i18n="dc1_qs">امسح الباركود بكاميرا جوالك —<br>بدون تحميل أي تطبيق</div>
+        <div class="dqr-s dqr-s-m" style="color:#D9BE8F" data-i18n="dc1_qsm">افتح المنيو مباشرة —<br>بدون تحميل أي تطبيق</div>
+        <a class="dqr-scan" href="demos/diafa.html"><img class="dqr-code" src="assets/qr/diafa.svg" alt="امسح الكود لفتح الديمو" loading="lazy"></a>
+        <a class="dqr-open" href="demos/diafa.html"><span data-i18n="qr_open">افتح الديمو</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
       </div>
       <div class="dbody">
         <div class="dbadge-row"><span class="dbadge" style="background:#F1E2C8;color:#6B3F23" data-i18n="dc1_bd">ديمو حي</span><span class="dclient" style="color:#A08466" data-i18n="dc1_cl">مطعم «ضيافة» — عميل افتراضي</span></div>
@@ -889,7 +965,7 @@
         <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc1_f2_t">صورة وسعر لكل طبق</b><span data-i18n="dc1_f2_s">الزبون يشوف قبل ما يطلب — بالدرهم وبدون لبس</span></div><div class="dline" style="border-color:#C89B3C"></div><div class="darr" style="border-inline-end:9px solid #C89B3C"></div></div>
         <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc1_f3_t">السلة ترسل الطلب واتساب</b><span data-i18n="dc1_f3_s">رسالة جاهزة بالأصناف والإجمالي — بدون تطبيق</span></div><div class="dline" style="border-color:#C89B3C"></div><div class="darr" style="border-inline-end:9px solid #C89B3C"></div></div>
         </div>
-        <img class="dphone" style="border-color:#3E2A1A" src="assets/shots/rest-1.webp" alt="" loading="lazy">
+        <span class="phone dphone"><img src="assets/shots/rest-1.webp" alt="" loading="lazy"><i class="pn"></i></span>
       </div>
     </article>
     <article class="dcard reveal" style="background:#FAF4F0">
@@ -897,9 +973,10 @@
         <span class="blob1" style="background:rgba(201,168,106,.22)"></span><span class="blob2" style="background:rgba(255,255,255,.1)"></span>
         <img class="dqr-logo" src="assets/logo-lamsa.webp" alt="شعار لمسة" loading="lazy">
         <div class="dqr-t" data-i18n="dc2_qt">جرّبي الحجز الآن</div>
-        <div class="dqr-s" style="color:#F0D3D6" data-i18n="dc2_qs">امسحي الباركود بكاميرا جوالك —<br>الحجز يأخذ أقل من دقيقة</div>
-        <a href="demos/lamsa.html" style="display:block"><div class="dqr-code" dir="ltr" style="--dqc:#46342E"><i class="dq c" style="top:14px;left:14px"></i><i class="dq ci" style="top:25px;left:25px"></i><i class="dq c" style="top:14px;right:14px"></i><i class="dq ci" style="top:25px;right:25px"></i><i class="dq c" style="bottom:14px;left:14px"></i><i class="dq ci" style="bottom:25px;left:25px"></i><i class="dq d" style="top:18px;left:60px"></i><i class="dq d" style="top:32px;left:74px"></i><i class="dq d" style="top:18px;left:88px"></i><i class="dq d" style="top:46px;left:60px"></i><i class="dq d" style="top:60px;left:20px"></i><i class="dq d" style="top:60px;left:42px"></i><i class="dq d" style="top:74px;left:60px"></i><i class="dq d" style="top:60px;left:88px"></i><i class="dq d" style="top:74px;left:106px"></i><i class="dq d" style="top:60px;left:124px"></i><i class="dq d" style="top:88px;left:32px"></i><i class="dq d" style="top:88px;left:74px"></i><i class="dq d" style="top:102px;left:60px"></i><i class="dq d" style="top:102px;left:92px"></i><i class="dq d" style="top:116px;left:74px"></i><i class="dq d" style="top:130px;left:92px"></i><i class="dq d" style="top:116px;left:110px"></i><i class="dq d" style="top:130px;left:128px"></i><i class="dq d" style="top:88px;left:128px"></i><i class="dq d" style="top:140px;left:66px"></i></div></a>
-        <a class="dqr-url" dir="ltr" href="demos/lamsa.html">lamsa-demo.ae</a>
+        <div class="dqr-s dqr-s-d" style="color:#F0D3D6" data-i18n="dc2_qs">امسحي الباركود بكاميرا جوالك —<br>الحجز يأخذ أقل من دقيقة</div>
+        <div class="dqr-s dqr-s-m" style="color:#F0D3D6" data-i18n="dc2_qsm">افتحي الحجز مباشرة —<br>يأخذ أقل من دقيقة</div>
+        <a class="dqr-scan" href="demos/lamsa.html"><img class="dqr-code" src="assets/qr/lamsa.svg" alt="امسح الكود لفتح الديمو" loading="lazy"></a>
+        <a class="dqr-open" href="demos/lamsa.html"><span data-i18n="qr_open">افتح الديمو</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
       </div>
       <div class="dbody">
         <div class="dbadge-row"><span class="dbadge" style="background:#F7E8E6;color:#B76E79" data-i18n="dc2_bd">ديمو حي</span><span class="dclient" style="color:#B49A8D" data-i18n="dc2_cl">صالون «لمسة» — عميل افتراضي</span></div>
@@ -909,7 +986,7 @@
         <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc2_f2_t">التقويم يعرض المتاح فقط</b><span data-i18n="dc2_f2_s">المواعيد المحجوزة تُقفل تلقائياً — لا تعارض</span></div><div class="dline" style="border-color:#C9A86A"></div><div class="darr" style="border-inline-end:9px solid #C9A86A"></div></div>
         <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc2_f3_t">التأكيد يوصل واتساب</b><span data-i18n="dc2_f3_s">تأكيد وتذكير قبل الموعد — تقل نسبة الغياب</span></div><div class="dline" style="border-color:#C9A86A"></div><div class="darr" style="border-inline-end:9px solid #C9A86A"></div></div>
         </div>
-        <img class="dphone" style="border-color:#46342E" src="assets/shots/salon-2.webp" alt="" loading="lazy">
+        <span class="phone dphone"><img src="assets/shots/salon-2.webp" alt="" loading="lazy"><i class="pn"></i></span>
       </div>
     </article>
     <article class="dcard reveal" style="background:#ffffff">
@@ -917,9 +994,10 @@
         <span class="blob1" style="background:rgba(11,164,90,.28)"></span><span class="blob2" style="background:rgba(255,255,255,.06)"></span>
         <img class="dqr-logo" src="assets/logo-dukkan.webp" alt="شعار دكان" loading="lazy">
         <div class="dqr-t" data-i18n="dc3_qt">جرّب المتجر الآن</div>
-        <div class="dqr-s" style="color:#A9A9AE" data-i18n="dc3_qs">امسح الباركود بكاميرا جوالك —<br>تجربة الشراء كاملة حتى واتساب</div>
-        <a href="demos/dukkan.html" style="display:block"><div class="dqr-code" dir="ltr" style="--dqc:#1D1D1F"><i class="dq c" style="top:14px;left:14px"></i><i class="dq ci" style="top:25px;left:25px"></i><i class="dq c" style="top:14px;right:14px"></i><i class="dq ci" style="top:25px;right:25px"></i><i class="dq c" style="bottom:14px;left:14px"></i><i class="dq ci" style="bottom:25px;left:25px"></i><i class="dq d" style="top:18px;left:60px"></i><i class="dq d" style="top:32px;left:74px"></i><i class="dq d" style="top:18px;left:88px"></i><i class="dq d" style="top:46px;left:60px"></i><i class="dq d" style="top:60px;left:20px"></i><i class="dq d" style="top:60px;left:42px"></i><i class="dq d" style="top:74px;left:60px"></i><i class="dq d" style="top:60px;left:88px"></i><i class="dq d" style="top:74px;left:106px"></i><i class="dq d" style="top:60px;left:124px"></i><i class="dq d" style="top:88px;left:32px"></i><i class="dq d" style="top:88px;left:74px"></i><i class="dq d" style="top:102px;left:60px"></i><i class="dq d" style="top:102px;left:92px"></i><i class="dq d" style="top:116px;left:74px"></i><i class="dq d" style="top:130px;left:92px"></i><i class="dq d" style="top:116px;left:110px"></i><i class="dq d" style="top:130px;left:128px"></i><i class="dq d" style="top:88px;left:128px"></i><i class="dq d" style="top:140px;left:66px"></i></div></a>
-        <a class="dqr-url" dir="ltr" href="demos/dukkan.html">dukkan-demo.ae</a>
+        <div class="dqr-s dqr-s-d" style="color:#A9A9AE" data-i18n="dc3_qs">امسح الباركود بكاميرا جوالك —<br>تجربة الشراء كاملة حتى واتساب</div>
+        <div class="dqr-s dqr-s-m" style="color:#A9A9AE" data-i18n="dc3_qsm">افتح المتجر مباشرة —<br>تجربة الشراء كاملة حتى واتساب</div>
+        <a class="dqr-scan" href="demos/dukkan.html"><img class="dqr-code" src="assets/qr/dukkan.svg" alt="امسح الكود لفتح الديمو" loading="lazy"></a>
+        <a class="dqr-open" href="demos/dukkan.html"><span data-i18n="qr_open">افتح الديمو</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
       </div>
       <div class="dbody">
         <div class="dbadge-row"><span class="dbadge" style="background:#E7F6EE;color:#0BA45A" data-i18n="dc3_bd">ديمو حي · الجوال</span><span class="dclient" style="color:#86868B" data-i18n="dc3_cl">متجر «دكان» — عميل افتراضي</span></div>
@@ -929,7 +1007,7 @@
         <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc3_f2_t">سلة تحسب كل شيء</b><span data-i18n="dc3_f2_s">الشحن والضريبة والإجمالي — بدون مفاجآت</span></div><div class="dline" style="border-color:#0BA45A"></div><div class="darr" style="border-inline-end:9px solid #0BA45A"></div></div>
         <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc3_f3_t">الطلب يوصل واتساب</b><span data-i18n="dc3_f3_s">تأكيد ورقم تتبع يصل الزبون تلقائياً</span></div><div class="dline" style="border-color:#0BA45A"></div><div class="darr" style="border-inline-end:9px solid #0BA45A"></div></div>
         </div>
-        <img class="dphone" style="border-color:#1D1D1F" src="assets/shots/store-m1.webp" alt="" loading="lazy">
+        <span class="phone dphone"><img src="assets/shots/store-m1.webp" alt="" loading="lazy"><i class="pn"></i></span>
       </div>
     </article>
     <article class="dcard reveal" style="background:#F6F6F7">
@@ -937,9 +1015,10 @@
         <span class="blob1" style="background:rgba(255,255,255,.14)"></span><span class="blob2" style="background:rgba(29,29,31,.15)"></span>
         <img class="dqr-logo" src="assets/logo-dukkan.webp" alt="شعار دكان" loading="lazy">
         <div class="dqr-t" data-i18n="dc4_qt">جرّبه من الكمبيوتر</div>
-        <div class="dqr-s" style="color:#D3F2E1" data-i18n="dc4_qs">نفس المتجر بواجهة كاملة —<br>هيرو وشبكة منتجات وCheckout</div>
-        <a href="demos/dukkan.html" style="display:block"><div class="dqr-code" dir="ltr" style="--dqc:#103B24"><i class="dq c" style="top:14px;left:14px"></i><i class="dq ci" style="top:25px;left:25px"></i><i class="dq c" style="top:14px;right:14px"></i><i class="dq ci" style="top:25px;right:25px"></i><i class="dq c" style="bottom:14px;left:14px"></i><i class="dq ci" style="bottom:25px;left:25px"></i><i class="dq d" style="top:18px;left:60px"></i><i class="dq d" style="top:32px;left:74px"></i><i class="dq d" style="top:18px;left:88px"></i><i class="dq d" style="top:46px;left:60px"></i><i class="dq d" style="top:60px;left:20px"></i><i class="dq d" style="top:60px;left:42px"></i><i class="dq d" style="top:74px;left:60px"></i><i class="dq d" style="top:60px;left:88px"></i><i class="dq d" style="top:74px;left:106px"></i><i class="dq d" style="top:60px;left:124px"></i><i class="dq d" style="top:88px;left:32px"></i><i class="dq d" style="top:88px;left:74px"></i><i class="dq d" style="top:102px;left:60px"></i><i class="dq d" style="top:102px;left:92px"></i><i class="dq d" style="top:116px;left:74px"></i><i class="dq d" style="top:130px;left:92px"></i><i class="dq d" style="top:116px;left:110px"></i><i class="dq d" style="top:130px;left:128px"></i><i class="dq d" style="top:88px;left:128px"></i><i class="dq d" style="top:140px;left:66px"></i></div></a>
-        <a class="dqr-url" dir="ltr" href="demos/dukkan.html">dukkan-demo.ae/checkout</a>
+        <div class="dqr-s dqr-s-d" style="color:#D3F2E1" data-i18n="dc4_qs">نفس المتجر بواجهة كاملة —<br>هيرو وشبكة منتجات وCheckout</div>
+        <div class="dqr-s dqr-s-m" style="color:#D3F2E1" data-i18n="dc4_qsm">يفضّل فتحه من الكمبيوتر —<br>لكن جرّبه من هنا أيضاً</div>
+        <a class="dqr-scan" href="demos/dukkan.html"><img class="dqr-code" src="assets/qr/dukkan.svg" alt="امسح الكود لفتح الديمو" loading="lazy"></a>
+        <a class="dqr-open" href="demos/dukkan.html"><span data-i18n="qr_open">افتح الديمو</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
       </div>
       <div class="dbody">
         <div class="dbadge-row"><span class="dbadge" style="background:#E7F6EE;color:#0BA45A" data-i18n="dc4_bd">ديمو حي · الكمبيوتر</span><span class="dclient" style="color:#86868B" data-i18n="dc4_cl">متجر «دكان» — عميل افتراضي</span></div>
@@ -1103,6 +1182,10 @@
       <div class="info-card tint-green">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
         <div><b data-i18n="ct_hq">الموقع</b><span data-i18n="ct_hq_v">دبي، الإمارات — نخدم جميع الإمارات والخليج</span></div>
+      </div>
+      <div class="site-qr">
+        <img src="assets/qr/site.svg" alt="امسح الكود لفتح موقع نايل سوفت على جوالك" loading="lazy">
+        <div><b data-i18n="ct_qr_t">افتح الموقع على جوالك</b><span data-i18n="ct_qr_s">امسح الكود بكاميرا جوالك لتتصفّح الموقع والنماذج الحية — أو شاركه مع من يهمه الأمر.</span></div>
       </div>
     </div>
     <form class="contact-form squircle-xl reveal d1" id="contactForm" novalidate>
@@ -1315,6 +1398,12 @@
       j3_b: '3 · Week 3', j3_t: 'We launch on both stores', j3_s: 'iOS & Android + full training',
       ai_t: 'Automation that works for you', ai_s: 'From order to invoice to report — no copy-paste',
       ai_p1: 'The bot replies within a second', ai_p2: 'even while you sleep',
+      qr_open: 'Open the demo', swipe: 'Swipe to see the rest',
+      ct_qr_t: 'Open the site on your phone', ct_qr_s: 'Scan with your phone camera to browse the site and the live demos — or share it with whoever needs it.',
+      dc1_qsm: 'Open the menu instantly —<br>no app to download',
+      dc2_qsm: 'Open the booking flow —<br>it takes under a minute',
+      dc3_qsm: 'Open the store instantly —<br>full checkout through WhatsApp',
+      dc4_qsm: 'Best viewed on desktop —<br>but try it from here too',
       dc1_qt: 'Try the menu now', dc1_qs: 'Scan the code with your phone camera —<br>no app to download',
       dc1_bd: 'Live demo', dc1_cl: '\u201cDiafa\u201d Restaurant — fictional client',
       dc1_h: 'A digital menu taking orders<br>from the table to the cashier system or WhatsApp',
@@ -1436,6 +1525,12 @@
       j3_b: '٣ · الأسبوع الثالث', j3_t: 'نطلق على المتجرين', j3_s: 'iOS وAndroid + تدريب كامل',
       ai_t: 'أتمتة تشتغل بدالك', ai_s: 'من الطلب للفاتورة للتقرير — بلا نسخ ولصق',
       ai_p1: 'البوت يرد خلال ثانية', ai_p2: 'حتى وأنت نايم',
+      qr_open: 'افتح الديمو', swipe: 'اسحب لاستعراض الباقي',
+      ct_qr_t: 'افتح الموقع على جوالك', ct_qr_s: 'امسح الكود بكاميرا جوالك لتتصفّح الموقع والنماذج الحية — أو شاركه مع من يهمه الأمر.',
+      dc1_qsm: 'افتح المنيو مباشرة —<br>بدون تحميل أي تطبيق',
+      dc2_qsm: 'افتحي الحجز مباشرة —<br>يأخذ أقل من دقيقة',
+      dc3_qsm: 'افتح المتجر مباشرة —<br>تجربة الشراء كاملة حتى واتساب',
+      dc4_qsm: 'يفضّل فتحه من الكمبيوتر —<br>لكن جرّبه من هنا أيضاً',
       dc1_qt: 'جرّب المنيو الآن', dc1_qs: 'امسح الباركود بكاميرا جوالك —<br>بدون تحميل أي تطبيق',
       dc1_bd: 'ديمو حي', dc1_cl: 'مطعم «ضيافة» — عميل افتراضي',
       dc1_h: 'منيو رقمي يستقبل الطلبات<br>من الطاولة إلى سيستم الكاشير أو واتساب',
