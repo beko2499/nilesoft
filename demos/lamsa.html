@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لمسة — معاينة ديمو | نايل سوفت</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;background:#FAF4F0;font-family:'Noto Kufi Arabic',system-ui,sans-serif;color:#46342E;display:flex;flex-direction:column;align-items:center;padding:26px 16px 40px}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.logo{width:46px;height:46px;border-radius:14px;background:#B76E79;color:#FBEFE9;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;object-fit:cover;box-shadow:0 8px 18px -8px rgba(70,52,46,.45)}
+.top b{font-size:19px}
+.badge{background:#F7E8E6;color:#B76E79;font-size:11.5px;font-weight:700;padding:6px 14px;border-radius:999px;margin:8px 0 20px;text-align:center}
+.stage{display:flex;gap:26px;align-items:flex-start;flex-wrap:wrap;justify-content:center}
+.phone{width:min(380px,92vw);aspect-ratio:780/1688;border-radius:34px;border:8px solid #46342E;background:#fff;overflow:hidden;box-shadow:0 34px 70px -30px rgba(0,0,0,.5);position:relative}
+.slider{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab;direction:rtl}
+.slider::-webkit-scrollbar{display:none}
+.slider img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;user-select:none;-webkit-user-drag:none;display:block}
+.slider.dragging{cursor:grabbing;scroll-snap-type:none}
+.hint{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:13px;font-weight:600;color:#B49A8D}
+.dots{display:flex;gap:6px}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.15)}
+.dots i.on{background:#B76E79}
+
+.foot{margin-top:26px;font-size:12.5px;color:#B49A8D;text-align:center;line-height:1.9}
+.foot a{color:#B76E79;font-weight:700;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="top"><img class="logo" src="../assets/logo-lamsa.webp" alt="شعار لمسة"><b>لمسة</b></div>
+<div class="badge">معاينة تصميم الديمو — النسخة التفاعلية الكاملة قيد البناء</div>
+<div class="stage">
+  <div>
+    <div class="phone"><div class="slider" id="sl"><img src="../assets/shots/salon-1.webp" alt=""><img src="../assets/shots/salon-2.webp" alt=""><img src="../assets/shots/salon-3.webp" alt=""></div></div>
+    <div class="hint"><span>اسحب الشاشة لتتنقل</span><span class="dots" id="dots"><i class="on"></i><i></i><i></i></span></div>
+  </div>
+  
+</div>
+<p class="foot">نموذج من نماذج قدرات <a href="../index.html">نايل سوفت</a> — علامة «لمسة» علامة افتراضية للعرض فقط<br><a href="../index.html#contact">اطلب واحداً مثله لنشاطك ←</a></p>
+<script>
+(function(){
+  var el=document.getElementById('sl');
+  var dots=document.querySelectorAll('#dots i');
+  var down=false,sx=0,sl=0;
+  el.addEventListener('pointerdown',function(e){down=true;sx=e.clientX;sl=el.scrollLeft;el.classList.add('dragging');try{el.setPointerCapture(e.pointerId)}catch(err){}});
+  el.addEventListener('pointermove',function(e){if(!down)return;el.scrollLeft=sl-(e.clientX-sx)});
+  function up(){down=false;el.classList.remove('dragging')}
+  el.addEventListener('pointerup',up);el.addEventListener('pointercancel',up);
+  el.addEventListener('scroll',function(){var i=Math.min(dots.length-1,Math.round(Math.abs(el.scrollLeft)/el.clientWidth));dots.forEach(function(d,j){d.classList.toggle('on',j===i)})},{passive:true});
+})();
+</script>
+</body>
+</html>
