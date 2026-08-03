@@ -23,12 +23,24 @@ python -m http.server 8000
 
 ثم افتح `http://localhost:8000`.
 
-## النشر على GitHub Pages
+## النشر على Render (الموصى به)
+
+المشروع يحتوي على `render.yaml` جاهزاً، فلا تحتاج ضبط أي إعدادات يدوياً:
+
+1. ارفع المشروع على GitHub (شغّل `push-to-github.bat`).
+2. من [dashboard.render.com](https://dashboard.render.com) اختر **New → Static Site**.
+3. اربط المستودع، وستُقرأ الإعدادات تلقائياً من `render.yaml`.
+4. اضغط **Create Static Site**.
+
+الموقع يصبح حياً خلال دقيقتين على `https://nilesoft.onrender.com` (مجاناً مع شهادة TLS)، ويُحدَّث تلقائياً مع كل `git push`.
+
+**الإعدادات يدوياً** (إن لم يُقرأ الملف): Build Command = `true`، Publish Directory = `./`
+
+## النشر على GitHub Pages (بديل)
 
 من صفحة المستودع: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `root` → Save**.
 
-يصبح الموقع متاحاً خلال دقيقة تقريباً على:
-`https://<username>.github.io/<repo-name>/`
+يصبح الموقع متاحاً على: `https://<username>.github.io/<repo-name>/`
 
 ## ملاحظات
 
