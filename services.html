@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نايل سوفت — خدمات برمجية في الإمارات: مواقع، متاجر، تطبيقات وأتمتة</title>
+<meta name="description" content="نايل سوفت — خدمات برمجية للأعمال الصغيرة والمتوسطة في الإمارات والخليج: مواقع ومتاجر إلكترونية وأنظمة إدارية وتطبيقات وأتمتة بالذكاء الاصطناعي. جودة عالية وسعر عادل وتسليم سريع.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<script>
+  // Apply saved theme + language before first paint (no flash)
+  (function(){
+    try{
+      document.documentElement.dataset.theme = 'light';
+      var l = localStorage.getItem('ns-lang') || 'ar';
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+    }catch(e){}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="services" data-title-key="title_services">
+
+<canvas id="bg3d" aria-hidden="true"></canvas>
+
+<!-- ============ Dynamic Island ============ -->
+<div class="island" id="island">
+  <button class="island-core pressable" id="islandCore" aria-expanded="false" aria-controls="islandMenu" aria-label="NILESOFT — open navigation">
+    <span class="island-nail"><img src="assets/logo-mark.png" alt=""></span>
+    <span class="island-label" id="islandLabel">NILESOFT</span>
+    <span class="island-dot" id="islandDot"></span>
+  </button>
+  <div class="island-menu" id="islandMenu">
+    <div class="island-menu-inner">
+      <nav aria-label="Primary">
+        <a href="index.html"><span data-i18n="nav_home">الرئيسية</span> <span class="k">00</span></a>
+        <a aria-current="page" href="#services"><span data-i18n="nav_services">Services</span> <span class="k">01</span></a>
+        <a href="work.html"><span data-i18n="nav_work">Work</span> <span class="k">02</span></a>
+        <a href="about.html"><span data-i18n="nav_story">Our Story</span> <span class="k">03</span></a>
+        <a href="about.html#process"><span data-i18n="nav_process">Process</span> <span class="k">04</span></a>
+        <a href="about.html#clients"><span data-i18n="nav_clients">Clients</span> <span class="k">05</span></a>
+        <a href="contact.html"><span data-i18n="nav_contact">Contact</span> <span class="k">06</span></a>
+      </nav>
+      <a class="island-cta pressable" href="contact.html"><span data-i18n="island_cta">Start a Project</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Theme & language controls ============ -->
+<div class="ctrl">
+  <button id="langBtn" class="pressable" aria-label="Switch language">ع</button>
+</div>
+
+<main>
+
+<section class="sheet glass" id="services" data-island="nav_services">
+  <nav class="svc-jump reveal" aria-label="الخدمات">
+    <div class="svc-jump-links">
+      <a class="svc-jump-link pressable" href="#service-1" style="--i:0"><span class="svc-jump-num">01</span><span data-i18n="svc_nav_1">صفحة تعريفية</span></a>
+      <a class="svc-jump-link pressable" href="#service-2" style="--i:1"><span class="svc-jump-num">02</span><span data-i18n="svc_nav_2">موقع شركة</span></a>
+      <a class="svc-jump-link pressable" href="#service-3" style="--i:2"><span class="svc-jump-num">03</span><span data-i18n="svc_nav_3">متجر إلكتروني</span></a>
+      <a class="svc-jump-link pressable" href="#service-4" style="--i:3"><span class="svc-jump-num">04</span><span data-i18n="svc_nav_4">نظام حجوزات</span></a>
+      <a class="svc-jump-link pressable" href="#service-5" style="--i:4"><span class="svc-jump-num">05</span><span data-i18n="svc_nav_5">تطبيق موبايل</span></a>
+      <a class="svc-jump-link pressable" href="#service-6" style="--i:5"><span class="svc-jump-num">06</span><span data-i18n="svc_nav_6">أتمتة وذكاء اصطناعي</span></a>
+    </div>
+  </nav>
+  <div class="head reveal">
+    <span class="eyebrow" data-i18n="svc_eyebrow">الخدمات والأسعار</span>
+    <h2 data-i18n="svc_h2">خدمات واضحة،<br>بأسعار واضحة.</h2>
+    <p data-i18n="svc_sub">كل خدمة منتج محدد: تعرف ماذا ستستلم، ومتى، وبكم — قبل أن تدفع درهماً واحداً.</p>
+  </div>
+  <div class="svc-secs">
+  <article class="svc-sec reveal" id="service-1" data-wavegroup data-anim="wvx">
+    <header class="ss-head">
+      <div>
+        <div class="ss-kicker"><span class="ss-num" data-i18n="ssn1">الخدمة ٠١</span></div>
+        <h3 data-i18n="svc1_t">صفحة تعريفية احترافية</h3>
+      </div>
+      <p class="ss-sub" data-i18n="svc1_d">لأي نشاط يحتاج واجهة أونلاين محترمة اليوم — صفحة واحدة قوية تجمع كل ما يحتاجه عميلك للوصول إليك.</p>
+    </header>
+    <div class="ss-g1">
+      <div data-wave>
+        <div class="shot-card feat"><img class="shot" src="assets/shots/shot-3.webp" alt="" loading="lazy"></div>
+        <div class="ss-cap"><b data-i18n="g1a_t">أكاديمية تدريب أونلاين</b><span data-i18n="g1a_s">تسجيل الدفعة الجديدة · ٣ أيام تنفيذ</span></div>
+      </div>
+      <div class="ss-col">
+        <div data-wave>
+          <div class="shot-card mini"><img class="shot" src="assets/shots/shot-1.webp" alt="" loading="lazy"></div>
+          <div class="ss-cap"><b data-i18n="g1b_t">متجر ساعات فاخرة</b><span data-i18n="g1b_s">عرض المنتجات والشراء المباشر</span></div>
+        </div>
+        <div data-wave>
+          <div class="shot-card mini"><img class="shot" src="assets/shots/shot-2.webp" alt="" loading="lazy"></div>
+          <div class="ss-cap"><b data-i18n="g1c_t">منصة حجوزات سياحية</b><span data-i18n="g1c_s">رحلات وإقامات وحجز مباشر</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
+    <div class="ss-foot">
+      <a class="ss-cta pressable" data-wa="svc1" href="contact.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
+      <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc1_p">300 د.إ</b> · <span data-i18n="svc1_tm">خلال 3 أيام كحد أقصى</span></div>
+    </div>
+  </article>
+  <article class="svc-sec reveal" id="service-2" data-wavegroup data-anim="wv">
+    <header class="ss-head">
+      <div>
+        <div class="ss-kicker"><span class="ss-num" data-i18n="ssn2">الخدمة ٠٢</span><span class="ss-pop" data-i18n="svc_pop">الأكثر طلباً</span></div>
+        <h3 data-i18n="svc2_t">موقع شركة متكامل</h3>
+      </div>
+      <p class="ss-sub" data-i18n="svc2_d">موقع متكامل يليق باسم نشاطك ويظهر في نتائج البحث — واجهتك الرسمية أمام عملائك وشركائك.</p>
+    </header>
+    <div class="ss-fan">
+      <div class="f f1"><div data-wave><div class="fwrap"><div class="pg"><img class="shot" src="assets/shots/co-pg-about.webp" alt="" loading="lazy"></div></div></div></div>
+      <div class="f f2"><div data-wave><div class="fwrap"><div class="pg"><img class="shot" src="assets/shots/co-pg-services.webp" alt="" loading="lazy"></div></div></div></div>
+      <div class="f f3"><div data-wave><div class="fwrap"><span class="fbadge" data-i18n="p_home">الرئيسية</span><div class="pg"><img class="shot" src="assets/shots/co-pg-home.webp" alt="" loading="lazy"></div></div></div></div>
+      <div class="f f4"><div data-wave><div class="fwrap"><div class="pg"><img class="shot" src="assets/shots/co-pg-portfolio.webp" alt="" loading="lazy"></div></div></div></div>
+      <div class="f f5"><div data-wave><div class="fwrap"><div class="pg"><img class="shot" src="assets/shots/co-pg-contact.webp" alt="" loading="lazy"></div></div></div></div>
+    </div>
+    <div class="ss-chips">
+      <span class="chip" data-i18n="p_home">الرئيسية</span>
+      <span class="chip" data-i18n="p_about">من نحن</span>
+      <span class="chip" data-i18n="p_srv">خدماتنا</span>
+      <span class="chip" data-i18n="p_work">أعمالنا</span>
+      <span class="chip" data-i18n="p_contact">اتصل بنا</span>
+      <span class="chip amber" data-i18n="p_lang">بلغتين AR ⇄ EN</span>
+    </div>
+    <div class="ss-bullets">
+      <span class="blt" data-i18n="svc2_f1">5–8 صفحات بلغتين مع لوحة تحكم سهلة</span>
+      <span class="blt" data-i18n="svc2_f2">تهيئة قوية لمحركات البحث وسرعة عالية</span>
+      <span class="blt" data-i18n="svc2_f3">تدريب لتدير المحتوى بنفسك</span>
+    </div>
+    <div class="ss-foot">
+      <a class="ss-cta pressable" data-wa="svc2" href="contact.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
+      <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc2_p">1,000 د.إ</b> · <span data-i18n="svc2_tm">خلال أسبوع كحد أقصى</span></div>
+    </div>
+  </article>
+  <article class="svc-sec reveal" id="service-3" data-wavegroup data-anim="wvx">
+    <header class="ss-head">
+      <div>
+        <div class="ss-kicker"><span class="ss-num" data-i18n="ssn3">الخدمة ٠٣</span></div>
+        <h3 data-i18n="svc3_t">متجر إلكتروني</h3>
+      </div>
+      <p class="ss-sub" data-i18n="svc3_d">انتقل من البيع عبر الرسائل إلى متجر يعمل 24 ساعة ويستقبل الطلبات والمدفوعات آلياً.</p>
+    </header>
+    <div class="ss-ba">
+      <div class="ba-col" data-wave>
+        <span class="ba-tag before" data-i18n="ba_b">قبل</span>
+        <div class="ba-shot"><img class="shot" src="assets/shots/store-chaos.webp" alt="" loading="lazy"></div>
+        <div class="ba-cap" data-i18n="ba_cap">كل طلب = عشر رسائل، وتحويلات تضيع بينها</div>
+      </div>
+      <div class="ba-arrow" aria-hidden="true">←</div>
+      <div class="ba-col" data-wave>
+        <span class="ba-tag after" data-i18n="ba_a">بعد — متجرك يبيع وحده</span>
+        <div class="bframe"><div class="bbar"><i></i><i></i><i></i></div><div class="ba-slider" id="storeSlider"><img src="assets/shots/store-scr-1.webp" alt="" loading="lazy"><img src="assets/shots/store-scr-2.webp" alt="" loading="lazy"><img src="assets/shots/store-scr-3.webp" alt="" loading="lazy"></div></div><div class="ba-hint" id="storeHint"><span data-i18n="st_swipe">اسحب لترى رحلة الشراء كاملة</span><span class="ba-dots" id="storeDots" aria-hidden="true"><i class="on"></i><i></i><i></i></span></div>
+        <div class="ss-tags">
+          <span class="tagp g" data-i18n="st_t1">يعمل 24 ساعة</span>
+          <span class="tagp g" data-i18n="st_t2">دفع وفواتير آلية</span>
+          <span class="tagp a" data-i18n="st_t3">مخزون وشحن مربوط</span>
+        </div>
+      </div>
+    </div>
+    <div class="ss-foot">
+      <a class="ss-cta pressable" data-wa="svc3" href="contact.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
+      <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc3_p">1,500 د.إ</b> · <span data-i18n="svc3_tm">خلال 10 أيام كحد أقصى</span></div>
+    </div>
+  </article>
+  <article class="svc-sec reveal" id="service-4" data-wavegroup data-anim="wv">
+    <header class="ss-head">
+      <div>
+        <div class="ss-kicker"><span class="ss-num" data-i18n="ssn4">الخدمة ٠٤</span></div>
+        <h3 data-i18n="svc4_t">نظام حجوزات وإدارة</h3>
+      </div>
+      <p class="ss-sub" data-i18n="svc4_d">أوقف إدارة عملك بالدفاتر وجداول الإكسل — نظام واحد يضبط الحجوزات أو المخزون أو الفواتير أو العملاء.</p>
+    </header>
+    <div class="ss-sys">
+      <div class="sys-stage">
+        <div data-wave>
+          <div class="bframe"><div class="bbar"><i></i><i></i><i></i></div><div class="sys-dash-img"><img class="shot" src="assets/shots/sys-dash.webp" alt="" loading="lazy"></div></div>
+        </div>
+        <div class="sys-phone" data-wave><div class="phone"><img class="shot" src="assets/shots/sys-mobile.webp" alt="" loading="lazy"><i class="pn"></i></div></div>
+      </div>
+      <div class="frows">
+        <div class="frow" data-wave><span class="fdot"></span><div data-i18n="svc4_f1">مواعيد أو مخزون أو فواتير أو إدارة عملاء</div></div>
+        <div class="frow" data-wave><span class="fdot"></span><div data-i18n="svc4_f2">تقارير ولوحات متابعة وصلاحيات موظفين</div></div>
+        <div class="frow" data-wave><span class="fdot"></span><div data-i18n="svc4_f3">يعمل من الجوال والكمبيوتر</div></div>
+      </div>
+    </div>
+    <div class="ss-foot">
+      <a class="ss-cta pressable" data-wa="svc4" href="contact.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
+      <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc4_p">1,700 د.إ</b> · <span data-i18n="svc4_tm">خلال أسبوعين كحد أقصى</span></div>
+    </div>
+  </article>
+  <article class="svc-sec reveal" id="service-5" data-wavegroup data-anim="wv">
+    <header class="ss-head">
+      <div>
+        <div class="ss-kicker"><span class="ss-num" data-i18n="ssn5">الخدمة ٠٥</span></div>
+        <h3 data-i18n="svc5_t">تطبيق موبايل (MVP)</h3>
+      </div>
+      <p class="ss-sub" data-i18n="svc5_d">تطبيق باسم علامتك على متجري Google و Apple — نبدأ بنسخة أولى ذكية ثم نطورها مع نمو مستخدميك.</p>
+    </header>
+    <div class="ss-journey">
+      <div class="jline" aria-hidden="true"></div>
+      <div class="jgrid">
+        <div class="jstage" data-wave>
+        <div class="jbadge" data-i18n="j1_b">١ · الأسبوع الأول</div>
+        <div class="phone jphone"><img class="shot" src="assets/shots/app-wireframe.webp" alt="" loading="lazy"><i class="pn"></i></div>
+        <div class="jcap"><b data-i18n="j1_t">نثبّت الفكرة</b><span data-i18n="j1_s">شاشات ورقية + مسار المستخدم</span></div>
+      </div>
+        <div class="jstage" data-wave>
+        <div class="jbadge" data-i18n="j2_b">٢ · الأسبوع الثاني</div>
+        <div class="phone jphone"><img class="shot" src="assets/shots/app-home.webp" alt="" loading="lazy"><i class="pn"></i></div>
+        <div class="jcap"><b data-i18n="j2_t">نصمم ونراجع معك</b><span data-i18n="j2_s">هوية تطبيقك على كل شاشة</span></div>
+      </div>
+        <div class="jstage" data-wave>
+        <div class="jbadge go" data-i18n="j3_b">٣ · الأسبوع الثالث</div>
+        <div class="phone jphone launch"><img class="shot" src="assets/shots/app-launch.webp" alt="" loading="lazy"><i class="pn"></i></div>
+        <div class="jcap"><b data-i18n="j3_t">نطلق على المتجرين</b><span data-i18n="j3_s">iOS وAndroid + تدريب كامل</span></div>
+      </div>
+      </div>
+    </div>
+    <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
+    <div class="ss-foot">
+      <a class="ss-cta pressable" data-wa="svc5" href="contact.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
+      <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc5_p">2,500 د.إ</b> · <span data-i18n="svc5_tm">خلال 3 أسابيع كحد أقصى</span></div>
+    </div>
+  </article>
+  <article class="svc-sec reveal" id="service-6" data-wavegroup data-anim="wv">
+    <header class="ss-head">
+      <div>
+        <div class="ss-kicker"><span class="ss-num" data-i18n="ssn6">الخدمة ٠٦</span></div>
+        <h3 data-i18n="svc6_t">أتمتة وذكاء اصطناعي</h3>
+      </div>
+      <p class="ss-sub" data-i18n="svc6_d">وظّف الذكاء الاصطناعي في عملك: ردود فورية على عملائك وأتمتة توفر عليك ساعات كل يوم.</p>
+    </header>
+    <div class="ss-ai">
+      <div>
+        <div data-wave>
+          <div class="ai-flow-img"><img class="shot" src="assets/shots/ai-flow.webp" alt="" loading="lazy"></div>
+          <div class="ss-cap"><b data-i18n="ai_t">أتمتة تشتغل بدالك</b><span data-i18n="ai_s">من الطلب للفاتورة للتقرير — بلا نسخ ولصق</span></div>
+        </div>
+        <div class="frows" style="margin-top:22px">
+          <div class="frow" data-wave><span class="fdot"></span><div data-i18n="svc6_f1">بوت واتساب يرد على استفسارات عملائك</div></div>
+          <div class="frow" data-wave><span class="fdot"></span><div data-i18n="svc6_f2">أتمتة المهام المكتبية المتكررة وربط الأنظمة</div></div>
+          <div class="frow" data-wave><span class="fdot"></span><div data-i18n="svc6_f3">تقارير آلية إلى بريدك أو واتسابك</div></div>
+        </div>
+      </div>
+      <div class="ai-phone-col" data-wave>
+        <div class="phone ai-phone"><img class="shot" src="assets/shots/ai-chat.webp" alt="" loading="lazy"><i class="pn"></i></div>
+        <div class="ai-cap"><b data-i18n="ai_p1">البوت يرد خلال ثانية</b><span data-i18n="ai_p2">حتى وأنت نايم</span></div>
+      </div>
+    </div>
+    <div class="ss-foot">
+      <a class="ss-cta pressable" data-wa="svc6" href="contact.html"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
+      <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc6_p">2,000 د.إ</b> · <span data-i18n="svc6_tm">خلال 12 يوماً كحد أقصى</span></div>
+    </div>
+  </article>
+  </div>
+</section>
+
+<section class="cta sheet" id="cta">
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="cta-grid">
+  <img class="cta-art reveal" src="assets/cta-art.webp" alt="جلسة استشارية" loading="lazy">
+  <div class="cta-copy">
+  <h2 class="reveal" data-i18n="cta_h2"><span class="accent">استشارة مجانية</span><br>لمشروعك.</h2>
+  <p class="reveal d1" data-i18n="cta_p">مكالمة 30 دقيقة نناقش فيها فكرتك ونحدد الحل الأنسب وتكلفته الحقيقية — دون أي التزام.</p>
+    <a class="cta-book pressable reveal d2" href="contact.html" data-wa="general"><span data-i18n="cta_btn">احجز استشارتك الآن</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+  </a>
+  </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="foot">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/logo-full.png" alt="NILESOFT">
+        <p data-i18n="foot_about">نايل سوفت — خدمات برمجية للأعمال في الإمارات والخليج: مواقع ومتاجر وأنظمة وتطبيقات وأتمتة بالذكاء الاصطناعي.</p>
+        <p class="tagline" id="footTagline" lang="en" dir="ltr" data-i18n="foot_tag" style="color:var(--gray)">NILESOFT — Software services, built right</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4 data-i18n="foot_company">روابط</h4>
+          <ul>
+            <li><a href="about.html" data-i18n="foot_about_l">من نحن</a></li>
+            <li><a href="about.html#process" data-i18n="foot_how">كيف نعمل</a></li>
+            <li><a href="about.html#clients" data-i18n="foot_why">لماذا نايل سوفت</a></li>
+            <li><a href="work.html" data-i18n="foot_demos">النماذج الحية</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="foot_services">الخدمات</h4>
+          <ul>
+            <li><a href="#services" data-i18n="foot_s1">مواقع وصفحات تعريفية</a></li>
+            <li><a href="#services" data-i18n="foot_s2">متاجر إلكترونية</a></li>
+            <li><a href="#services" data-i18n="foot_s3">أنظمة وتطبيقات</a></li>
+            <li><a href="#services" data-i18n="foot_s4">أتمتة وذكاء اصطناعي</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="foot_contact">تواصل</h4>
+          <ul>
+            <li><a href="mailto:abubkr249@icloud.com">abubkr249@icloud.com</a></li>
+            <li><a href="contact.html" data-wa="general" data-i18n="foot_wa">واتساب مباشر</a></li>
+            <li><a href="contact.html" data-i18n="foot_addr">دبي، الإمارات</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span><span data-i18n="foot_rights">© 2026 نايل سوفت — جميع الحقوق محفوظة.</span></span>
+      <span style="display:inline-flex;align-items:center"><span data-i18n="foot_made1">صُنع بأيادٍ سودانية</span>
+        <span class="flag" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span data-i18n="foot_made2">لخدمة الإمارات والخليج</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نايل سوفت — خدمات برمجية في الإمارات: مواقع، متاجر، تطبيقات وأتمتة</title>
+<meta name="description" content="نايل سوفت — خدمات برمجية للأعمال الصغيرة والمتوسطة في الإمارات والخليج: مواقع ومتاجر إلكترونية وأنظمة إدارية وتطبيقات وأتمتة بالذكاء الاصطناعي. جودة عالية وسعر عادل وتسليم سريع.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<script>
+  // Apply saved theme + language before first paint (no flash)
+  (function(){
+    try{
+      document.documentElement.dataset.theme = 'light';
+      var l = localStorage.getItem('ns-lang') || 'ar';
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+    }catch(e){}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="contact" data-title-key="title_contact">
+
+<canvas id="bg3d" aria-hidden="true"></canvas>
+
+<!-- ============ Dynamic Island ============ -->
+<div class="island" id="island">
+  <button class="island-core pressable" id="islandCore" aria-expanded="false" aria-controls="islandMenu" aria-label="NILESOFT — open navigation">
+    <span class="island-nail"><img src="assets/logo-mark.png" alt=""></span>
+    <span class="island-label" id="islandLabel">NILESOFT</span>
+    <span class="island-dot" id="islandDot"></span>
+  </button>
+  <div class="island-menu" id="islandMenu">
+    <div class="island-menu-inner">
+      <nav aria-label="Primary">
+        <a href="index.html"><span data-i18n="nav_home">الرئيسية</span> <span class="k">00</span></a>
+        <a href="services.html"><span data-i18n="nav_services">Services</span> <span class="k">01</span></a>
+        <a href="work.html"><span data-i18n="nav_work">Work</span> <span class="k">02</span></a>
+        <a href="about.html"><span data-i18n="nav_story">Our Story</span> <span class="k">03</span></a>
+        <a href="about.html#process"><span data-i18n="nav_process">Process</span> <span class="k">04</span></a>
+        <a href="about.html#clients"><span data-i18n="nav_clients">Clients</span> <span class="k">05</span></a>
+        <a aria-current="page" href="#contact"><span data-i18n="nav_contact">Contact</span> <span class="k">06</span></a>
+      </nav>
+      <a class="island-cta pressable" href="#contact"><span data-i18n="island_cta">Start a Project</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Theme & language controls ============ -->
+<div class="ctrl">
+  <button id="langBtn" class="pressable" aria-label="Switch language">ع</button>
+</div>
+
+<main>
+
+<section class="sheet glass" id="contact" data-island="nav_contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow" data-i18n="ct_eyebrow">تواصل معنا</span>
+      <h2 data-i18n="ct_h2">كل مشروع ناجح يبدأ بمحادثة.</h2>
+      <p data-i18n="ct_sub">أسرع طريقة هي واتساب — أو استخدم النموذج وسيصلك الرد خلال ساعات العمل في نفس اليوم.</p>
+      <div class="info-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg></div>
+        <div><b data-i18n="ct_email">البريد الإلكتروني</b><a href="mailto:abubkr249@icloud.com">abubkr249@icloud.com</a></div>
+      </div>
+      <div class="info-card tint-amber">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+        <div><b data-i18n="ct_phone">واتساب</b><a href="#contact" data-wa="general" id="waLink" dir="ltr" data-i18n="ct_wa_v">+971 50 449 4638</a></div>
+      </div>
+      <div class="info-card tint-green">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <div><b data-i18n="ct_hq">الموقع</b><span data-i18n="ct_hq_v">دبي، الإمارات — نخدم جميع الإمارات والخليج</span></div>
+      </div>
+      <div class="site-qr">
+        <img src="assets/qr/site.svg" alt="امسح الكود لفتح موقع نايل سوفت على جوالك" loading="lazy">
+        <div><b data-i18n="ct_qr_t">افتح الموقع على جوالك</b><span data-i18n="ct_qr_s">امسح الكود بكاميرا جوالك لتتصفّح الموقع والنماذج الحية — أو شاركه مع من يهمه الأمر.</span></div>
+      </div>
+    </div>
+    <form class="contact-form squircle-xl reveal d1" id="contactForm" novalidate>
+      <h3 data-i18n="form_h3">أخبرنا عن مشروعك</h3>
+      <div class="form-row">
+        <div class="field"><label for="f-name" data-i18n="f_name_l">الاسم الكامل</label><input id="f-name" name="name" type="text" placeholder="محمد علي" data-i18n-ph="f_name_ph" required></div>
+        <div class="field"><label for="f-email" data-i18n="f_email_l">البريد أو رقم الواتساب</label><input id="f-email" name="email" type="text" placeholder="you@company.com" data-i18n-ph="f_email_ph" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="f-company" data-i18n="f_company_l">اسم النشاط التجاري</label><input id="f-company" name="company" type="text" placeholder="اسم المحل أو الشركة" data-i18n-ph="f_company_ph"></div>
+        <div class="field"><label for="f-topic" data-i18n="f_topic_l">أحتاج</label>
+          <select id="f-topic" name="topic">
+            <option data-i18n="opt1">صفحة تعريفية احترافية</option>
+            <option data-i18n="opt2">موقع شركة متكامل</option>
+            <option data-i18n="opt3">متجر إلكتروني</option>
+            <option data-i18n="opt4">نظام حجوزات وإدارة</option>
+            <option data-i18n="opt5">تطبيق موبايل</option>
+            <option data-i18n="opt6">أتمتة وذكاء اصطناعي</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="f-msg" data-i18n="f_msg_l">تفاصيل المشروع</label><textarea id="f-msg" name="message" placeholder="صف نشاطك وما تحتاجه — وسنعود إليك بخطة وسعر واضحين." data-i18n-ph="f_msg_ph" required></textarea></div>
+      <button class="btn btn-primary pressable" type="submit"><span data-i18n="f_send">أرسل الطلب</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+      </button>
+      <div class="form-success" id="formSuccess">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span data-i18n="f_success">شكراً — وصلنا طلبك وسنرد عليك خلال ساعات العمل في نفس اليوم.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="foot">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/logo-full.png" alt="NILESOFT">
+        <p data-i18n="foot_about">نايل سوفت — خدمات برمجية للأعمال في الإمارات والخليج: مواقع ومتاجر وأنظمة وتطبيقات وأتمتة بالذكاء الاصطناعي.</p>
+        <p class="tagline" id="footTagline" lang="en" dir="ltr" data-i18n="foot_tag" style="color:var(--gray)">NILESOFT — Software services, built right</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4 data-i18n="foot_company">روابط</h4>
+          <ul>
+            <li><a href="about.html" data-i18n="foot_about_l">من نحن</a></li>
+            <li><a href="about.html#process" data-i18n="foot_how">كيف نعمل</a></li>
+            <li><a href="about.html#clients" data-i18n="foot_why">لماذا نايل سوفت</a></li>
+            <li><a href="work.html" data-i18n="foot_demos">النماذج الحية</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="foot_services">الخدمات</h4>
+          <ul>
+            <li><a href="services.html" data-i18n="foot_s1">مواقع وصفحات تعريفية</a></li>
+            <li><a href="services.html" data-i18n="foot_s2">متاجر إلكترونية</a></li>
+            <li><a href="services.html" data-i18n="foot_s3">أنظمة وتطبيقات</a></li>
+            <li><a href="services.html" data-i18n="foot_s4">أتمتة وذكاء اصطناعي</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="foot_contact">تواصل</h4>
+          <ul>
+            <li><a href="mailto:abubkr249@icloud.com">abubkr249@icloud.com</a></li>
+            <li><a href="#contact" data-wa="general" data-i18n="foot_wa">واتساب مباشر</a></li>
+            <li><a href="#contact" data-i18n="foot_addr">دبي، الإمارات</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span><span data-i18n="foot_rights">© 2026 نايل سوفت — جميع الحقوق محفوظة.</span></span>
+      <span style="display:inline-flex;align-items:center"><span data-i18n="foot_made1">صُنع بأيادٍ سودانية</span>
+        <span class="flag" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span data-i18n="foot_made2">لخدمة الإمارات والخليج</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نايل سوفت — خدمات برمجية في الإمارات: مواقع، متاجر، تطبيقات وأتمتة</title>
+<meta name="description" content="نايل سوفت — خدمات برمجية للأعمال الصغيرة والمتوسطة في الإمارات والخليج: مواقع ومتاجر إلكترونية وأنظمة إدارية وتطبيقات وأتمتة بالذكاء الاصطناعي. جودة عالية وسعر عادل وتسليم سريع.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<script>
+  // Apply saved theme + language before first paint (no flash)
+  (function(){
+    try{
+      document.documentElement.dataset.theme = 'light';
+      var l = localStorage.getItem('ns-lang') || 'ar';
+      document.documentElement.lang = l;
+      document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
+    }catch(e){}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="work" data-title-key="title_work">
+
+<canvas id="bg3d" aria-hidden="true"></canvas>
+
+<!-- ============ Dynamic Island ============ -->
+<div class="island" id="island">
+  <button class="island-core pressable" id="islandCore" aria-expanded="false" aria-controls="islandMenu" aria-label="NILESOFT — open navigation">
+    <span class="island-nail"><img src="assets/logo-mark.png" alt=""></span>
+    <span class="island-label" id="islandLabel">NILESOFT</span>
+    <span class="island-dot" id="islandDot"></span>
+  </button>
+  <div class="island-menu" id="islandMenu">
+    <div class="island-menu-inner">
+      <nav aria-label="Primary">
+        <a href="index.html"><span data-i18n="nav_home">الرئيسية</span> <span class="k">00</span></a>
+        <a href="services.html"><span data-i18n="nav_services">Services</span> <span class="k">01</span></a>
+        <a aria-current="page" href="#work"><span data-i18n="nav_work">Work</span> <span class="k">02</span></a>
+        <a href="about.html"><span data-i18n="nav_story">Our Story</span> <span class="k">03</span></a>
+        <a href="about.html#process"><span data-i18n="nav_process">Process</span> <span class="k">04</span></a>
+        <a href="about.html#clients"><span data-i18n="nav_clients">Clients</span> <span class="k">05</span></a>
+        <a href="contact.html"><span data-i18n="nav_contact">Contact</span> <span class="k">06</span></a>
+      </nav>
+      <a class="island-cta pressable" href="contact.html"><span data-i18n="island_cta">Start a Project</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Theme & language controls ============ -->
+<div class="ctrl">
+  <button id="langBtn" class="pressable" aria-label="Switch language">ع</button>
+</div>
+
+<main>
+
+<section class="sheet glass" id="work" data-island="nav_work">
+  <div class="head reveal">
+    <span class="eyebrow" data-i18n="work_eyebrow">نماذج حية</span>
+    <h2 data-i18n="work_h2">جرّب بنفسك قبل أن تقرر.</h2>
+    <p data-i18n="work_sub">نماذج تجريبية كاملة نبنيها لتختبر مستوى الجودة بيدك — نعرضها بصراحة كنماذج قدرات، لا كأعمال لعملاء.</p>
+  </div>
+  <div class="demo-cards">
+    <article class="dcard reveal" style="background:#FAF3E7">
+      <div class="dqr" style="background:#6B3F23;color:#F8EDD8">
+        <span class="blob1" style="background:rgba(200,155,60,.18)"></span><span class="blob2" style="background:rgba(200,155,60,.12)"></span>
+        <img class="dqr-logo" src="assets/logo-diafa.webp" alt="شعار ضيافة" loading="lazy">
+        <div class="dqr-t" data-i18n="dc1_qt">جرّب المنيو الآن</div>
+        <div class="dqr-s dqr-s-d" style="color:#D9BE8F" data-i18n="dc1_qs">امسح الباركود بكاميرا جوالك —<br>بدون تحميل أي تطبيق</div>
+        <div class="dqr-s dqr-s-m" style="color:#D9BE8F" data-i18n="dc1_qsm">افتح المنيو مباشرة —<br>بدون تحميل أي تطبيق</div>
+        <a class="dqr-scan" href="demos/diafa.html"><img class="dqr-code" src="assets/qr/diafa.svg" alt="امسح الكود لفتح الديمو" loading="lazy"></a>
+        <a class="dqr-open" href="demos/diafa.html"><span data-i18n="qr_open">افتح الديمو</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+      </div>
+      <div class="dbody">
+        <div class="dbadge-row"><span class="dbadge" style="background:#F1E2C8;color:#6B3F23" data-i18n="dc1_bd">ديمو حي</span><span class="dclient" style="color:#A08466" data-i18n="dc1_cl">مطعم «ضيافة» — عميل افتراضي</span></div>
+        <div class="dhead" style="color:#3E2A1A" data-i18n="dc1_h">منيو رقمي يستقبل الطلبات<br>من الطاولة إلى سيستم الكاشير أو واتساب</div>
+        <div class="dfeats" style="">
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc1_f1_t">فئات المنيو بضغطة</b><span data-i18n="dc1_f1_s">مشاوي، رئيسية، مشروبات، حلويات — تتبدل فوراً</span></div><div class="dline" style="border-color:#C89B3C"></div><div class="darr" style="border-inline-end:9px solid #C89B3C"></div></div>
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc1_f2_t">صورة وسعر لكل طبق</b><span data-i18n="dc1_f2_s">الزبون يشوف قبل ما يطلب — بالدرهم وبدون لبس</span></div><div class="dline" style="border-color:#C89B3C"></div><div class="darr" style="border-inline-end:9px solid #C89B3C"></div></div>
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc1_f3_t">السلة ترسل الطلب واتساب</b><span data-i18n="dc1_f3_s">رسالة جاهزة بالأصناف والإجمالي — بدون تطبيق</span></div><div class="dline" style="border-color:#C89B3C"></div><div class="darr" style="border-inline-end:9px solid #C89B3C"></div></div>
+        </div>
+        <span class="phone dphone"><img src="assets/shots/rest-1.webp" alt="" loading="lazy"><i class="pn"></i></span>
+      </div>
+    </article>
+    <article class="dcard reveal" style="background:#FAF4F0">
+      <div class="dqr" style="background:#B76E79;color:#FBEFE9">
+        <span class="blob1" style="background:rgba(201,168,106,.22)"></span><span class="blob2" style="background:rgba(255,255,255,.1)"></span>
+        <img class="dqr-logo" src="assets/logo-lamsa.webp" alt="شعار لمسة" loading="lazy">
+        <div class="dqr-t" data-i18n="dc2_qt">جرّبي الحجز الآن</div>
+        <div class="dqr-s dqr-s-d" style="color:#F0D3D6" data-i18n="dc2_qs">امسحي الباركود بكاميرا جوالك —<br>الحجز يأخذ أقل من دقيقة</div>
+        <div class="dqr-s dqr-s-m" style="color:#F0D3D6" data-i18n="dc2_qsm">افتحي الحجز مباشرة —<br>يأخذ أقل من دقيقة</div>
+        <a class="dqr-scan" href="demos/lamsa.html"><img class="dqr-code" src="assets/qr/lamsa.svg" alt="امسح الكود لفتح الديمو" loading="lazy"></a>
+        <a class="dqr-open" href="demos/lamsa.html"><span data-i18n="qr_open">افتح الديمو</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+      </div>
+      <div class="dbody">
+        <div class="dbadge-row"><span class="dbadge" style="background:#F7E8E6;color:#B76E79" data-i18n="dc2_bd">ديمو حي</span><span class="dclient" style="color:#B49A8D" data-i18n="dc2_cl">صالون «لمسة» — عميل افتراضي</span></div>
+        <div class="dhead" style="color:#46342E" data-i18n="dc2_h">نظام حجز يملأ جدولك<br>بدون مكالمات ولا دفتر</div>
+        <div class="dfeats" style="">
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc2_f1_t">الخدمات بالسعر والمدة</b><span data-i18n="dc2_f1_s">العميلة تعرف التكلفة والوقت قبل الحجز</span></div><div class="dline" style="border-color:#C9A86A"></div><div class="darr" style="border-inline-end:9px solid #C9A86A"></div></div>
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc2_f2_t">التقويم يعرض المتاح فقط</b><span data-i18n="dc2_f2_s">المواعيد المحجوزة تُقفل تلقائياً — لا تعارض</span></div><div class="dline" style="border-color:#C9A86A"></div><div class="darr" style="border-inline-end:9px solid #C9A86A"></div></div>
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc2_f3_t">التأكيد يوصل واتساب</b><span data-i18n="dc2_f3_s">تأكيد وتذكير قبل الموعد — تقل نسبة الغياب</span></div><div class="dline" style="border-color:#C9A86A"></div><div class="darr" style="border-inline-end:9px solid #C9A86A"></div></div>
+        </div>
+        <span class="phone dphone"><img src="assets/shots/salon-2.webp" alt="" loading="lazy"><i class="pn"></i></span>
+      </div>
+    </article>
+    <article class="dcard reveal" style="background:#ffffff">
+      <div class="dqr" style="background:#1D1D1F;color:#ffffff">
+        <span class="blob1" style="background:rgba(11,164,90,.28)"></span><span class="blob2" style="background:rgba(255,255,255,.06)"></span>
+        <img class="dqr-logo" src="assets/logo-dukkan.webp" alt="شعار دكان" loading="lazy">
+        <div class="dqr-t" data-i18n="dc3_qt">جرّب المتجر الآن</div>
+        <div class="dqr-s dqr-s-d" style="color:#A9A9AE" data-i18n="dc3_qs">امسح الباركود بكاميرا جوالك —<br>تجربة الشراء كاملة حتى واتساب</div>
+        <div class="dqr-s dqr-s-m" style="color:#A9A9AE" data-i18n="dc3_qsm">افتح المتجر مباشرة —<br>تجربة الشراء كاملة حتى واتساب</div>
+        <a class="dqr-scan" href="demos/dukkan.html"><img class="dqr-code" src="assets/qr/dukkan.svg" alt="امسح الكود لفتح الديمو" loading="lazy"></a>
+        <a class="dqr-open" href="demos/dukkan.html"><span data-i18n="qr_open">افتح الديمو</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+      </div>
+      <div class="dbody">
+        <div class="dbadge-row"><span class="dbadge" style="background:#E7F6EE;color:#0BA45A" data-i18n="dc3_bd">ديمو حي · الجوال</span><span class="dclient" style="color:#86868B" data-i18n="dc3_cl">متجر «دكان» — عميل افتراضي</span></div>
+        <div class="dhead" style="color:#1D1D1F" data-i18n="dc3_h">متجر كامل في جيب زبونك<br>من التصفح إلى الدفع</div>
+        <div class="dfeats" style="">
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc3_f1_t">فئات ومنتجات مميزة</b><span data-i18n="dc3_f1_s">بحث وعروض وشارة «جديد» — كل شيء بضغطة</span></div><div class="dline" style="border-color:#0BA45A"></div><div class="darr" style="border-inline-end:9px solid #0BA45A"></div></div>
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc3_f2_t">سلة تحسب كل شيء</b><span data-i18n="dc3_f2_s">الشحن والضريبة والإجمالي — بدون مفاجآت</span></div><div class="dline" style="border-color:#0BA45A"></div><div class="darr" style="border-inline-end:9px solid #0BA45A"></div></div>
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc3_f3_t">الطلب يوصل واتساب</b><span data-i18n="dc3_f3_s">تأكيد ورقم تتبع يصل الزبون تلقائياً</span></div><div class="dline" style="border-color:#0BA45A"></div><div class="darr" style="border-inline-end:9px solid #0BA45A"></div></div>
+        </div>
+        <span class="phone dphone"><img src="assets/shots/store-m1.webp" alt="" loading="lazy"><i class="pn"></i></span>
+      </div>
+    </article>
+    <article class="dcard reveal" style="background:#F6F6F7">
+      <div class="dqr" style="background:#0BA45A;color:#ffffff">
+        <span class="blob1" style="background:rgba(255,255,255,.14)"></span><span class="blob2" style="background:rgba(29,29,31,.15)"></span>
+        <img class="dqr-logo" src="assets/logo-dukkan.webp" alt="شعار دكان" loading="lazy">
+        <div class="dqr-t" data-i18n="dc4_qt">جرّبه من الكمبيوتر</div>
+        <div class="dqr-s dqr-s-d" style="color:#D3F2E1" data-i18n="dc4_qs">نفس المتجر بواجهة كاملة —<br>هيرو وشبكة منتجات وCheckout</div>
+        <div class="dqr-s dqr-s-m" style="color:#D3F2E1" data-i18n="dc4_qsm">يفضّل فتحه من الكمبيوتر —<br>لكن جرّبه من هنا أيضاً</div>
+        <a class="dqr-scan" href="demos/dukkan.html"><img class="dqr-code" src="assets/qr/dukkan.svg" alt="امسح الكود لفتح الديمو" loading="lazy"></a>
+        <a class="dqr-open" href="demos/dukkan.html"><span data-i18n="qr_open">افتح الديمو</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></a>
+      </div>
+      <div class="dbody">
+        <div class="dbadge-row"><span class="dbadge" style="background:#E7F6EE;color:#0BA45A" data-i18n="dc4_bd">ديمو حي · الكمبيوتر</span><span class="dclient" style="color:#86868B" data-i18n="dc4_cl">متجر «دكان» — عميل افتراضي</span></div>
+        <div class="dhead" style="color:#1D1D1F" data-i18n="dc4_h">إتمام طلب يطمّن الزبون<br>ويدفع بدون تردد</div>
+        <div class="dfeats" style="">
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc4_f1_t">بياناته في خطوتين فقط</b><span data-i18n="dc4_f1_s">توصيل ثم دفع — بدون تسجيل إجباري</span></div><div class="dline" style="border-color:#0BA45A"></div><div class="darr" style="border-inline-end:9px solid #0BA45A"></div></div>
+        <div class="dfeat"><div class="dfeat-txt"><b data-i18n="dc4_f2_t">ثلاث طرق دفع محلية</b><span data-i18n="dc4_f2_s">بطاقة، محفظة رقمية، أو عند الاستلام</span></div><div class="dline" style="border-color:#0BA45A"></div><div class="darr" style="border-inline-end:9px solid #0BA45A"></div></div>
+        </div>
+        <img class="dlap" style="border-color:#1D1D1F" src="assets/shots/store-d2.webp" alt="" loading="lazy">
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="cta sheet" id="cta">
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="cta-grid">
+  <img class="cta-art reveal" src="assets/cta-art.webp" alt="جلسة استشارية" loading="lazy">
+  <div class="cta-copy">
+  <h2 class="reveal" data-i18n="cta_h2"><span class="accent">استشارة مجانية</span><br>لمشروعك.</h2>
+  <p class="reveal d1" data-i18n="cta_p">مكالمة 30 دقيقة نناقش فيها فكرتك ونحدد الحل الأنسب وتكلفته الحقيقية — دون أي التزام.</p>
+    <a class="cta-book pressable reveal d2" href="contact.html" data-wa="general"><span data-i18n="cta_btn">احجز استشارتك الآن</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+  </a>
+  </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="foot">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/logo-full.png" alt="NILESOFT">
+        <p data-i18n="foot_about">نايل سوفت — خدمات برمجية للأعمال في الإمارات والخليج: مواقع ومتاجر وأنظمة وتطبيقات وأتمتة بالذكاء الاصطناعي.</p>
+        <p class="tagline" id="footTagline" lang="en" dir="ltr" data-i18n="foot_tag" style="color:var(--gray)">NILESOFT — Software services, built right</p>
+      </div>
+      <div class="foot-cols">
+        <div>
+          <h4 data-i18n="foot_company">روابط</h4>
+          <ul>
+            <li><a href="about.html" data-i18n="foot_about_l">من نحن</a></li>
+            <li><a href="about.html#process" data-i18n="foot_how">كيف نعمل</a></li>
+            <li><a href="about.html#clients" data-i18n="foot_why">لماذا نايل سوفت</a></li>
+            <li><a href="#work" data-i18n="foot_demos">النماذج الحية</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="foot_services">الخدمات</h4>
+          <ul>
+            <li><a href="services.html" data-i18n="foot_s1">مواقع وصفحات تعريفية</a></li>
+            <li><a href="services.html" data-i18n="foot_s2">متاجر إلكترونية</a></li>
+            <li><a href="services.html" data-i18n="foot_s3">أنظمة وتطبيقات</a></li>
+            <li><a href="services.html" data-i18n="foot_s4">أتمتة وذكاء اصطناعي</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="foot_contact">تواصل</h4>
+          <ul>
+            <li><a href="mailto:abubkr249@icloud.com">abubkr249@icloud.com</a></li>
+            <li><a href="contact.html" data-wa="general" data-i18n="foot_wa">واتساب مباشر</a></li>
+            <li><a href="contact.html" data-i18n="foot_addr">دبي، الإمارات</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span><span data-i18n="foot_rights">© 2026 نايل سوفت — جميع الحقوق محفوظة.</span></span>
+      <span style="display:inline-flex;align-items:center"><span data-i18n="foot_made1">صُنع بأيادٍ سودانية</span>
+        <span class="flag" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span data-i18n="foot_made2">لخدمة الإمارات والخليج</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

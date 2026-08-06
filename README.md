@@ -50,3 +50,15 @@ python -m http.server 8000
 ---
 
 © 2026 نايل سوفت — جميع الحقوق محفوظة.
+
+## Page structure
+
+- `index.html` — home and primary call to action
+- `services.html` — services and pricing
+- `work.html` — live demos
+- `about.html` — story, process, and client proof
+- `contact.html` — contact details and project form
+- `styles.css` and `app.js` — shared presentation and behavior
+- `site-source.html` — canonical full-page source used by the page generator
+
+After editing `site-source.html`, run `python split_pages.py` to rebuild all public pages.
