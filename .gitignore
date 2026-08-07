@@ -1,18 +1,1 @@
-# ملفات المصدر الخام (صور ومقاطع قبل المعالجة) — لا تُرفع
-ChatGPT Image*
-hf_*.mp4
-*.psd
-*.ai
-archive*.zip
-
-# نظام التشغيل والمحررات
-Thumbs.db
-desktop.ini
-.DS_Store
-.vscode/
-.idea/
-
-# مؤقتات
-*.tmp
-*.log
-node_modules/
+.vendor/

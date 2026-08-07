@@ -712,6 +712,7 @@
   .hero-stage{position:absolute;inset:0;z-index:0;display:grid;background:var(--bg)}
   .hslide{grid-area:1/1;opacity:0;transition:opacity .9s var(--ease);will-change:opacity}
   .hslide.is-active{opacity:1}
+  .hslide picture{display:block;width:100%;height:100%}
   .hslide img{width:100%;height:100%;object-fit:cover;object-position:84% 50%;display:block}
   .hero-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:168px;background:linear-gradient(to top,var(--bg) 14%,rgba(251,251,253,0));z-index:1;pointer-events:none}
   .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
@@ -758,7 +759,7 @@
     .hero .scroll-cue{display:none}
   }
   @media(max-width:640px){
-    .hero{min-height:100svh;padding:100px 20px 28px}
+    .hero{min-height:max(100svh,920px);padding:100px 20px 28px;isolation:isolate}
     .hero-main,.hero-copy{display:contents}
     .hero-mark{display:none}
     .hero-rot{order:1;position:relative;width:100%;text-align:center}
@@ -767,11 +768,16 @@
     .hrow h1{font-size:clamp(34px,10.2vw,42px);line-height:1.2}
     .hrow .lede{font-size:16px;line-height:1.8;margin-top:18px}
     .htag{margin-bottom:16px}
-    .hero-ctas{order:2;width:100%;margin-top:24px;gap:10px;flex-direction:column;flex-wrap:nowrap;align-items:stretch}
-    .hero-ctas .btn{width:100%;min-height:56px;justify-content:center}
-    .hero-stage{order:3;width:calc(100% + 40px);height:82vw;min-height:270px;max-height:330px;margin:28px -20px 0;border-radius:0;box-shadow:none;background:transparent}
-    .hslide img{object-position:78% 50%}
-    .hero-controls{order:4;margin-top:20px}
+    .hero-ctas{order:2;width:100%;margin-top:22px;gap:8px;flex-direction:row;flex-wrap:nowrap;align-items:stretch}
+    .hero-ctas .btn{width:auto;min-width:0;min-height:48px;flex:1 1 0;justify-content:center;padding-inline:8px;font-size:clamp(11.5px,3.15vw,13px);white-space:nowrap;gap:6px}
+    .hero-ctas .btn svg{width:14px!important;height:14px!important;flex:none;margin-inline-end:0!important}
+    .hero-ctas .btn-primary svg:last-child{display:none}
+    .hero-rot,.hero-ctas,.hero-controls,.hero .sectors{position:relative;z-index:2}
+    .hero-stage{position:absolute;inset:0 -40px;z-index:0;width:auto;height:100%;min-height:0;max-height:none;margin:0;border-radius:0;box-shadow:none;background:var(--bg);overflow:hidden}
+    .hero-stage::before{content:"";position:absolute;inset:0 0 auto;height:58%;z-index:2;pointer-events:none;background:linear-gradient(to bottom,var(--bg) 0%,rgba(251,251,253,.99) 58%,rgba(251,251,253,.78) 78%,rgba(251,251,253,0) 100%)}
+    .hero-stage::after{display:block;height:92px;z-index:2}
+    .hslide img{object-position:50% 50%}
+    .hero-controls{order:4;margin-top:auto;padding-top:320px}
     .hc-dots{gap:12px}
     .hc-dot.is-active{width:8px}
     .hero .sectors{order:5}

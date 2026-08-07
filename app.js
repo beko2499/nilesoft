@@ -696,7 +696,7 @@
     var dots=[].slice.call(hero.querySelectorAll('.hc-dot'));
     var N=slides.length, cur=0, timer=null, paused=false;
     var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function load(i){var im=slides[i]&&slides[i].querySelector('img'); if(im&&im.dataset.srcset){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute('data-srcset');im.removeAttribute('data-src');}}
+    function load(i){var slide=slides[i],im=slide&&slide.querySelector('img'); if(!slide)return; [].slice.call(slide.querySelectorAll('source[data-srcset]')).forEach(function(source){source.srcset=source.dataset.srcset;source.removeAttribute('data-srcset');}); if(im&&im.dataset.srcset){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute('data-srcset');im.removeAttribute('data-src');}}
     function show(i){ i=((i%N)+N)%N; load(i); load((i+1)%N);
       slides[cur].classList.remove('is-active'); rows[cur].classList.remove('is-active'); dots[cur].classList.remove('is-active');
       cur=i;

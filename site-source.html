@@ -735,6 +735,7 @@
   .hero-stage{position:absolute;inset:0;z-index:0;display:grid;background:var(--bg)}
   .hslide{grid-area:1/1;opacity:0;transition:opacity .9s var(--ease);will-change:opacity}
   .hslide.is-active{opacity:1}
+  .hslide picture{display:block;width:100%;height:100%}
   .hslide img{width:100%;height:100%;object-fit:cover;object-position:84% 50%;display:block}
   .hero-stage::after{content:"";position:absolute;left:0;right:0;bottom:0;height:168px;background:linear-gradient(to top,var(--bg) 14%,rgba(251,251,253,0));z-index:1;pointer-events:none}
   .hero-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
@@ -781,7 +782,7 @@
     .hero .scroll-cue{display:none}
   }
   @media(max-width:640px){
-    .hero{min-height:100svh;padding:100px 20px 28px}
+    .hero{min-height:max(100svh,920px);padding:100px 20px 28px;isolation:isolate}
     .hero-main,.hero-copy{display:contents}
     .hero-mark{display:none}
     .hero-rot{order:1;position:relative;width:100%;text-align:center}
@@ -790,11 +791,16 @@
     .hrow h1{font-size:clamp(34px,10.2vw,42px);line-height:1.2}
     .hrow .lede{font-size:16px;line-height:1.8;margin-top:18px}
     .htag{margin-bottom:16px}
-    .hero-ctas{order:2;width:100%;margin-top:24px;gap:10px;flex-direction:column;flex-wrap:nowrap;align-items:stretch}
-    .hero-ctas .btn{width:100%;min-height:56px;justify-content:center}
-    .hero-stage{order:3;width:calc(100% + 40px);height:82vw;min-height:270px;max-height:330px;margin:28px -20px 0;border-radius:0;box-shadow:none;background:transparent}
-    .hslide img{object-position:78% 50%}
-    .hero-controls{order:4;margin-top:20px}
+    .hero-ctas{order:2;width:100%;margin-top:22px;gap:8px;flex-direction:row;flex-wrap:nowrap;align-items:stretch}
+    .hero-ctas .btn{width:auto;min-width:0;min-height:48px;flex:1 1 0;justify-content:center;padding-inline:8px;font-size:clamp(11.5px,3.15vw,13px);white-space:nowrap;gap:6px}
+    .hero-ctas .btn svg{width:14px!important;height:14px!important;flex:none;margin-inline-end:0!important}
+    .hero-ctas .btn-primary svg:last-child{display:none}
+    .hero-rot,.hero-ctas,.hero-controls,.hero .sectors{position:relative;z-index:2}
+    .hero-stage{position:absolute;inset:0 -40px;z-index:0;width:auto;height:100%;min-height:0;max-height:none;margin:0;border-radius:0;box-shadow:none;background:var(--bg);overflow:hidden}
+    .hero-stage::before{content:"";position:absolute;inset:0 0 auto;height:58%;z-index:2;pointer-events:none;background:linear-gradient(to bottom,var(--bg) 0%,rgba(251,251,253,.99) 58%,rgba(251,251,253,.78) 78%,rgba(251,251,253,0) 100%)}
+    .hero-stage::after{display:block;height:92px;z-index:2}
+    .hslide img{object-position:50% 50%}
+    .hero-controls{order:4;margin-top:auto;padding-top:320px}
     .hc-dots{gap:12px}
     .hc-dot.is-active{width:8px}
     .hero .sectors{order:5}
@@ -844,15 +850,15 @@
 <!-- ============ Hero ============ -->
 <section class="hero" id="top">
   <div class="hero-stage" aria-hidden="true">
-    <div class="hslide is-active"><img alt="" src="assets/hero/hero-1.webp" srcset="assets/hero/hero-1-sm.webp 800w, assets/hero/hero-1.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" fetchpriority="high"></div>
-    <div class="hslide"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-2.webp" data-srcset="assets/hero/hero-2-sm.webp 800w, assets/hero/hero-2.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></div>
-    <div class="hslide"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-3.webp" data-srcset="assets/hero/hero-3-sm.webp 800w, assets/hero/hero-3.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></div>
-    <div class="hslide"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-4.webp" data-srcset="assets/hero/hero-4-sm.webp 800w, assets/hero/hero-4.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></div>
-    <div class="hslide"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-5.webp" data-srcset="assets/hero/hero-5-sm.webp 800w, assets/hero/hero-5.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></div>
-    <div class="hslide"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-6.webp" data-srcset="assets/hero/hero-6-sm.webp 800w, assets/hero/hero-6.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></div>
-    <div class="hslide"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-7.webp" data-srcset="assets/hero/hero-7-sm.webp 800w, assets/hero/hero-7.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></div>
-    <div class="hslide"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-8.webp" data-srcset="assets/hero/hero-8-sm.webp 800w, assets/hero/hero-8.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></div>
-    <div class="hslide"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-9.webp" data-srcset="assets/hero/hero-9-sm.webp 800w, assets/hero/hero-9.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></div>
+    <div class="hslide is-active"><picture><source media="(max-width:640px)" srcset="assets/hero/mobile-v2/hero-1-mobile.webp"><img alt="" src="assets/hero/hero-1.webp" srcset="assets/hero/hero-1-sm.webp 800w, assets/hero/hero-1.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" fetchpriority="high"></picture></div>
+    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-2-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-2.webp" data-srcset="assets/hero/hero-2-sm.webp 800w, assets/hero/hero-2.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
+    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-3-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-3.webp" data-srcset="assets/hero/hero-3-sm.webp 800w, assets/hero/hero-3.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
+    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-4-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-4.webp" data-srcset="assets/hero/hero-4-sm.webp 800w, assets/hero/hero-4.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
+    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-5-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-5.webp" data-srcset="assets/hero/hero-5-sm.webp 800w, assets/hero/hero-5.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
+    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-6-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-6.webp" data-srcset="assets/hero/hero-6-sm.webp 800w, assets/hero/hero-6.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
+    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-7-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-7.webp" data-srcset="assets/hero/hero-7-sm.webp 800w, assets/hero/hero-7.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
+    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-8-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-8.webp" data-srcset="assets/hero/hero-8-sm.webp 800w, assets/hero/hero-8.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
+    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-9-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-9.webp" data-srcset="assets/hero/hero-9-sm.webp 800w, assets/hero/hero-9.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
     <div class="hero-scrim"></div>
   </div>
   <div class="hero-main">
@@ -2159,7 +2165,7 @@
     var dots=[].slice.call(hero.querySelectorAll('.hc-dot'));
     var N=slides.length, cur=0, timer=null, paused=false;
     var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function load(i){var im=slides[i]&&slides[i].querySelector('img'); if(im&&im.dataset.srcset){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute('data-srcset');im.removeAttribute('data-src');}}
+    function load(i){var slide=slides[i],im=slide&&slide.querySelector('img'); if(!slide)return; [].slice.call(slide.querySelectorAll('source[data-srcset]')).forEach(function(source){source.srcset=source.dataset.srcset;source.removeAttribute('data-srcset');}); if(im&&im.dataset.srcset){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute('data-srcset');im.removeAttribute('data-src');}}
     function show(i){ i=((i%N)+N)%N; load(i); load((i+1)%N);
       slides[cur].classList.remove('is-active'); rows[cur].classList.remove('is-active'); dots[cur].classList.remove('is-active');
       cur=i;
