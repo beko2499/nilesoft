@@ -723,7 +723,7 @@
   .hero-rot{display:grid}
   .hrow{grid-area:1/1;opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease);pointer-events:none}
   .hrow.is-active{opacity:1;transform:none;pointer-events:auto}
-  .htag{display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:var(--green);background:var(--tint-green);padding:6px 15px;border-radius:999px;margin-bottom:18px}
+  .htag{display:none}
   .hrow h1{font-size:clamp(33px,4.4vw,58px);font-weight:700;letter-spacing:-.03em;line-height:1.12;margin:0}
   .hrow h1 .l2{display:block}
   .hrow h1 .g{color:var(--green)} .hrow h1 .r{color:var(--red)}
