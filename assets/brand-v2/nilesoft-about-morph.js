@@ -196,7 +196,9 @@
   function createMorph(root) {
     root.innerHTML = '';
     var stage = createElement('div', 'ns-about-morph-stage', root);
+    stage.dir = 'ltr';
     var scene = createElement('div', 'ns-about-morph-scene', stage);
+    scene.dir = 'ltr';
     var elementNames = ['hero', 'frame', 'tl1', 'tl2', 'nav1', 'nav2', 'nav3', 'rail', 'progress', 'bar', 'sbar', 'sqt', 'dot1', 'dot2', 'dot3', 'sqc', 'tick', 'pulse', 'dash'];
     var elements = {};
     elementNames.forEach(function (name, index) {
@@ -218,6 +220,7 @@
     checks.forEach(function (reference) { reference.svg.style.zIndex = '18'; });
 
     var wordmark = createElement('div', 'ns-about-morph-wordmark', scene);
+    wordmark.dir = 'ltr';
     var wordmarkLetters = 'NILESOFT'.split('').map(function (character) {
       var letter = document.createElement('span');
       letter.textContent = character;
