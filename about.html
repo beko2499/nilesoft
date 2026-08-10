@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>نايل سوفت — خدمات برمجية في الإمارات: مواقع، متاجر، تطبيقات وأتمتة</title>
 <meta name="description" content="نايل سوفت — خدمات برمجية للأعمال الصغيرة والمتوسطة في الإمارات والخليج: مواقع ومتاجر إلكترونية وأنظمة إدارية وتطبيقات وأتمتة بالذكاء الاصطناعي. جودة عالية وسعر عادل وتسليم سريع.">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/svg+xml" href="assets/brand-v2/nilesoft-mark.svg">
 <script>
   // Apply saved theme + language before first paint (no flash)
   (function(){
@@ -19,17 +19,36 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="assets/brand-v2/nilesoft-splash.js"></script>
+<script src="assets/brand-v2/nilesoft-hero.js"></script>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="about" data-title-key="title_about">
+<body data-page="about" data-title-key="title_about"><script>
+(function(){
+  var key='ns-splash-v2-seen',show=true;
+  try{show=sessionStorage.getItem(key)!=='1';if(show)sessionStorage.setItem(key,'1');}catch(e){}
+  if(!show||!window.NilesoftSplash)return;
+  var started=Date.now(),done=false;
+  var splash=NilesoftSplash.mount({theme:'dark',accent:'#C06B3E',speed:1.15,wordmark:true,autoHideMs:0,loadFont:false});
+  function finish(){
+    if(done)return;
+    done=true;
+    var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var wait=Math.max(0,(reduced?250:2200)-(Date.now()-started));
+    setTimeout(function(){splash.hide();},wait);
+  }
+  if(document.readyState==='complete')finish();else window.addEventListener('load',finish,{once:true});
+  setTimeout(finish,4200);
+})();
+</script>
 
 <canvas id="bg3d" aria-hidden="true"></canvas>
 
 <!-- ============ Dynamic Island ============ -->
 <div class="island" id="island">
   <button class="island-core pressable" id="islandCore" aria-expanded="false" aria-controls="islandMenu" aria-label="NILESOFT — open navigation">
-    <span class="island-nail"><img src="assets/logo-mark.png" alt=""></span>
+    <span class="island-nail"><img src="assets/brand-v2/nilesoft-mark.svg" alt=""></span>
     <span class="island-label" id="islandLabel">NILESOFT</span>
     <span class="island-dot" id="islandDot"></span>
   </button>
@@ -60,8 +79,8 @@
 
 <section class="sheet glass" id="story" data-island="nav_story">
   <div class="story-grid">
-    <div class="story-img squircle-xl reveal" style="background:var(--field)">
-      <video class="story-motion" src="assets/brand-motion.mp4" autoplay muted loop playsinline poster="assets/logo-mark.png" aria-label="فيديو تعريفي: نايل سوفت — مواقع ومتاجر وأنظمة وتطبيقات"></video>
+    <div class="story-img story-brand-v2 squircle-xl reveal" role="img" aria-label="هوية نايل سوفت البصرية الجديدة">
+      <img src="assets/brand-v2/nilesoft-lockup-light.svg" alt="">
     </div>
     <div class="story-copy reveal d1">
       <span class="eyebrow" data-i18n="story_eyebrow">من نحن</span>
@@ -96,7 +115,7 @@
         <path d="M132,208 L151,189"/>
         <path d="M208,208 L189,189"/>
       </g>
-      <image href="assets/logo-mark.png" x="144" y="142" width="52" height="56" preserveAspectRatio="xMidYMid meet"/>
+      <image href="assets/brand-v2/nilesoft-mark.svg" x="144" y="142" width="52" height="56" preserveAspectRatio="xMidYMid meet"/>
     </svg>
     <div class="pflow-grid">
       <div class="pstage s1">
@@ -148,7 +167,7 @@
         </div>
       </div>
     </div>
-    <div class="pcenter"><img src="assets/logo-mark.png" alt="نايل سوفت"></div>
+    <div class="pcenter"><img src="assets/brand-v2/nilesoft-mark.svg" alt="نايل سوفت"></div>
   </div>
 </section>
 
@@ -191,7 +210,7 @@
   <div class="foot">
     <div class="foot-top">
       <div class="foot-brand">
-        <img src="assets/logo-full.png" alt="NILESOFT">
+        <img src="assets/brand-v2/nilesoft-lockup.svg" alt="NILESOFT">
         <p data-i18n="foot_about">نايل سوفت — خدمات برمجية للأعمال في الإمارات والخليج: مواقع ومتاجر وأنظمة وتطبيقات وأتمتة بالذكاء الاصطناعي.</p>
         <p class="tagline" id="footTagline" lang="en" dir="ltr" data-i18n="foot_tag" style="color:var(--gray)">NILESOFT — Software services, built right</p>
       </div>
@@ -233,7 +252,6 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

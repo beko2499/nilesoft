@@ -36,16 +36,16 @@
       nav_home: 'Home', nav_services: 'Services & Pricing', nav_work: 'Live Demos', nav_story: 'About', nav_process: 'Process', nav_clients: 'Why Us', nav_contact: 'Contact',
       title_home: 'NILESOFT — Software services in the UAE', title_services: 'Services & Pricing — NILESOFT', title_work: 'Live Demos — NILESOFT', title_about: 'About NILESOFT', title_contact: 'Contact NILESOFT',
       island_cta: 'Free Consultation',
-      mark_alt: 'NILESOFT mark — the Nile flowing through a geometric shield',
+      mark_alt: 'NILESOFT geometric N mark',
       hero_eyebrow: 'Websites · Stores · Systems · Apps · Automation',
-      hs1_tag: 'Websites · Stores · Systems · Apps · Automation', hs1_1: 'A presence you deserve', hs1_2: 'fairly priced.', hs1_d: 'We turn your ideas into complete digital solutions that help you grow and stand out.',
-      hs2_tag: 'Apps', hs2_1: 'Their phone is always on.', hs2_2: 'Is your app on it?', hs2_d: 'Your brand in every pocket — alerts, orders, loyalty.',
-      hs3_tag: 'Automation', hs3_1: 'Every manual minute', hs3_2: 'costs you money.', hs3_d: 'We turn copy-paste into one dashboard that runs itself.',
-      hs4_tag: 'Systems', hs4_1: 'Orders stuck in WhatsApp?', hs4_2: 'Time to level up.', hs4_d: 'From message chaos to one place that organises it all.',
-      hs5_tag: 'MVP', hs5_1: 'The idea exists.', hs5_2: 'Let’s build it.', hs5_d: 'From a paper sketch to an app on both stores in weeks.',
-      hs6_tag: 'Brand', hs6_1: 'A first impression', hs6_2: 'never comes twice.', hs6_d: 'A site that mirrors your level in three seconds.',
-      hs7_tag: 'Presence', hs7_1: 'Not online yet?', hs7_2: 'You’re already behind.', hs7_d: 'If search can’t find you, your rival takes the client.',
-      hs8_tag: 'Invest', hs8_1: 'Invest once,', hs8_2: 'earn for years.', hs8_d: 'Built once — saving you hours every single week.',
+      hs1_tag: 'Business Website', hs1_1: 'A digital presence you deserve', hs1_2: 'fairly priced.', hs1_d: 'A professional website that introduces your business and turns visitors into customers.',
+      hs2_tag: 'Online Store', hs2_1: 'Your store sells all day', hs2_2: 'even while you sleep.', hs2_d: 'Products, orders and payments in one simple customer experience.',
+      hs3_tag: 'Mobile App', hs3_1: 'Their phone is always on.', hs3_2: 'Is your app on it?', hs3_d: 'Your brand in every pocket — alerts, orders and loyalty.',
+      hs4_tag: 'Automation', hs4_1: 'Every manual minute', hs4_2: 'costs you money.', hs4_d: 'We turn repetitive work into tasks that complete themselves.',
+      hs5_tag: 'Business System', hs5_1: 'Orders stuck in WhatsApp?', hs5_2: 'Time to level up.', hs5_d: 'One system organises orders, invoices and customers clearly.',
+      hs6_tag: 'MVP', hs6_1: 'The idea exists.', hs6_2: 'Let’s build it.', hs6_d: 'From an early wireframe to a real product ready to test and launch.',
+      hs7_tag: 'Brand', hs7_1: 'A first impression', hs7_2: 'never comes twice.', hs7_d: 'A confident interface that reflects your level in three seconds.',
+      hs8_tag: 'Race', hs8_1: 'Not online yet?', hs8_2: 'You’re already behind.', hs8_d: 'Your competitor moves faster and reaches the customer first.',
       hs9_tag: 'Trust', hs9_1: 'Before they call,', hs9_2: 'they decide to trust you.', hs9_d: 'Your presence is the first trust test. Make it count.',
       cta_demos: 'Try the live demos',
       hero_h1: 'A digital presence your business deserves —<br><span class="accent">fairly priced</span>.',
@@ -175,16 +175,16 @@
       nav_home: 'الرئيسية', nav_services: 'الخدمات والأسعار', nav_work: 'النماذج الحية', nav_story: 'من نحن', nav_process: 'منهجيتنا', nav_clients: 'لماذا نحن', nav_contact: 'تواصل معنا',
       title_home: 'نايل سوفت — خدمات برمجية في الإمارات', title_services: 'الخدمات والأسعار — نايل سوفت', title_work: 'النماذج الحية — نايل سوفت', title_about: 'من نحن — نايل سوفت', title_contact: 'تواصل معنا — نايل سوفت',
       island_cta: 'استشارة مجانية',
-      mark_alt: 'شعار نايل سوفت — النيل يجري عبر درع هندسي',
+      mark_alt: 'علامة نايل سوفت الهندسية الجديدة',
       hero_eyebrow: 'مواقع · متاجر · أنظمة · تطبيقات · أتمتة',
-      hs1_tag: 'مواقع · متاجر · أنظمة · تطبيقات · أتمتة', hs1_1: 'حضور رقمي يليق بعملك', hs1_2: 'بسعر عادل.', hs1_d: 'نحوّل أفكارك إلى حلول رقمية متكاملة تساعدك على النمو والتميز في سوق اليوم.',
-      hs2_tag: 'تطبيق', hs2_1: 'عميلك لا يترك هاتفه', hs2_2: 'فأين تطبيقك؟', hs2_d: 'تطبيق باسمك في جيب كل عميل — إشعارات وطلبات وولاء.',
-      hs3_tag: 'أتمتة', hs3_1: 'كل دقيقة يدويّة', hs3_2: 'تكلّفك مالاً.', hs3_d: 'نحوّل النسخ واللصق إلى لوحة واحدة تعمل بذاتها.',
-      hs4_tag: 'نظام', hs4_1: 'طلباتك في واتساب؟', hs4_2: 'حان وقت التطوّر.', hs4_d: 'من فوضى الرسائل إلى نظام يرتّب كل شيء بمكان واحد.',
-      hs5_tag: 'MVP', hs5_1: 'الفكرة موجودة.', hs5_2: 'دعنا نبنيها.', hs5_d: 'من فكرة على ورقة إلى تطبيق على المتجرين خلال أسابيع.',
-      hs6_tag: 'هوية', hs6_1: 'أول انطباع', hs6_2: 'لا يتكرر مرتين.', hs6_d: 'موقع يعكس مستوى شركتك في أول ثلاث ثوانٍ.',
-      hs7_tag: 'حضور', hs7_1: 'غير موجود رقمياً؟', hs7_2: 'أنت متأخر إذاً.', hs7_d: 'إن لم تظهر في البحث، فمنافسك يأخذ عميلك أولاً.',
-      hs8_tag: 'استثمار', hs8_1: 'استثمر مرة واحدة', hs8_2: 'واكسب لسنوات.', hs8_d: 'يُبنى مرة، ويوفّر عليك ساعات كل أسبوع — للأبد.',
+      hs1_tag: 'موقع شركة', hs1_1: 'حضور رقمي يليق بعملك', hs1_2: 'بسعر عادل.', hs1_d: 'موقع احترافي يعرّف بك ويحوّل الزائر إلى عميل بخطوة واضحة.',
+      hs2_tag: 'متجر إلكتروني', hs2_1: 'متجرك يبيع طوال اليوم', hs2_2: 'حتى وأنت نائم.', hs2_d: 'منتجات وطلبات ودفع في تجربة واحدة سهلة وواضحة لعميلك.',
+      hs3_tag: 'تطبيق', hs3_1: 'عميلك لا يترك هاتفه', hs3_2: 'فأين تطبيقك؟', hs3_d: 'تطبيق باسمك في جيب كل عميل — إشعارات وطلبات وولاء.',
+      hs4_tag: 'أتمتة', hs4_1: 'كل دقيقة يدويّة', hs4_2: 'تكلّفك مالاً.', hs4_d: 'نحوّل التكرار والنسخ واللصق إلى مهام تنجز نفسها.',
+      hs5_tag: 'نظام', hs5_1: 'طلباتك في واتساب؟', hs5_2: 'حان وقت التطوّر.', hs5_d: 'نظام واحد يرتّب الطلبات والفواتير والعملاء في مكان واضح.',
+      hs6_tag: 'MVP', hs6_1: 'الفكرة موجودة.', hs6_2: 'دعنا نبنيها.', hs6_d: 'من مسودة أولى إلى منتج حقيقي جاهز للاختبار والإطلاق.',
+      hs7_tag: 'هوية', hs7_1: 'أول انطباع', hs7_2: 'لا يتكرر مرتين.', hs7_d: 'واجهة واثقة تعكس مستوى شركتك في أول ثلاث ثوانٍ.',
+      hs8_tag: 'سباق', hs8_1: 'غير موجود رقمياً؟', hs8_2: 'أنت متأخر إذاً.', hs8_d: 'منافسك يتحرك أسرع ويصل إلى عميلك قبلك.',
       hs9_tag: 'ثقة', hs9_1: 'قبل أن يتصل بك', hs9_2: 'قرّر أن يثق بك.', hs9_d: 'حضورك الرقمي أول اختبار للثقة — اجعله يستحقها.',
       cta_demos: 'جرّب النماذج الحية',
       hero_h1: 'حضور رقمي يليق بعملك<br><span class="accent">بسعر عادل</span>.',
@@ -696,7 +696,7 @@
     var dots=[].slice.call(hero.querySelectorAll('.hc-dot'));
     var N=slides.length, cur=0, timer=null, paused=false;
     var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    function load(i){var slide=slides[i],im=slide&&slide.querySelector('img'); if(!slide)return; [].slice.call(slide.querySelectorAll('source[data-srcset]')).forEach(function(source){source.srcset=source.dataset.srcset;source.removeAttribute('data-srcset');}); if(im&&im.dataset.srcset){im.srcset=im.dataset.srcset;im.src=im.dataset.src;im.removeAttribute('data-srcset');im.removeAttribute('data-src');}}
+    function load(i){var slide=slides[i],art=slide&&slide.querySelector('[data-hero-scene]'); if(!slide||!art||art.dataset.mounted==='1'||!window.NilesoftHero)return; window.NilesoftHero.mount({target:art,scene:parseInt(art.dataset.heroScene,10),theme:'light',accent:'#C06B3E',speed:1}); art.dataset.mounted='1';}
     function show(i){ i=((i%N)+N)%N; load(i); load((i+1)%N);
       slides[cur].classList.remove('is-active'); rows[cur].classList.remove('is-active'); dots[cur].classList.remove('is-active');
       cur=i;
@@ -717,7 +717,7 @@
     var sx=null;
     hero.addEventListener('touchstart',function(e){ sx=e.touches[0].clientX; },{passive:true});
     hero.addEventListener('touchend',function(e){ if(sx==null) return; var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>44){ (dx<0)?next():prev(); start(); } sx=null; },{passive:true});
-    var map={web:0,app:1,auto:2,automation:2,system:3,systems:3,mvp:4,brand:5,presence:6,invest:7,trust:8};
+    var map={web:0,store:1,shop:1,app:2,auto:3,automation:3,system:4,systems:4,mvp:5,brand:6,presence:7,race:7,trust:8};
     function fromHash(){ var h=(location.hash||'').replace('#','').toLowerCase(); if(map.hasOwnProperty(h)){ show(map[h]); return true; } var m=h.match(/^h([1-9])$/); if(m){ show((+m[1])-1); return true; } return false; }
     load(0); load(1); fromHash(); window.addEventListener('hashchange',fromHash);
     start();

@@ -78,15 +78,23 @@ def extract_section(source: str, section_id: str) -> str:
 def rewrite_asset_data_urls(fragment: str) -> str:
     fragment = re.sub(
         r'(<span class="island-nail"><img)\s+src="data:image/[^\"]+"',
-        r'\1 src="assets/logo-mark.png"',
+        r'\1 src="assets/brand-v2/nilesoft-mark.svg"',
         fragment,
         count=1,
     )
     fragment = re.sub(
         r'(<div class="foot-brand">\s*<img)\s+src="data:image/[^\"]+"',
-        r'\1 src="assets/logo-full.png"',
+        r'\1 src="assets/brand-v2/nilesoft-lockup.svg"',
         fragment,
         count=1,
+    )
+    fragment = fragment.replace(
+        'assets/logo-mark.png',
+        'assets/brand-v2/nilesoft-mark.svg',
+    )
+    fragment = fragment.replace(
+        'assets/logo-full.png',
+        'assets/brand-v2/nilesoft-lockup.svg',
     )
     return fragment
 
@@ -165,11 +173,15 @@ def build() -> None:
     head = source[: style_match.start()]
     head = re.sub(
         r'<link rel="icon"[^>]+>',
-        '<link rel="icon" type="image/png" href="assets/favicon.png">',
+        '<link rel="icon" type="image/svg+xml" href="assets/brand-v2/nilesoft-mark.svg">',
         head,
         count=1,
     )
-    head += '<link rel="stylesheet" href="styles.css">\n</head>\n'
+    head += (
+        '<script src="assets/brand-v2/nilesoft-splash.js"></script>\n'
+        '<script src="assets/brand-v2/nilesoft-hero.js"></script>\n'
+        '<link rel="stylesheet" href="styles.css">\n</head>\n'
+    )
 
     chrome = source[body_start:main_start]
     chrome = rewrite_asset_data_urls(add_navigation_home(chrome))
@@ -182,15 +194,31 @@ def build() -> None:
         for section_id in page["sections"]
     }
 
-    scripts = (
-        '<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>\n'
-        '<script src="app.js"></script>\n'
-    )
+    splash_boot = '''<script>
+(function(){
+  var key='ns-splash-v2-seen',show=true;
+  try{show=sessionStorage.getItem(key)!=='1';if(show)sessionStorage.setItem(key,'1');}catch(e){}
+  if(!show||!window.NilesoftSplash)return;
+  var started=Date.now(),done=false;
+  var splash=NilesoftSplash.mount({theme:'dark',accent:'#C06B3E',speed:1.15,wordmark:true,autoHideMs:0,loadFont:false});
+  function finish(){
+    if(done)return;
+    done=true;
+    var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var wait=Math.max(0,(reduced?250:2200)-(Date.now()-started));
+    setTimeout(function(){splash.hide();},wait);
+  }
+  if(document.readyState==='complete')finish();else window.addEventListener('load',finish,{once:true});
+  setTimeout(finish,4200);
+})();
+</script>'''
+
+    scripts = '<script src="app.js"></script>\n'
 
     for filename, page in PAGES.items():
         page_chrome = chrome.replace(
             "<body>",
-            f'<body data-page="{page["name"]}" data-title-key="{page["title_key"]}">',
+            f'<body data-page="{page["name"]}" data-title-key="{page["title_key"]}">{splash_boot}',
             1,
         )
         content = "\n\n".join(section_cache[section_id] for section_id in page["sections"])

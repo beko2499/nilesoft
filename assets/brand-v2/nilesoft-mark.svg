@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 252 160" role="img" aria-labelledby="title">
+  <title id="title">NILESOFT</title>
+  <g fill="#141413">
+    <rect x="188" width="36" height="36"/>
+    <rect y="124" width="36" height="36" fill="#C06B3E"/>
+    <path d="M0 0h58l144 160h-58z"/>
+    <path d="M170 70h58l24 26.7V126h-31.6z"/>
+    <path d="M214 134h30l8 8.9V160h-14.6z"/>
+  </g>
+</svg>

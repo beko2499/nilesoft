@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>نايل سوفت — خدمات برمجية في الإمارات: مواقع، متاجر، تطبيقات وأتمتة</title>
 <meta name="description" content="نايل سوفت — خدمات برمجية للأعمال الصغيرة والمتوسطة في الإمارات والخليج: مواقع ومتاجر إلكترونية وأنظمة إدارية وتطبيقات وأتمتة بالذكاء الاصطناعي. جودة عالية وسعر عادل وتسليم سريع.">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/svg+xml" href="assets/brand-v2/nilesoft-mark.svg">
 <script>
   // Apply saved theme + language before first paint (no flash)
   (function(){
@@ -19,17 +19,36 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="assets/brand-v2/nilesoft-splash.js"></script>
+<script src="assets/brand-v2/nilesoft-hero.js"></script>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="home" data-title-key="title_home">
+<body data-page="home" data-title-key="title_home"><script>
+(function(){
+  var key='ns-splash-v2-seen',show=true;
+  try{show=sessionStorage.getItem(key)!=='1';if(show)sessionStorage.setItem(key,'1');}catch(e){}
+  if(!show||!window.NilesoftSplash)return;
+  var started=Date.now(),done=false;
+  var splash=NilesoftSplash.mount({theme:'dark',accent:'#C06B3E',speed:1.15,wordmark:true,autoHideMs:0,loadFont:false});
+  function finish(){
+    if(done)return;
+    done=true;
+    var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var wait=Math.max(0,(reduced?250:2200)-(Date.now()-started));
+    setTimeout(function(){splash.hide();},wait);
+  }
+  if(document.readyState==='complete')finish();else window.addEventListener('load',finish,{once:true});
+  setTimeout(finish,4200);
+})();
+</script>
 
 <canvas id="bg3d" aria-hidden="true"></canvas>
 
 <!-- ============ Dynamic Island ============ -->
 <div class="island" id="island">
   <button class="island-core pressable" id="islandCore" aria-expanded="false" aria-controls="islandMenu" aria-label="NILESOFT — open navigation">
-    <span class="island-nail"><img src="assets/logo-mark.png" alt=""></span>
+    <span class="island-nail"><img src="assets/brand-v2/nilesoft-mark.svg" alt=""></span>
     <span class="island-label" id="islandLabel">NILESOFT</span>
     <span class="island-dot" id="islandDot"></span>
   </button>
@@ -60,60 +79,60 @@
 
 <section class="hero" id="top">
   <div class="hero-stage" aria-hidden="true">
-    <div class="hslide is-active"><picture><source media="(max-width:640px)" srcset="assets/hero/mobile-v2/hero-1-mobile.webp"><img alt="" src="assets/hero/hero-1.webp" srcset="assets/hero/hero-1-sm.webp 800w, assets/hero/hero-1.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" fetchpriority="high"></picture></div>
-    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-2-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-2.webp" data-srcset="assets/hero/hero-2-sm.webp 800w, assets/hero/hero-2.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
-    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-3-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-3.webp" data-srcset="assets/hero/hero-3-sm.webp 800w, assets/hero/hero-3.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
-    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-4-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-4.webp" data-srcset="assets/hero/hero-4-sm.webp 800w, assets/hero/hero-4.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
-    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-5-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-5.webp" data-srcset="assets/hero/hero-5-sm.webp 800w, assets/hero/hero-5.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
-    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-6-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-6.webp" data-srcset="assets/hero/hero-6-sm.webp 800w, assets/hero/hero-6.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
-    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-7-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-7.webp" data-srcset="assets/hero/hero-7-sm.webp 800w, assets/hero/hero-7.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
-    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-8-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-8.webp" data-srcset="assets/hero/hero-8-sm.webp 800w, assets/hero/hero-8.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
-    <div class="hslide"><picture><source media="(max-width:640px)" data-srcset="assets/hero/mobile-v2/hero-9-mobile.webp"><img alt="" src="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%2716%27%20height=%279%27/%3E" data-src="assets/hero/hero-9.webp" data-srcset="assets/hero/hero-9-sm.webp 800w, assets/hero/hero-9.webp 1600w" sizes="(max-width:940px) 92vw, 62vw" loading="lazy"></picture></div>
+    <div class="hslide is-active"><div class="hero-art" data-hero-scene="10"></div></div>
+    <div class="hslide"><div class="hero-art" data-hero-scene="11"></div></div>
+    <div class="hslide"><div class="hero-art" data-hero-scene="12"></div></div>
+    <div class="hslide"><div class="hero-art" data-hero-scene="13"></div></div>
+    <div class="hslide"><div class="hero-art" data-hero-scene="14"></div></div>
+    <div class="hslide"><div class="hero-art" data-hero-scene="15"></div></div>
+    <div class="hslide"><div class="hero-art" data-hero-scene="6"></div></div>
+    <div class="hslide"><div class="hero-art" data-hero-scene="7"></div></div>
+    <div class="hslide"><div class="hero-art" data-hero-scene="9"></div></div>
     <div class="hero-scrim"></div>
   </div>
   <div class="hero-main">
     <div class="hero-copy">
-      <img class="hero-mark" src="assets/logo-mark.png" data-i18n-alt="mark_alt" alt="شعار نايل سوفت">
+      <img class="hero-mark" src="assets/brand-v2/nilesoft-mark.svg" data-i18n-alt="mark_alt" alt="شعار نايل سوفت">
       <div class="hero-rot">
       <div class="hrow is-active" data-slide="0">
-        <span class="htag htag--eyebrow" data-i18n="hs1_tag">موقع</span>
-        <h1><span class="l1" data-i18n="hs1_1">موقعك يبيع</span><span class="l2 r" data-i18n="hs1_2">حتى وأنت نائم.</span></h1>
-        <p class="lede" data-i18n="hs1_d">نحوّل موقع شركتك إلى موظف مبيعات يعمل ٢٤ ساعة — يستقبل، ويقنع، ويحوّل.</p>
+        <span class="htag htag--eyebrow" data-i18n="hs1_tag">موقع شركة</span>
+        <h1><span class="l1" data-i18n="hs1_1">حضور رقمي يليق بعملك</span><span class="l2 r" data-i18n="hs1_2">بسعر عادل.</span></h1>
+        <p class="lede" data-i18n="hs1_d">موقع احترافي يعرّف بك ويحوّل الزائر إلى عميل بخطوة واضحة.</p>
       </div>
       <div class="hrow" data-slide="1">
-        <span class="htag" data-i18n="hs2_tag">تطبيق</span>
-        <h1><span class="l1" data-i18n="hs2_1">عميلك يحمل هاتفه طوال اليوم.</span><span class="l2 r" data-i18n="hs2_2">هل يحمل تطبيقك؟</span></h1>
-        <p class="lede" data-i18n="hs2_d">تطبيق باسم شركتك في جيب كل عميل — إشعارات وطلبات وولاء دائم.</p>
+        <span class="htag" data-i18n="hs2_tag">متجر</span>
+        <h1><span class="l1" data-i18n="hs2_1">متجرك يبيع طوال اليوم</span><span class="l2 r" data-i18n="hs2_2">حتى وأنت نائم.</span></h1>
+        <p class="lede" data-i18n="hs2_d">منتجات وطلبات ودفع في تجربة واحدة سهلة وواضحة لعميلك.</p>
       </div>
       <div class="hrow" data-slide="2">
-        <span class="htag" data-i18n="hs3_tag">أتمتة</span>
-        <h1><span class="l1" data-i18n="hs3_1">كل دقيقة في العمل اليدوي</span><span class="l2 r" data-i18n="hs3_2">تكلّفك مالاً.</span></h1>
-        <p class="lede" data-i18n="hs3_d">نحوّل الورق والنسخ واللصق إلى لوحة واحدة تعمل بذاتها.</p>
+        <span class="htag" data-i18n="hs3_tag">تطبيق</span>
+        <h1><span class="l1" data-i18n="hs3_1">عميلك لا يترك هاتفه</span><span class="l2 r" data-i18n="hs3_2">فأين تطبيقك؟</span></h1>
+        <p class="lede" data-i18n="hs3_d">تطبيق باسمك في جيب كل عميل — إشعارات وطلبات وولاء.</p>
       </div>
       <div class="hrow" data-slide="3">
-        <span class="htag" data-i18n="hs4_tag">نظام</span>
-        <h1><span class="l1" data-i18n="hs4_1">كل طلباتك في واتساب؟</span><span class="l2 g" data-i18n="hs4_2">حان وقت التطوّر.</span></h1>
-        <p class="lede" data-i18n="hs4_d">من فوضى الرسائل إلى نظام يرتّب الطلبات والفواتير والعملاء.</p>
+        <span class="htag" data-i18n="hs4_tag">أتمتة</span>
+        <h1><span class="l1" data-i18n="hs4_1">كل دقيقة يدويّة</span><span class="l2 r" data-i18n="hs4_2">تكلّفك مالاً.</span></h1>
+        <p class="lede" data-i18n="hs4_d">نحوّل التكرار والنسخ واللصق إلى مهام تنجز نفسها.</p>
       </div>
       <div class="hrow" data-slide="4">
-        <span class="htag" data-i18n="hs5_tag">MVP</span>
-        <h1><span class="l1" data-i18n="hs5_1">الفكرة موجودة.</span><span class="l2 g" data-i18n="hs5_2">دعنا نبنيها.</span></h1>
-        <p class="lede" data-i18n="hs5_d">من فكرة على ورقة إلى تطبيق يُطلق على المتجرين خلال أسابيع.</p>
+        <span class="htag" data-i18n="hs5_tag">نظام</span>
+        <h1><span class="l1" data-i18n="hs5_1">طلباتك في واتساب؟</span><span class="l2 g" data-i18n="hs5_2">حان وقت التطوّر.</span></h1>
+        <p class="lede" data-i18n="hs5_d">نظام واحد يرتّب الطلبات والفواتير والعملاء في مكان واضح.</p>
       </div>
       <div class="hrow" data-slide="5">
-        <span class="htag" data-i18n="hs6_tag">هوية</span>
-        <h1><span class="l1" data-i18n="hs6_1">أول انطباع</span><span class="l2 r" data-i18n="hs6_2">لا يتكرر مرتين.</span></h1>
-        <p class="lede" data-i18n="hs6_d">موقع يعكس مستوى شركتك في أول ثلاث ثوانٍ.</p>
+        <span class="htag" data-i18n="hs6_tag">MVP</span>
+        <h1><span class="l1" data-i18n="hs6_1">الفكرة موجودة.</span><span class="l2 g" data-i18n="hs6_2">دعنا نبنيها.</span></h1>
+        <p class="lede" data-i18n="hs6_d">من مسودة أولى إلى منتج حقيقي جاهز للاختبار والإطلاق.</p>
       </div>
       <div class="hrow" data-slide="6">
-        <span class="htag" data-i18n="hs7_tag">حضور</span>
-        <h1><span class="l1" data-i18n="hs7_1">إن لم تكن موجوداً رقمياً</span><span class="l2 r" data-i18n="hs7_2">فأنت متأخر بالفعل.</span></h1>
-        <p class="lede" data-i18n="hs7_d">منافسك يظهر في البحث ويأخذ عميلك — قبل أن تتصل به.</p>
+        <span class="htag" data-i18n="hs7_tag">هوية</span>
+        <h1><span class="l1" data-i18n="hs7_1">أول انطباع</span><span class="l2 r" data-i18n="hs7_2">لا يتكرر مرتين.</span></h1>
+        <p class="lede" data-i18n="hs7_d">واجهة واثقة تعكس مستوى شركتك في أول ثلاث ثوانٍ.</p>
       </div>
       <div class="hrow" data-slide="7">
-        <span class="htag" data-i18n="hs8_tag">استثمار</span>
-        <h1><span class="l1" data-i18n="hs8_1">استثمر مرة واحدة</span><span class="l2 g" data-i18n="hs8_2">واكسب لسنوات.</span></h1>
-        <p class="lede" data-i18n="hs8_d">نظام يُبنى مرة، ويوفّر عليك ساعات كل أسبوع — إلى الأبد.</p>
+        <span class="htag" data-i18n="hs8_tag">سباق</span>
+        <h1><span class="l1" data-i18n="hs8_1">غير موجود رقمياً؟</span><span class="l2 r" data-i18n="hs8_2">أنت متأخر إذاً.</span></h1>
+        <p class="lede" data-i18n="hs8_d">منافسك يتحرك أسرع ويصل إلى عميلك قبلك.</p>
       </div>
       <div class="hrow" data-slide="8">
         <span class="htag" data-i18n="hs9_tag">ثقة</span>
@@ -162,7 +181,7 @@
   <div class="foot">
     <div class="foot-top">
       <div class="foot-brand">
-        <img src="assets/logo-full.png" alt="NILESOFT">
+        <img src="assets/brand-v2/nilesoft-lockup.svg" alt="NILESOFT">
         <p data-i18n="foot_about">نايل سوفت — خدمات برمجية للأعمال في الإمارات والخليج: مواقع ومتاجر وأنظمة وتطبيقات وأتمتة بالذكاء الاصطناعي.</p>
         <p class="tagline" id="footTagline" lang="en" dir="ltr" data-i18n="foot_tag" style="color:var(--gray)">NILESOFT — Software services, built right</p>
       </div>
@@ -204,7 +223,6 @@
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
