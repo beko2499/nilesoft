@@ -20,6 +20,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="assets/brand-v2/nilesoft-morph-core.js"></script>
+<script src="assets/brand-v2/nilesoft-morph-tracks.js"></script>
+<script src="assets/brand-v2/nilesoft-about-morph.js"></script>
 <style>
   /* ============ NILESOFT visual identity tokens ============ */
   :root{
@@ -243,15 +246,17 @@
   .work-card p{font-size:14.5px;color:var(--gray)}
 
   /* ============ Story ============ */
-  .story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,5vw,72px);align-items:center;margin-bottom:70px}
+  .story-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(36px,5vw,72px);align-items:center;margin-bottom:70px}
   .story-img{overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.16)}
   .story-img img{width:100%;aspect-ratio:3/4;object-fit:cover}
   .story-img video{width:100%;aspect-ratio:1/1;object-fit:contain;display:block;background:var(--field)}
-  .story-brand-v2{position:relative;display:grid;place-items:center;aspect-ratio:1/1;padding:clamp(38px,7vw,88px);overflow:hidden;background:#0C0C0B}
-  .story-brand-v2::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(245,245,241,.055) 0 1px,transparent 1px 54px),repeating-linear-gradient(90deg,rgba(245,245,241,.055) 0 1px,transparent 1px 54px)}
-  .story-brand-v2::after{content:"";position:absolute;width:72%;height:22%;background:#C06B3E;transform:rotate(48deg);opacity:.92}
-  .story-brand-v2 img{position:relative;z-index:1;width:min(78%,420px);height:auto;aspect-ratio:auto;object-fit:contain;filter:drop-shadow(0 22px 35px rgba(0,0,0,.25));animation:brandFloat 6s ease-in-out infinite}
-  @keyframes brandFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .story-morph-shell{position:relative;aspect-ratio:16/9;padding:0;background:#FAFAF8;border:1px solid var(--hairline);box-shadow:0 24px 60px rgba(20,20,19,.12)}
+  .ns-about-morph-stage{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;transform-origin:0 0;background:#FAFAF8}
+  .ns-about-morph-scene{position:absolute;inset:0;overflow:hidden;background:#FAFAF8;transform-origin:50% 50%;font-family:var(--font-display)}
+  .ns-morph-el,.ns-morph-detail{position:absolute;box-sizing:border-box}
+  .ns-about-morph-wordmark{position:absolute;left:0;right:0;top:764px;z-index:26;text-align:center;color:#0C0C0B;font-family:var(--font-display);font-size:60px;font-weight:600;line-height:1.2}
+  .ns-about-morph-wordmark span{display:inline-block}
+  .ns-about-morph-wipe{position:absolute;inset:0;z-index:90;display:none;background:#FAFAF8}
   .story-copy .eyebrow{color:var(--green)}
   .story-copy h2{font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:18px}
   .story-copy p{font-size:clamp(16px,1.7vw,19px);color:var(--ink-2)}
@@ -818,7 +823,6 @@
   @media (prefers-reduced-motion: reduce){
     .hslide{transition:opacity .01s}
     .hrow{transition:opacity .01s;transform:none}
-    .story-brand-v2 img{animation:none}
   }
 </style>
 </head>
@@ -1243,13 +1247,11 @@
 <!-- ============ Story ============ -->
 <section class="sheet glass" id="story" data-island="nav_story">
   <div class="story-grid">
-    <div class="story-img story-brand-v2 squircle-xl reveal" role="img" aria-label="هوية نايل سوفت البصرية الجديدة">
-      <img src="assets/brand-v2/nilesoft-lockup-light.svg" alt="">
-    </div>
+    <div class="story-img story-morph-shell squircle-xl reveal" data-nilesoft-morph role="img" aria-label="شعار نايل سوفت يتحول إلى خدمات رقمية ثم يعود إلى هيئته الأصلية"></div>
     <div class="story-copy reveal d1">
-      <span class="eyebrow" data-i18n="story_eyebrow">من نحن</span>
-      <h2 data-i18n="story_h2">اسم من النيل — وعمل بمعايير عالمية.</h2>
-      <p data-i18n="story_p">الاسم يحمل القصة: بدأنا من ضفاف النيل، واليوم نخدم الأعمال في الإمارات والخليج. نايل سوفت ليست وكالة كبيرة ولا وسيطاً — بل مطوّر تتعامل معه مباشرة، يبني بمزيج من البرمجة الحديثة ومنصات الإنشاء السريع وأدوات الذكاء الاصطناعي: جودة عالية، تكلفة معقولة، وتفاصيل لا تضيع بين الأقسام.</p>
+      <span class="eyebrow" data-i18n="story_eyebrow">عن نايل سوفت</span>
+      <h2 data-i18n="story_h2">لا نبني مجرد شاشات؛ نبني المساحة التي تنمو فيها فكرتك.</h2>
+      <p data-i18n="story_p">بدأ اسمنا من النيل، لكن رؤيتنا تمتد إلى كل مكان تستطيع فيه فكرة جيدة أن تصنع فرقاً. في نايل سوفت نتعامل مع مشروعك كأنه مشروعنا: نفهم الناس الذين تخدمهم، ونختار التقنية التي تناسب مرحلتك، ثم نبني حلاً واضحاً يمكن أن يبدأ مركزاً ويتطور معك. من أول صفحة إلى نظام يدير تفاصيل عملك، ستتعامل مباشرة مع من يصمم ويبني — بصدق ومرونة واهتمام لا يضيع بين الأقسام.</p>
     </div>
   </div>
   <div class="values">
@@ -1561,8 +1563,8 @@
       work2_tag: 'Appointments', work2_t: 'Salon Booking System', work2_d: 'An elegant page where clients book their own appointments — reaching you instantly.',
       work3_tag: 'Commerce', work3_t: 'Demo Online Store', work3_d: 'A full store with cart and test checkout — try the entire purchase journey.',
       demo_soon: 'In progress — available soon',
-      story_eyebrow: 'About', story_h2: 'A name from the Nile — work to global standards.',
-      story_p: 'The name carries the story: it began on the banks of the Nile, and today serves businesses across the UAE and the Gulf. NILESOFT is not a big agency or a middleman — it is a developer you deal with directly, building with a mix of modern code, rapid platforms and AI tooling: high quality, sensible cost, and details that never get lost between departments.',
+      story_eyebrow: 'About NILESOFT', story_h2: 'We don’t just build screens. We build room for your idea to grow.',
+      story_p: 'Our name began with the Nile, but our outlook reaches anywhere a good idea can make a difference. At NILESOFT, we treat your project like our own: we understand the people it serves, choose technology that fits your stage, and build a clear solution that can start focused and grow with you. From a first landing page to the system behind your operations, you work directly with the people who design and build it — with honesty, flexibility and care that never gets lost between departments.',
       story_alt: 'NILESOFT logo mark',
       val1_t: 'Innovate', val1_d: 'Modern stacks and proven patterns — no hype for hype\'s sake.',
       val2_t: 'Empower', val2_d: 'Every delivery includes training — run your website or store yourself, no dependency.',
@@ -1700,8 +1702,8 @@
       work2_tag: 'مواعيد', work2_t: 'نظام حجز لصالون', work2_d: 'صفحة أنيقة يحجز منها العميل موعده بنفسه — وتصلك الحجوزات فوراً.',
       work3_tag: 'تجارة', work3_t: 'متجر إلكتروني تجريبي', work3_d: 'متجر كامل بسلة شراء ودفع تجريبي — جرّب رحلة الشراء من أولها لآخرها.',
       demo_soon: 'قيد الإنشاء — متاح قريباً',
-      story_eyebrow: 'من نحن', story_h2: 'اسم من النيل — وعمل بمعايير عالمية.',
-      story_p: 'الاسم يحمل القصة: بدأنا من ضفاف النيل، واليوم نخدم الأعمال في الإمارات والخليج. نايل سوفت ليست وكالة كبيرة ولا وسيطاً — بل مطوّر تتعامل معه مباشرة، يبني بمزيج من البرمجة الحديثة ومنصات الإنشاء السريع وأدوات الذكاء الاصطناعي: جودة عالية، وتكلفة معقولة، وتفاصيل لا تضيع بين الأقسام.',
+      story_eyebrow: 'عن نايل سوفت', story_h2: 'لا نبني مجرد شاشات؛ نبني المساحة التي تنمو فيها فكرتك.',
+      story_p: 'بدأ اسمنا من النيل، لكن رؤيتنا تمتد إلى كل مكان تستطيع فيه فكرة جيدة أن تصنع فرقاً. في نايل سوفت نتعامل مع مشروعك كأنه مشروعنا: نفهم الناس الذين تخدمهم، ونختار التقنية التي تناسب مرحلتك، ثم نبني حلاً واضحاً يمكن أن يبدأ مركزاً ويتطور معك. من أول صفحة إلى نظام يدير تفاصيل عملك، ستتعامل مباشرة مع من يصمم ويبني — بصدق ومرونة واهتمام لا يضيع بين الأقسام.',
       story_alt: 'شعار نايل سوفت',
       val1_t: 'نبتكر', val1_d: 'تقنيات حديثة وأنماط مجرّبة — دون انسياق وراء الضجيج.',
       val2_t: 'نمكّن', val2_d: 'مع كل تسليم تدريب كامل — تدير موقعك ومتجرك بنفسك دون الرجوع لأحد.',

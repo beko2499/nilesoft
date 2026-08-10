@@ -172,6 +172,11 @@ def build() -> None:
 
     head = source[: style_match.start()]
     head = re.sub(
+        r'<script src="assets/brand-v2/nilesoft-(?:morph-core|morph-tracks|about-morph)\.js"></script>\s*',
+        '',
+        head,
+    )
+    head = re.sub(
         r'<link rel="icon"[^>]+>',
         '<link rel="icon" type="image/svg+xml" href="assets/brand-v2/nilesoft-mark.svg">',
         head,
@@ -214,6 +219,11 @@ def build() -> None:
 </script>'''
 
     scripts = '<script src="app.js"></script>\n'
+    morph_scripts = (
+        '<script src="assets/brand-v2/nilesoft-morph-core.js"></script>\n'
+        '<script src="assets/brand-v2/nilesoft-morph-tracks.js"></script>\n'
+        '<script src="assets/brand-v2/nilesoft-about-morph.js"></script>\n'
+    )
 
     for filename, page in PAGES.items():
         page_chrome = chrome.replace(
@@ -222,6 +232,7 @@ def build() -> None:
             1,
         )
         content = "\n\n".join(section_cache[section_id] for section_id in page["sections"])
+        page_scripts = morph_scripts + scripts if filename == "about.html" else scripts
         document = (
             head
             + page_chrome
@@ -230,7 +241,7 @@ def build() -> None:
             + "\n\n</main>\n\n"
             + footer
             + "\n\n"
-            + scripts
+            + page_scripts
             + "</body>\n</html>\n"
         )
         document = rewrite_links(document, filename)
