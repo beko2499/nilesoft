@@ -78,7 +78,7 @@
   }
   html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4{font-family:var(--font-display)}
   html[lang="ar"] .hero h1{line-height:1.35}
-  html[lang="ar"] .head h2,html[lang="ar"] .cta h2{line-height:1.4}
+  html[lang="ar"] .head :is(h1,h2),html[lang="ar"] .cta h2{line-height:1.4}
 
   /* ============ 3D background canvas ============ */
   #bg3d{display:none}
@@ -177,7 +177,7 @@
   .sheet.glass + .sheet.glass{border-top:1px solid var(--hairline)}
   .eyebrow{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--red);margin-bottom:14px}
   .head{max-width:720px;margin:0 auto 64px;text-align:center}
-  .head h2{font-size:clamp(32px,4.6vw,54px);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px}
+  .head :is(h1,h2){font-size:clamp(32px,4.6vw,54px);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px}
   .head p{font-size:clamp(17px,1.6vw,20px);color:var(--gray);font-weight:400}
 
   /* ============ Hero ============ */
@@ -258,7 +258,7 @@
   .ns-about-morph-wordmark span{display:inline-block}
   .ns-about-morph-wipe{position:absolute;inset:0;z-index:90;display:none;background:transparent}
   .story-copy .eyebrow{color:var(--green)}
-  .story-copy h2{font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:18px}
+  .story-copy :is(h1,h2){font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:18px}
   .story-copy p{font-size:clamp(16px,1.7vw,19px);color:var(--ink-2)}
   .values{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 44px}
   .value{background:transparent;border:none;padding:0;text-align:start;transition:transform .45s var(--spring)}
@@ -381,7 +381,7 @@
 
   /* ============ Contact ============ */
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,5vw,72px);align-items:start}
-  .contact-info h2{font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
+  .contact-info :is(h1,h2){font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
   .contact-info>p{color:var(--gray);margin-bottom:34px;font-size:17px}
   .info-card{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--hairline);border-radius:var(--r-md);padding:18px 20px;margin-bottom:12px;transition:transform .4s var(--spring), box-shadow .3s var(--ease)}
   @media (hover:hover){.info-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.07)}}
@@ -759,9 +759,9 @@
   .hrow{grid-area:1/1;opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease);pointer-events:none}
   .hrow.is-active{opacity:1;transform:none;pointer-events:auto}
   .htag{display:none}
-  .hrow h1{font-size:clamp(33px,4.4vw,58px);font-weight:700;letter-spacing:-.03em;line-height:1.12;margin:0}
-  .hrow h1 .l2{display:block}
-  .hrow h1 .g{color:var(--green)} .hrow h1 .r{color:var(--red)}
+  .hrow :is(h1,h2){font-size:clamp(33px,4.4vw,58px);font-weight:700;letter-spacing:-.03em;line-height:1.12;margin:0}
+  .hrow :is(h1,h2) .l2{display:block}
+  .hrow :is(h1,h2) .g{color:var(--green)} .hrow :is(h1,h2) .r{color:var(--red)}
   .hrow .lede{font-size:clamp(16px,1.7vw,20px);color:var(--ink-2);line-height:1.7;margin:16px 0 0;max-width:470px}
   .hero-ctas{position:relative;z-index:2;display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;direction:rtl;justify-content:flex-start}
   html[lang="en"] .hero-ctas{direction:ltr}
@@ -784,7 +784,7 @@
     .hero-scrim{display:none}
     .hero-main{flex:none}
     .hero-copy{max-width:100%}
-    .hrow h1{font-size:clamp(29px,7.7vw,40px)}
+    .hrow :is(h1,h2){font-size:clamp(29px,7.7vw,40px)}
     .hrow .lede{max-width:100%;font-size:15.5px}
     .hero-ctas{margin-top:18px}
     .hc-arrow{display:none}
@@ -800,8 +800,8 @@
     .hero-rot{order:1;position:relative;width:100%;text-align:center}
     .hero-rot .hrow{position:absolute;inset:0;grid-area:auto;width:100%}
     .hero-rot .hrow.is-active{position:relative}
-    .hrow h1{font-size:clamp(30px,8.8vw,38px);line-height:1.25;overflow-wrap:anywhere}
-    .hrow h1 .l1,.hrow h1 .l2{display:block}
+    .hrow :is(h1,h2){font-size:clamp(30px,8.8vw,38px);line-height:1.25;overflow-wrap:anywhere}
+    .hrow :is(h1,h2) .l1,.hrow :is(h1,h2) .l2{display:block}
     .hrow .lede{font-size:14.5px;line-height:1.75;margin:16px auto 0;max-width:340px}
     .htag{margin-bottom:16px}
     .hero-ctas{order:2;width:100%;margin-top:22px;gap:8px;display:grid;grid-template-columns:1.06fr .94fr;align-items:stretch}
@@ -886,42 +886,42 @@
       </div>
       <div class="hrow" data-slide="1">
         <span class="htag" data-i18n="hs2_tag">متجر</span>
-        <h1><span class="l1" data-i18n="hs2_1">متجرك يبيع طوال اليوم</span><span class="l2 r" data-i18n="hs2_2">حتى وأنت نائم.</span></h1>
+        <h2><span class="l1" data-i18n="hs2_1">متجرك يبيع طوال اليوم</span><span class="l2 r" data-i18n="hs2_2">حتى وأنت نائم.</span></h2>
         <p class="lede" data-i18n="hs2_d">منتجات وطلبات ودفع في تجربة واحدة سهلة وواضحة لعميلك.</p>
       </div>
       <div class="hrow" data-slide="2">
         <span class="htag" data-i18n="hs3_tag">تطبيق</span>
-        <h1><span class="l1" data-i18n="hs3_1">عميلك لا يترك هاتفه</span><span class="l2 r" data-i18n="hs3_2">فأين تطبيقك؟</span></h1>
+        <h2><span class="l1" data-i18n="hs3_1">عميلك لا يترك هاتفه</span><span class="l2 r" data-i18n="hs3_2">فأين تطبيقك؟</span></h2>
         <p class="lede" data-i18n="hs3_d">تطبيق باسمك في جيب كل عميل — إشعارات وطلبات وولاء.</p>
       </div>
       <div class="hrow" data-slide="3">
         <span class="htag" data-i18n="hs4_tag">أتمتة</span>
-        <h1><span class="l1" data-i18n="hs4_1">كل دقيقة يدويّة</span><span class="l2 r" data-i18n="hs4_2">تكلّفك مالاً.</span></h1>
+        <h2><span class="l1" data-i18n="hs4_1">كل دقيقة يدويّة</span><span class="l2 r" data-i18n="hs4_2">تكلّفك مالاً.</span></h2>
         <p class="lede" data-i18n="hs4_d">نحوّل التكرار والنسخ واللصق إلى مهام تنجز نفسها.</p>
       </div>
       <div class="hrow" data-slide="4">
         <span class="htag" data-i18n="hs5_tag">نظام</span>
-        <h1><span class="l1" data-i18n="hs5_1">طلباتك في واتساب؟</span><span class="l2 g" data-i18n="hs5_2">حان وقت التطوّر.</span></h1>
+        <h2><span class="l1" data-i18n="hs5_1">طلباتك في واتساب؟</span><span class="l2 g" data-i18n="hs5_2">حان وقت التطوّر.</span></h2>
         <p class="lede" data-i18n="hs5_d">نظام واحد يرتّب الطلبات والفواتير والعملاء في مكان واضح.</p>
       </div>
       <div class="hrow" data-slide="5">
         <span class="htag" data-i18n="hs6_tag">MVP</span>
-        <h1><span class="l1" data-i18n="hs6_1">الفكرة موجودة.</span><span class="l2 g" data-i18n="hs6_2">دعنا نبنيها.</span></h1>
+        <h2><span class="l1" data-i18n="hs6_1">الفكرة موجودة.</span><span class="l2 g" data-i18n="hs6_2">دعنا نبنيها.</span></h2>
         <p class="lede" data-i18n="hs6_d">من مسودة أولى إلى منتج حقيقي جاهز للاختبار والإطلاق.</p>
       </div>
       <div class="hrow" data-slide="6">
         <span class="htag" data-i18n="hs7_tag">هوية</span>
-        <h1><span class="l1" data-i18n="hs7_1">أول انطباع</span><span class="l2 r" data-i18n="hs7_2">لا يتكرر مرتين.</span></h1>
+        <h2><span class="l1" data-i18n="hs7_1">أول انطباع</span><span class="l2 r" data-i18n="hs7_2">لا يتكرر مرتين.</span></h2>
         <p class="lede" data-i18n="hs7_d">واجهة واثقة تعكس مستوى شركتك في أول ثلاث ثوانٍ.</p>
       </div>
       <div class="hrow" data-slide="7">
         <span class="htag" data-i18n="hs8_tag">سباق</span>
-        <h1><span class="l1" data-i18n="hs8_1">غير موجود رقمياً؟</span><span class="l2 r" data-i18n="hs8_2">أنت متأخر إذاً.</span></h1>
+        <h2><span class="l1" data-i18n="hs8_1">غير موجود رقمياً؟</span><span class="l2 r" data-i18n="hs8_2">أنت متأخر إذاً.</span></h2>
         <p class="lede" data-i18n="hs8_d">منافسك يتحرك أسرع ويصل إلى عميلك قبلك.</p>
       </div>
       <div class="hrow" data-slide="8">
         <span class="htag" data-i18n="hs9_tag">ثقة</span>
-        <h1><span class="l1" data-i18n="hs9_1">قبل أن يتصل بك العميل</span><span class="l2 g" data-i18n="hs9_2">قرّر إن كان سيثق بك.</span></h1>
+        <h2><span class="l1" data-i18n="hs9_1">قبل أن يتصل بك العميل</span><span class="l2 g" data-i18n="hs9_2">قرّر إن كان سيثق بك.</span></h2>
         <p class="lede" data-i18n="hs9_d">حضورك الرقمي هو أول اختبار للثقة — اجعله يستحقها.</p>
       </div>
       </div>
@@ -1390,7 +1390,7 @@
       </div>
       <div class="info-card tint-green">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-        <div><b data-i18n="ct_hq">الموقع</b><span data-i18n="ct_hq_v">دبي، الإمارات — نخدم جميع الإمارات والخليج</span></div>
+        <div><b data-i18n="ct_hq">الموقع</b><span data-i18n="ct_hq_v">عجمان، الإمارات — نخدم جميع الإمارات والخليج</span></div>
       </div>
       <div class="site-qr">
         <img src="assets/qr/site.svg" alt="امسح الكود لفتح موقع نايل سوفت على جوالك" loading="lazy">
@@ -1463,7 +1463,7 @@
           <ul>
             <li><a href="mailto:abubkr249@icloud.com">abubkr249@icloud.com</a></li>
             <li><a href="#contact" data-wa="general" data-i18n="foot_wa">واتساب مباشر</a></li>
-            <li><a href="#contact" data-i18n="foot_addr">دبي، الإمارات</a></li>
+            <li><a href="#contact" data-i18n="foot_addr">عجمان، الإمارات</a></li>
           </ul>
         </div>
       </div>
@@ -1515,7 +1515,7 @@
       title: 'NILESOFT — Software services in the UAE: websites, stores, apps & automation',
       brand: 'NILESOFT', menu_label: 'Menu', island_sent: '\u2713 Message sent',
       nav_home: 'Home', nav_services: 'Services & Pricing', nav_work: 'Live Demos', nav_story: 'About', nav_process: 'Process', nav_clients: 'Why Us', nav_contact: 'Contact',
-      title_home: 'NILESOFT — Software services in the UAE', title_services: 'Services & Pricing — NILESOFT', title_work: 'Live Demos — NILESOFT', title_about: 'About NILESOFT', title_contact: 'Contact NILESOFT',
+      title_home: 'Software Development Company in Ajman & UAE | NILESOFT', title_services: 'Website, App & Business Software Services UAE | NILESOFT', title_work: 'Live Website, Store & Booking System Demos | NILESOFT', title_about: 'About NILESOFT | Ajman Software Development Company', title_contact: 'Contact NILESOFT Software Development UAE',
       island_cta: 'Free Consultation',
       mark_alt: 'NILESOFT geometric N mark',
       hero_eyebrow: 'Websites · Stores · Systems · Apps · Automation',
@@ -1589,7 +1589,7 @@
       cta_btn: 'Book Your Consultation',
       ct_eyebrow: 'Get in touch', ct_h2: 'Every successful project starts with a conversation.',
       ct_sub: 'WhatsApp is the fastest way — or use the form and you\'ll hear back within working hours the same day.',
-      ct_email: 'Email', ct_phone: 'WhatsApp', ct_wa_v: '+971 50 449 4638', ct_hq: 'Location', ct_hq_v: 'Dubai, UAE — serving all Emirates & the Gulf',
+      ct_email: 'Email', ct_phone: 'WhatsApp', ct_wa_v: '+971 50 449 4638', ct_hq: 'Location', ct_hq_v: 'Ajman, UAE — serving all Emirates & the Gulf',
       form_h3: 'Tell us about your project',
       f_name_l: 'Full name', f_name_ph: 'Mohamed Ali',
       f_email_l: 'Email or WhatsApp number', f_email_ph: 'you@company.com',
@@ -1604,7 +1604,7 @@
       foot_tag: 'نايل سوفت — خدمات برمجية تنمّي أعمالك',
       foot_company: 'Links', foot_about_l: 'About', foot_how: 'How we work', foot_why: 'Why NILESOFT', foot_demos: 'Live demos',
       foot_services: 'Services', foot_s1: 'Websites & one-page sites', foot_s2: 'Online stores', foot_s3: 'Systems & apps', foot_s4: 'Automation & AI',
-      foot_contact: 'Contact', foot_wa: 'Direct WhatsApp', foot_addr: 'Dubai, UAE',
+      foot_contact: 'Contact', foot_wa: 'Direct WhatsApp', foot_addr: 'Ajman, UAE',
       foot_rights: '\u00a9 2026 NILESOFT. All rights reserved.',
       ssn1: 'Service 01', ssn2: 'Service 02', ssn3: 'Service 03', ssn4: 'Service 04', ssn5: 'Service 05', ssn6: 'Service 06',
       g1a_t: 'Online training academy', g1a_s: 'New cohort signup · built in 3 days',
@@ -1654,7 +1654,7 @@
       title: 'نايل سوفت — خدمات برمجية في الإمارات: مواقع، متاجر، تطبيقات وأتمتة',
       brand: 'نايل سوفت', menu_label: 'القائمة', island_sent: '\u2713 تم إرسال الطلب',
       nav_home: 'الرئيسية', nav_services: 'الخدمات والأسعار', nav_work: 'النماذج الحية', nav_story: 'من نحن', nav_process: 'منهجيتنا', nav_clients: 'لماذا نحن', nav_contact: 'تواصل معنا',
-      title_home: 'نايل سوفت — خدمات برمجية في الإمارات', title_services: 'الخدمات والأسعار — نايل سوفت', title_work: 'النماذج الحية — نايل سوفت', title_about: 'من نحن — نايل سوفت', title_contact: 'تواصل معنا — نايل سوفت',
+      title_home: 'شركة برمجة في عجمان والإمارات | نايل سوفت', title_services: 'خدمات برمجة المواقع والتطبيقات في الإمارات | نايل سوفت', title_work: 'نماذج مواقع وأنظمة وتطبيقات تجريبية | نايل سوفت', title_about: 'عن نايل سوفت | شركة تطوير برمجيات في عجمان', title_contact: 'تواصل مع نايل سوفت للبرمجة في عجمان والإمارات',
       island_cta: 'استشارة مجانية',
       mark_alt: 'علامة نايل سوفت الهندسية الجديدة',
       hero_eyebrow: 'مواقع · متاجر · أنظمة · تطبيقات · أتمتة',
@@ -1728,7 +1728,7 @@
       cta_btn: 'احجز استشارتك الآن',
       ct_eyebrow: 'تواصل معنا', ct_h2: 'كل مشروع ناجح يبدأ بمحادثة.',
       ct_sub: 'أسرع طريقة هي واتساب — أو استخدم النموذج وسيصلك الرد خلال ساعات العمل في نفس اليوم.',
-      ct_email: 'البريد الإلكتروني', ct_phone: 'واتساب', ct_wa_v: '+971 50 449 4638', ct_hq: 'الموقع', ct_hq_v: 'دبي، الإمارات — نخدم جميع الإمارات والخليج',
+      ct_email: 'البريد الإلكتروني', ct_phone: 'واتساب', ct_wa_v: '+971 50 449 4638', ct_hq: 'الموقع', ct_hq_v: 'عجمان، الإمارات — نخدم جميع الإمارات والخليج',
       form_h3: 'أخبرنا عن مشروعك',
       f_name_l: 'الاسم الكامل', f_name_ph: 'محمد علي',
       f_email_l: 'البريد أو رقم الواتساب', f_email_ph: 'you@company.com',
@@ -1743,7 +1743,7 @@
       foot_tag: 'NILESOFT — Software services, built right',
       foot_company: 'روابط', foot_about_l: 'من نحن', foot_how: 'كيف نعمل', foot_why: 'لماذا نايل سوفت', foot_demos: 'النماذج الحية',
       foot_services: 'الخدمات', foot_s1: 'مواقع وصفحات تعريفية', foot_s2: 'متاجر إلكترونية', foot_s3: 'أنظمة وتطبيقات', foot_s4: 'أتمتة وذكاء اصطناعي',
-      foot_contact: 'تواصل', foot_wa: 'واتساب مباشر', foot_addr: 'دبي، الإمارات',
+      foot_contact: 'تواصل', foot_wa: 'واتساب مباشر', foot_addr: 'عجمان، الإمارات',
       foot_rights: '\u00a9 2026 نايل سوفت — جميع الحقوق محفوظة.',
       ssn1: 'الخدمة ٠١', ssn2: 'الخدمة ٠٢', ssn3: 'الخدمة ٠٣', ssn4: 'الخدمة ٠٤', ssn5: 'الخدمة ٠٥', ssn6: 'الخدمة ٠٦',
       g1a_t: 'أكاديمية تدريب أونلاين', g1a_s: 'تسجيل الدفعة الجديدة · ٣ أيام تنفيذ',

@@ -52,7 +52,7 @@
   }
   html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] h4{font-family:var(--font-display)}
   html[lang="ar"] .hero h1{line-height:1.35}
-  html[lang="ar"] .head h2,html[lang="ar"] .cta h2{line-height:1.4}
+  html[lang="ar"] .head :is(h1,h2),html[lang="ar"] .cta h2{line-height:1.4}
 
   /* ============ 3D background canvas ============ */
   #bg3d{display:none}
@@ -151,7 +151,7 @@
   .sheet.glass + .sheet.glass{border-top:1px solid var(--hairline)}
   .eyebrow{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--red);margin-bottom:14px}
   .head{max-width:720px;margin:0 auto 64px;text-align:center}
-  .head h2{font-size:clamp(32px,4.6vw,54px);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px}
+  .head :is(h1,h2){font-size:clamp(32px,4.6vw,54px);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-bottom:16px}
   .head p{font-size:clamp(17px,1.6vw,20px);color:var(--gray);font-weight:400}
 
   /* ============ Hero ============ */
@@ -232,7 +232,7 @@
   .ns-about-morph-wordmark span{display:inline-block}
   .ns-about-morph-wipe{position:absolute;inset:0;z-index:90;display:none;background:transparent}
   .story-copy .eyebrow{color:var(--green)}
-  .story-copy h2{font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:18px}
+  .story-copy :is(h1,h2){font-size:clamp(28px,3.6vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:18px}
   .story-copy p{font-size:clamp(16px,1.7vw,19px);color:var(--ink-2)}
   .values{display:grid;grid-template-columns:repeat(3,1fr);gap:48px 44px}
   .value{background:transparent;border:none;padding:0;text-align:start;transition:transform .45s var(--spring)}
@@ -355,7 +355,7 @@
 
   /* ============ Contact ============ */
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,5vw,72px);align-items:start}
-  .contact-info h2{font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
+  .contact-info :is(h1,h2){font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:14px}
   .contact-info>p{color:var(--gray);margin-bottom:34px;font-size:17px}
   .info-card{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--hairline);border-radius:var(--r-md);padding:18px 20px;margin-bottom:12px;transition:transform .4s var(--spring), box-shadow .3s var(--ease)}
   @media (hover:hover){.info-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.07)}}
@@ -733,9 +733,9 @@
   .hrow{grid-area:1/1;opacity:0;transform:translateY(16px);transition:opacity .55s var(--ease),transform .55s var(--ease);pointer-events:none}
   .hrow.is-active{opacity:1;transform:none;pointer-events:auto}
   .htag{display:none}
-  .hrow h1{font-size:clamp(33px,4.4vw,58px);font-weight:700;letter-spacing:-.03em;line-height:1.12;margin:0}
-  .hrow h1 .l2{display:block}
-  .hrow h1 .g{color:var(--green)} .hrow h1 .r{color:var(--red)}
+  .hrow :is(h1,h2){font-size:clamp(33px,4.4vw,58px);font-weight:700;letter-spacing:-.03em;line-height:1.12;margin:0}
+  .hrow :is(h1,h2) .l2{display:block}
+  .hrow :is(h1,h2) .g{color:var(--green)} .hrow :is(h1,h2) .r{color:var(--red)}
   .hrow .lede{font-size:clamp(16px,1.7vw,20px);color:var(--ink-2);line-height:1.7;margin:16px 0 0;max-width:470px}
   .hero-ctas{position:relative;z-index:2;display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;direction:rtl;justify-content:flex-start}
   html[lang="en"] .hero-ctas{direction:ltr}
@@ -758,7 +758,7 @@
     .hero-scrim{display:none}
     .hero-main{flex:none}
     .hero-copy{max-width:100%}
-    .hrow h1{font-size:clamp(29px,7.7vw,40px)}
+    .hrow :is(h1,h2){font-size:clamp(29px,7.7vw,40px)}
     .hrow .lede{max-width:100%;font-size:15.5px}
     .hero-ctas{margin-top:18px}
     .hc-arrow{display:none}
@@ -774,8 +774,8 @@
     .hero-rot{order:1;position:relative;width:100%;text-align:center}
     .hero-rot .hrow{position:absolute;inset:0;grid-area:auto;width:100%}
     .hero-rot .hrow.is-active{position:relative}
-    .hrow h1{font-size:clamp(30px,8.8vw,38px);line-height:1.25;overflow-wrap:anywhere}
-    .hrow h1 .l1,.hrow h1 .l2{display:block}
+    .hrow :is(h1,h2){font-size:clamp(30px,8.8vw,38px);line-height:1.25;overflow-wrap:anywhere}
+    .hrow :is(h1,h2) .l1,.hrow :is(h1,h2) .l2{display:block}
     .hrow .lede{font-size:14.5px;line-height:1.75;margin:16px auto 0;max-width:340px}
     .htag{margin-bottom:16px}
     .hero-ctas{order:2;width:100%;margin-top:22px;gap:8px;display:grid;grid-template-columns:1.06fr .94fr;align-items:stretch}

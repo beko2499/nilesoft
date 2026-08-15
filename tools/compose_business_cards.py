@@ -28,7 +28,10 @@ def paste_with_shadow(
 
 
 def build_front() -> None:
-    base = Image.open(BRAND / "nilesoft-business-card-front-base.png").convert("RGBA")
+    source = BRAND / "nilesoft-business-card-front-base.png"
+    if not source.exists():
+        return
+    base = Image.open(source).convert("RGBA")
     base = base.resize(CARD_SIZE, Image.Resampling.LANCZOS)
     mark = Image.open(BRAND / "nilesoft-mark-ivory.png").convert("RGBA")
     mark = resize_contain(mark, 675)
@@ -41,7 +44,10 @@ def build_front() -> None:
 
 
 def build_back() -> None:
-    base = Image.open(BRAND / "nilesoft-business-card-back-base.png").convert("RGBA")
+    source = BRAND / "nilesoft-business-card-back-base.png"
+    if not source.exists():
+        source = BRAND / "nilesoft-business-card-back.png"
+    base = Image.open(source).convert("RGBA")
     base = base.resize(CARD_SIZE, Image.Resampling.LANCZOS)
 
     qr = Image.open(BRAND / "nilesoft-qr.png").convert("RGBA")

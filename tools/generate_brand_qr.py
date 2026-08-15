@@ -83,7 +83,7 @@ def draw_finder(draw: ImageDraw.ImageDraw, x: float, y: float, module: int) -> N
     center = (x + 2 * module, y + 2 * module, x + 5 * module, y + 5 * module)
     chamfered_box(draw, outer, module * 0.58, INK)
     chamfered_box(draw, middle, module * 0.42, PAPER)
-    chamfered_box(draw, center, module * 0.34, INK)
+    chamfered_box(draw, center, module * 0.34, COPPER)
 
 
 def main() -> None:

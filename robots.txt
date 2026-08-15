@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /.vendor/
+Disallow: /tmp/
+Disallow: /tools/
+Disallow: /brand-assets/
+Disallow: /site-source.html
+
+Sitemap: https://www.nilesoft.tech/sitemap.xml
