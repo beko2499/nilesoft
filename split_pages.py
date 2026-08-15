@@ -11,6 +11,13 @@ SOURCE_PATH = ROOT / "site-source.html"
 BASE_URL = "https://www.nilesoft.tech"
 OG_IMAGE = f"{BASE_URL}/assets/brand-v2/nilesoft-business-card-back.png"
 GOOGLE_ANALYTICS_ID = "G-MYRTW6VKN8"
+FAVICON_URL = f"{BASE_URL}/favicon-512.png"
+FAVICON_LINKS = '''<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">'''
 
 PAGES = {
     "index.html": {
@@ -198,7 +205,9 @@ def structured_data(page: dict[str, object]) -> str:
             "url": f"{BASE_URL}/",
             "logo": {
                 "@type": "ImageObject",
-                "url": f"{BASE_URL}/assets/brand-v2/nilesoft-mark.svg",
+                "url": FAVICON_URL,
+                "width": 512,
+                "height": 512,
             },
             "image": OG_IMAGE,
             "description": "شركة تطوير برمجيات في عجمان تخدم الشركات في جميع الإمارات والخليج.",
@@ -383,8 +392,13 @@ def build() -> None:
         head_template,
     )
     head_template = re.sub(
-        r'<link rel="icon"[^>]+>',
-        '<link rel="icon" type="image/svg+xml" href="assets/brand-v2/nilesoft-mark.svg">',
+        r'<link rel="(?:icon|apple-touch-icon|manifest)"[^>]*>\s*',
+        '',
+        head_template,
+    )
+    head_template = re.sub(
+        r'(<meta name="description" content="[^"]*">)',
+        r'\1\n' + FAVICON_LINKS,
         head_template,
         count=1,
     )

@@ -6,12 +6,20 @@
   /* ============ WhatsApp (ضع رقمك هنا — بصيغة دولية بدون + أو مسافات، مثال: 9715XXXXXXXX) ============ */
   const WA_NUMBER = '971504494638';
   function waReady(){ return /^\d{9,15}$/.test(WA_NUMBER); }
+  function trackLead(method, service){
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', 'generate_lead', {
+      method,
+      service: service || 'general'
+    });
+  }
   function waOpen(serviceKey){
     if (!waReady()) return false;
     let msg = t('wa_msg');
     if (serviceKey && serviceKey !== 'general') {
       msg += ' — ' + String(t(serviceKey + '_t')).replace(/<[^>]+>/g, '').replace(/&amp;/g, '&');
     }
+    trackLead('whatsapp', serviceKey);
     window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
     return true;
   }
@@ -626,11 +634,13 @@
       const topicSel = document.getElementById('f-topic');
       const topic = topicSel ? topicSel.options[topicSel.selectedIndex].text : '';
       const lines = [t('wa_msg'), t('f_name_l') + ': ' + g('f-name'), t('f_company_l') + ': ' + g('f-company'), t('f_topic_l') + ': ' + topic, t('f_msg_l') + ': ' + g('f-msg'), t('f_email_l') + ': ' + g('f-email')];
+      trackLead('contact_form', topic);
       window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
     }
     document.getElementById('formSuccess').classList.add('show');
     haptic(20);
     notify(t('island_sent'), 2600);
+    window.setTimeout(() => { window.location.href = 'thank-you.html'; }, 350);
   });
 
   /* ============ Wave reveal (service sections) ============ */
