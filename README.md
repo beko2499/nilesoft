@@ -1,8 +1,8 @@
 # نايل سوفت — NILESOFT
 
-موقع تعريفي لخدمات نايل سوفت البرمجية في الإمارات والخليج: مواقع، متاجر إلكترونية، أنظمة، تطبيقات، وأتمتة بالذكاء الاصطناعي.
+موقع تعريفي لخدمات نايل سوفت في الإمارات والخليج: مواقع، متاجر إلكترونية، أنظمة، تطبيقات، أتمتة بالذكاء الاصطناعي، SEO وإعلانات Google.
 
-**Landing page for NILESOFT** — software services for businesses in the UAE and the Gulf: websites, online stores, business systems, mobile apps and AI automation.
+**Landing page for NILESOFT** — software and Google growth services for businesses in the UAE and the Gulf: websites, stores, systems, mobile apps, AI automation, SEO and Google Ads.
 
 ## المحتويات
 

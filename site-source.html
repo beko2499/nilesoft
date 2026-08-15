@@ -624,6 +624,25 @@
   .ai-phone::before{box-shadow:0 30px 56px -26px rgba(192,107,62,.45)}
   .ai-cap b{display:block;font-size:15px;font-weight:600}
   .ai-cap span{font-size:13px;color:var(--gray)}
+  .ss-growth{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.85fr);gap:34px;align-items:stretch}
+  .ss-growth.is-reverse{grid-template-columns:minmax(280px,.85fr) minmax(0,1.45fr)}
+  .ss-growth.is-reverse .growth-visual{order:2}
+  .ss-growth.is-reverse .growth-panel{order:1}
+  .growth-visual{min-width:0}
+  .growth-art{aspect-ratio:3/2;border:1px solid var(--hairline);border-radius:22px;overflow:hidden;background:#f7f3ec;box-shadow:0 22px 46px -30px rgba(29,29,31,.42)}
+  .growth-art img{width:100%;height:100%;object-fit:cover}
+  .growth-panel{display:flex;flex-direction:column;justify-content:center;gap:22px;padding:clamp(22px,3vw,34px);border:1px solid var(--hairline);border-radius:22px;background:rgba(245,245,241,.7)}
+  .growth-promise{padding-bottom:20px;border-bottom:1px solid var(--hairline)}
+  .growth-promise span{display:inline-flex;margin-bottom:10px;padding:5px 11px;border-radius:999px;background:var(--tint-red);color:var(--red-dark);font-size:11px;font-weight:800;letter-spacing:.04em}
+  .growth-promise b{display:block;font-size:clamp(20px,2.35vw,27px);line-height:1.55;letter-spacing:-.015em}
+  .growth-panel .frows{gap:14px}
+  .growth-panel .frow{font-size:14px;line-height:1.75}
+  .marketing-art-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .marketing-art-card{min-width:0}
+  .marketing-art-card .growth-art{border-radius:18px}
+  .marketing-art-card figcaption{display:flex;flex-direction:column;gap:3px;padding:10px 4px 0}
+  .marketing-art-card figcaption b{font-size:14px;font-weight:700}
+  .marketing-art-card figcaption span{font-size:12px;line-height:1.65;color:var(--gray)}
   .site-qr{display:none;align-items:center;gap:20px;margin-top:28px;padding-top:26px;border-top:1px solid var(--hairline)}
   .site-qr img{width:138px;height:138px;flex:none;background:#fff;border-radius:16px;padding:7px;box-shadow:0 16px 34px -22px rgba(29,29,31,.55)}
   .site-qr b{display:block;font-size:15.5px;font-weight:700;margin-bottom:6px}
@@ -636,7 +655,7 @@
   @keyframes wvx{from{opacity:0;transform:translateX(48px)}to{opacity:1;transform:none}}
   @media(max-width:900px){
     .svc-sec{padding:38px 0}
-    .ss-ba,.ss-sys,.ss-ai{grid-template-columns:1fr}
+    .ss-ba,.ss-sys,.ss-ai,.ss-growth,.ss-growth.is-reverse{grid-template-columns:1fr}
     /* الخدمة 01 — معرض أفقي بالسحب بدل التكديس الطويل */
     .ss-g1{display:flex;gap:14px;align-items:start;overflow-x:auto;scroll-snap-type:x mandatory;
            overscroll-behavior-x:contain;scrollbar-width:none;
@@ -656,7 +675,7 @@
     .ba-slider{height:252px}
     .ss-ba{gap:14px}
     /* اللوحات العريضة تُعرض بحجم مقروء وتُسحب أفقياً بدل تصغيرها لدرجة لا تُقرأ فيها */
-    .ss-sys>*,.ss-ai>*,.sys-stage,.bframe,.frows{min-width:0}
+    .ss-sys>*,.ss-ai>*,.ss-growth>*,.sys-stage,.bframe,.frows{min-width:0}
     .sys-stage{padding-bottom:34px}
     .sys-phone{position:absolute;bottom:0;inset-inline-end:8px;width:104px}
     .ss-sys{gap:26px}
@@ -686,6 +705,15 @@
     .ai-cap b{font-size:15px;margin-bottom:4px}
     .ai-cap span{font-size:13px;line-height:1.7}
     .ss-ai .frows{order:3;margin-top:0 !important;gap:15px}
+    .ss-growth.is-reverse .growth-visual,.ss-growth.is-reverse .growth-panel{order:initial}
+    .ss-growth{gap:14px}
+    .growth-art{border-radius:17px}
+    .growth-panel{gap:18px;padding:20px;border-radius:17px}
+    .growth-promise{padding-bottom:16px}
+    .growth-promise b{font-size:20px}
+    .marketing-art-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;margin-inline:calc(-1*clamp(24px,5.5vw,92px));padding:2px clamp(24px,5.5vw,92px) 12px;scroll-padding-inline:clamp(24px,5.5vw,92px)}
+    .marketing-art-grid::-webkit-scrollbar{display:none}
+    .marketing-art-card{flex:0 0 82%;scroll-snap-align:start}
     .ss-bullets{gap:14px;flex-direction:column;align-items:flex-start}
   }
 
@@ -961,6 +989,7 @@
       <a class="svc-jump-link pressable" href="#service-4" style="--i:3"><span class="svc-jump-num">04</span><span data-i18n="svc_nav_4">نظام حجوزات</span></a>
       <a class="svc-jump-link pressable" href="#service-5" style="--i:4"><span class="svc-jump-num">05</span><span data-i18n="svc_nav_5">تطبيق موبايل</span></a>
       <a class="svc-jump-link pressable" href="#service-6" style="--i:5"><span class="svc-jump-num">06</span><span data-i18n="svc_nav_6">أتمتة وذكاء اصطناعي</span></a>
+      <a class="svc-jump-link pressable" href="#service-7" style="--i:6"><span class="svc-jump-num">07</span><span data-i18n="svc_nav_7">SEO وإعلانات Google</span></a>
     </div>
   </nav>
   <div class="head reveal">
@@ -1101,17 +1130,17 @@
       <div class="jgrid">
         <div class="jstage" data-wave>
         <div class="jbadge" data-i18n="j1_b">١ · الأسبوع الأول</div>
-        <div class="phone jphone"><img class="shot" src="assets/shots/app-wireframe.webp" alt="" loading="lazy"><i class="pn"></i></div>
+        <div class="phone jphone"><img class="shot" src="assets/shots/app-wireframe-v2.webp" alt="" loading="lazy"><i class="pn"></i></div>
         <div class="jcap"><b data-i18n="j1_t">نثبّت الفكرة</b><span data-i18n="j1_s">شاشات ورقية + مسار المستخدم</span></div>
       </div>
         <div class="jstage" data-wave>
         <div class="jbadge" data-i18n="j2_b">٢ · الأسبوع الثاني</div>
-        <div class="phone jphone"><img class="shot" src="assets/shots/app-home.webp" alt="" loading="lazy"><i class="pn"></i></div>
+        <div class="phone jphone"><img class="shot" src="assets/shots/app-home-v2.webp" alt="" loading="lazy"><i class="pn"></i></div>
         <div class="jcap"><b data-i18n="j2_t">نصمم ونراجع معك</b><span data-i18n="j2_s">هوية تطبيقك على كل شاشة</span></div>
       </div>
         <div class="jstage" data-wave>
         <div class="jbadge go" data-i18n="j3_b">٣ · الأسبوع الثالث</div>
-        <div class="phone jphone launch"><img class="shot" src="assets/shots/app-launch.webp" alt="" loading="lazy"><i class="pn"></i></div>
+        <div class="phone jphone launch"><img class="shot" src="assets/shots/app-launch-v2.webp" alt="" loading="lazy"><i class="pn"></i></div>
         <div class="jcap"><b data-i18n="j3_t">نطلق على المتجرين</b><span data-i18n="j3_s">iOS وAndroid + تدريب كامل</span></div>
       </div>
       </div>
@@ -1150,6 +1179,43 @@
     <div class="ss-foot">
       <a class="ss-cta pressable" data-wa="svc6" href="#contact"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
       <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc6_p">2,000 د.إ</b> · <span data-i18n="svc6_tm">خلال 12 يوماً كحد أقصى</span></div>
+    </div>
+  </article>
+  <article class="svc-sec reveal" id="service-7" data-wavegroup data-anim="wvx">
+    <header class="ss-head">
+      <div>
+        <div class="ss-kicker"><span class="ss-num" data-i18n="ssn7">الخدمة ٠٧</span></div>
+        <h3 data-i18n="svc7_t">الظهور في Google عبر SEO والإعلانات</h3>
+      </div>
+      <p class="ss-sub" data-i18n="svc7_d">نجمع بين الظهور الطبيعي المستدام والوصول المدفوع السريع حتى يجدك العميل المناسب في لحظة البحث والقرار.</p>
+    </header>
+    <div class="ss-growth">
+      <div class="growth-visual" data-wave>
+        <div class="marketing-art-grid">
+          <figure class="marketing-art-card">
+            <div class="growth-art"><img src="assets/shots/seo-service-v1.webp" alt="رسم توضيحي لنمو ترتيب الموقع في نتائج البحث" loading="lazy"></div>
+            <figcaption><b data-i18n="seo_cap_t">SEO — مكانك الطبيعي</b><span data-i18n="seo_cap_s">أساس تقني ومحتوى يبنيان حضوراً يتراكم</span></figcaption>
+          </figure>
+          <figure class="marketing-art-card">
+            <div class="growth-art"><img src="assets/shots/google-ads-service-v1.webp" alt="رسم توضيحي لاستهداف العميل المناسب بإعلانات Google" loading="lazy"></div>
+            <figcaption><b data-i18n="ads_cap_t">Google Ads — وصول أسرع</b><span data-i18n="ads_cap_s">استهداف أدق ونتائج قابلة للقياس</span></figcaption>
+          </figure>
+        </div>
+        <div class="swipe-hint" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M11 6l-6 6 6 6"/></svg><span data-i18n="swipe">اسحب لاستعراض الباقي</span></div>
+      </div>
+      <div class="growth-panel" data-wave>
+        <div class="growth-promise"><span data-i18n="seo_label">مساران، هدف واحد</span><b data-i18n="seo_promise">تظهر الآن بالإعلان، وتبني مكانك الطبيعي للمستقبل.</b></div>
+        <div class="frows">
+          <div class="frow"><span class="fdot"></span><div data-i18n="svc7_f1">تدقيق SEO تقني وتحسين الصفحات والظهور المحلي</div></div>
+          <div class="frow"><span class="fdot"></span><div data-i18n="svc7_f2">بحث كلمات ومنافسين يغطي النتائج الطبيعية والمدفوعة</div></div>
+          <div class="frow"><span class="fdot"></span><div data-i18n="svc7_f3">إعداد الحملات وربط المكالمات والواتساب والتحويلات</div></div>
+          <div class="frow"><span class="fdot"></span><div data-i18n="svc7_f4">تحسين مستمر وتقرير شهري واضح للترتيب والتكلفة والنتائج</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="ss-foot">
+      <a class="ss-cta pressable" data-wa="svc7" href="#contact"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.4 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3 0 .1 0 .7-.2 1.4z"/></svg><span data-i18n="svc_cta">اطلبها عبر واتساب</span></a>
+      <div class="ss-price"><span data-i18n="price_from">يبدأ من</span> <b data-i18n="svc7_p">1,500 د.إ / شهرياً</b> · <span data-i18n="svc7_tm">الخطة والحملة خلال 7 أيام — ميزانية الإعلان منفصلة</span></div>
     </div>
   </article>
   </div>
@@ -1418,6 +1484,7 @@
             <option data-i18n="opt4">نظام حجوزات وإدارة</option>
             <option data-i18n="opt5">تطبيق موبايل</option>
             <option data-i18n="opt6">أتمتة وذكاء اصطناعي</option>
+            <option data-i18n="opt7">SEO وإعلانات Google</option>
           </select>
         </div>
       </div>
@@ -1461,6 +1528,7 @@
             <li><a href="#services" data-i18n="foot_s2">متاجر إلكترونية</a></li>
             <li><a href="#services" data-i18n="foot_s3">أنظمة وتطبيقات</a></li>
             <li><a href="#services" data-i18n="foot_s4">أتمتة وذكاء اصطناعي</a></li>
+            <li><a href="#service-7" data-i18n="foot_s5">SEO وإعلانات Google</a></li>
           </ul>
         </div>
         <div>
@@ -1528,7 +1596,7 @@
       title: 'NILESOFT — Software services in the UAE: websites, stores, apps & automation',
       brand: 'NILESOFT', menu_label: 'Menu', island_sent: '\u2713 Message sent',
       nav_home: 'Home', nav_services: 'Services & Pricing', nav_work: 'Live Demos', nav_story: 'About', nav_process: 'Process', nav_clients: 'Why Us', nav_contact: 'Contact',
-      title_home: 'Software Development Company in Ajman & UAE | NILESOFT', title_services: 'Website, App & Business Software Services UAE | NILESOFT', title_work: 'Live Website, Store & Booking System Demos | NILESOFT', title_about: 'About NILESOFT | Ajman Software Development Company', title_contact: 'Contact NILESOFT Software Development UAE',
+      title_home: 'Software Development Company in Ajman & UAE | NILESOFT', title_services: 'Web, App, SEO & Google Ads Services UAE | NILESOFT', title_work: 'Live Website, Store & Booking System Demos | NILESOFT', title_about: 'About NILESOFT | Ajman Software Development Company', title_contact: 'Contact NILESOFT Software Development UAE',
       island_cta: 'Free Consultation',
       mark_alt: 'NILESOFT geometric N mark',
       hero_eyebrow: 'Websites · Stores · Systems · Apps · Automation',
@@ -1547,7 +1615,7 @@
       hero_lede: 'We turn your ideas into integrated digital solutions that help you grow and stand out in today\'s market.',
       cta_start: 'Start Your Project Now', cta_explore: 'See How We Work',
       sec_1: 'Restaurants & Cafés', sec_2: 'Salons & Beauty', sec_3: 'Clinics', sec_4: 'Real Estate', sec_5: 'Traders & Shops', sec_6: 'Service Offices',
-      svc_nav_1: 'Landing Page', svc_nav_2: 'Business Website', svc_nav_3: 'Online Store', svc_nav_4: 'Booking System', svc_nav_5: 'Mobile App', svc_nav_6: 'Automation & AI',
+      svc_nav_1: 'Landing Page', svc_nav_2: 'Business Website', svc_nav_3: 'Online Store', svc_nav_4: 'Booking System', svc_nav_5: 'Mobile App', svc_nav_6: 'Automation & AI', svc_nav_7: 'SEO & Google Ads',
       svc_eyebrow: 'Services & Pricing', svc_h2: 'Clear services,<br>clear prices.',
       svc_sub: 'Every service is a defined product: you know exactly what you get, when, and for how much — before paying a dirham.',
       price_from: 'From', svc_pop: 'Most popular', svc_cta: 'Order via WhatsApp',
@@ -1569,6 +1637,12 @@
       svc6_t: 'Automation & AI', svc6_d: 'Put AI to work in your business: instant customer replies and automations that save hours every day.',
       svc6_f1: 'WhatsApp bot answering your customers', svc6_f2: 'Automating repetitive office tasks & integrations', svc6_f3: 'Automatic reports to your email or WhatsApp',
       svc6_p: 'AED 2,000', svc6_tm: 'Within 12 days max',
+      svc7_t: 'Google Visibility: SEO + Ads', svc7_d: 'We combine sustainable organic visibility with fast paid reach so the right customer finds you at the moment of search and decision.',
+      svc7_f1: 'Technical SEO audit, page optimization and local visibility', svc7_f2: 'Keyword and competitor research for organic and paid search', svc7_f3: 'Campaign setup with calls, WhatsApp and conversion tracking', svc7_f4: 'Continuous optimization and a clear monthly ranking, cost and results report',
+      svc7_p: 'AED 1,500 / month', svc7_tm: 'Strategy and campaign in 7 days — ad spend excluded',
+      seo_cap_t: 'SEO — your organic position', seo_cap_s: 'Technical foundations and content that compound over time',
+      ads_cap_t: 'Google Ads — faster reach', ads_cap_s: 'Sharper targeting and measurable results',
+      seo_label: 'Two paths, one goal', seo_promise: 'Show up now with ads while building your organic position for the future.',
       svc_note: 'Every project includes one month of free support after delivery and two free revision rounds within scope — payment is 50% to start, 50% on delivery. Ongoing care plans from AED 250/month.',
       work_eyebrow: 'Live demos', work_h2: 'Try it yourself before you decide.',
       work_sub: 'Complete demo products we build so you can test the quality with your own hands — honestly presented as capability demos, not client work.',
@@ -1608,18 +1682,18 @@
       f_email_l: 'Email or WhatsApp number', f_email_ph: 'you@company.com',
       f_company_l: 'Business name', f_company_ph: 'Shop or company name',
       f_topic_l: 'I need',
-      opt1: 'Professional one-page website', opt2: 'Complete business website', opt3: 'Online store', opt4: 'Booking & management system', opt5: 'Mobile app', opt6: 'Automation & AI',
+      opt1: 'Professional one-page website', opt2: 'Complete business website', opt3: 'Online store', opt4: 'Booking & management system', opt5: 'Mobile app', opt6: 'Automation & AI', opt7: 'SEO & Google Ads',
       f_msg_l: 'Project details', f_msg_ph: 'Describe your business and what you need — you\'ll get a clear plan and price.',
       f_send: 'Send Request',
       f_success: 'Thank you — your request is in. You\'ll hear back within working hours today.',
       wa_msg: 'Hello! I\'m interested in a service from NILESOFT',
-      foot_about: 'NILESOFT — software services for businesses in the UAE & Gulf: websites, stores, systems, apps and AI automation.',
+      foot_about: 'NILESOFT — software and Google growth services for businesses in the UAE & Gulf: websites, stores, systems, apps, automation, SEO and Google Ads.',
       foot_tag: 'نايل سوفت — خدمات برمجية تنمّي أعمالك',
       foot_company: 'Links', foot_about_l: 'About', foot_how: 'How we work', foot_why: 'Why NILESOFT', foot_demos: 'Live demos',
-      foot_services: 'Services', foot_s1: 'Websites & one-page sites', foot_s2: 'Online stores', foot_s3: 'Systems & apps', foot_s4: 'Automation & AI',
+      foot_services: 'Services', foot_s1: 'Websites & one-page sites', foot_s2: 'Online stores', foot_s3: 'Systems & apps', foot_s4: 'Automation & AI', foot_s5: 'SEO & Google Ads',
       foot_contact: 'Contact', foot_wa: 'Direct WhatsApp', foot_addr: 'Ajman, UAE',
       foot_rights: '\u00a9 2026 NILESOFT. All rights reserved.',
-      ssn1: 'Service 01', ssn2: 'Service 02', ssn3: 'Service 03', ssn4: 'Service 04', ssn5: 'Service 05', ssn6: 'Service 06',
+      ssn1: 'Service 01', ssn2: 'Service 02', ssn3: 'Service 03', ssn4: 'Service 04', ssn5: 'Service 05', ssn6: 'Service 06', ssn7: 'Service 07',
       g1a_t: 'Online training academy', g1a_s: 'New cohort signup · built in 3 days',
       g1b_t: 'Luxury watch store', g1b_s: 'Products & direct checkout',
       g1c_t: 'Travel booking platform', g1c_s: 'Tours, stays & direct booking',
@@ -1629,7 +1703,7 @@
       st_t1: 'Open 24/7', st_t2: 'Automatic payments & invoices', st_t3: 'Inventory & shipping connected',
       j1_b: '1 · Week 1', j1_t: 'We lock the idea', j1_s: 'Wireframes + user flow',
       j2_b: '2 · Week 2', j2_t: 'We design & review with you', j2_s: 'Your brand on every screen',
-      j3_b: '3 · Week 3', j3_t: 'We launch on both stores', j3_s: 'iOS & Android + full training',
+      j3_b: '3 · Week 3', j3_t: 'We publish to both stores', j3_s: 'iOS & Android + full training',
       ai_t: 'Automation that works for you', ai_s: 'From order to invoice to report — no copy-paste',
       ai_p1: 'The bot replies within a second', ai_p2: 'even while you sleep',
       qr_open: 'Open the demo', swipe: 'Swipe to see the rest',
@@ -1667,7 +1741,7 @@
       title: 'نايل سوفت — خدمات برمجية في الإمارات: مواقع، متاجر، تطبيقات وأتمتة',
       brand: 'نايل سوفت', menu_label: 'القائمة', island_sent: '\u2713 تم إرسال الطلب',
       nav_home: 'الرئيسية', nav_services: 'الخدمات والأسعار', nav_work: 'النماذج الحية', nav_story: 'من نحن', nav_process: 'منهجيتنا', nav_clients: 'لماذا نحن', nav_contact: 'تواصل معنا',
-      title_home: 'شركة برمجة في عجمان والإمارات | نايل سوفت', title_services: 'خدمات برمجة المواقع والتطبيقات في الإمارات | نايل سوفت', title_work: 'نماذج مواقع وأنظمة وتطبيقات تجريبية | نايل سوفت', title_about: 'عن نايل سوفت | شركة تطوير برمجيات في عجمان', title_contact: 'تواصل مع نايل سوفت للبرمجة في عجمان والإمارات',
+      title_home: 'شركة برمجة في عجمان والإمارات | نايل سوفت', title_services: 'خدمات المواقع والتطبيقات وSEO وإعلانات Google | نايل سوفت', title_work: 'نماذج مواقع وأنظمة وتطبيقات تجريبية | نايل سوفت', title_about: 'عن نايل سوفت | شركة تطوير برمجيات في عجمان', title_contact: 'تواصل مع نايل سوفت للبرمجة في عجمان والإمارات',
       island_cta: 'استشارة مجانية',
       mark_alt: 'علامة نايل سوفت الهندسية الجديدة',
       hero_eyebrow: 'مواقع · متاجر · أنظمة · تطبيقات · أتمتة',
@@ -1686,7 +1760,7 @@
       hero_lede: 'نحوّل أفكارك إلى حلول رقمية متكاملة تساعدك على النمو والتميز في سوق اليوم.',
       cta_start: 'ابدأ مشروعك الآن', cta_explore: 'شاهد كيف نعمل',
       sec_1: 'مطاعم وكافيهات', sec_2: 'صالونات وتجميل', sec_3: 'عيادات', sec_4: 'عقارات', sec_5: 'تجار ومتاجر', sec_6: 'مكاتب خدمات',
-      svc_nav_1: 'صفحة تعريفية', svc_nav_2: 'موقع شركة', svc_nav_3: 'متجر إلكتروني', svc_nav_4: 'نظام حجوزات', svc_nav_5: 'تطبيق موبايل', svc_nav_6: 'أتمتة وذكاء اصطناعي',
+      svc_nav_1: 'صفحة تعريفية', svc_nav_2: 'موقع شركة', svc_nav_3: 'متجر إلكتروني', svc_nav_4: 'نظام حجوزات', svc_nav_5: 'تطبيق موبايل', svc_nav_6: 'أتمتة وذكاء اصطناعي', svc_nav_7: 'SEO وإعلانات Google',
       svc_eyebrow: 'الخدمات والأسعار', svc_h2: 'خدمات واضحة،<br>بأسعار واضحة.',
       svc_sub: 'كل خدمة منتج محدد: تعرف ماذا ستستلم، ومتى، وبكم — قبل أن تدفع درهماً واحداً.',
       price_from: 'يبدأ من', svc_pop: 'الأكثر طلباً', svc_cta: 'اطلبها عبر واتساب',
@@ -1708,6 +1782,12 @@
       svc6_t: 'أتمتة وذكاء اصطناعي', svc6_d: 'وظّف الذكاء الاصطناعي في عملك: ردود فورية على عملائك وأتمتة توفر عليك ساعات كل يوم.',
       svc6_f1: 'بوت واتساب يرد على استفسارات عملائك', svc6_f2: 'أتمتة المهام المكتبية المتكررة وربط الأنظمة', svc6_f3: 'تقارير آلية إلى بريدك أو واتسابك',
       svc6_p: '2,000 د.إ', svc6_tm: 'خلال 12 يوماً كحد أقصى',
+      svc7_t: 'الظهور في Google عبر SEO والإعلانات', svc7_d: 'نجمع بين الظهور الطبيعي المستدام والوصول المدفوع السريع حتى يجدك العميل المناسب في لحظة البحث والقرار.',
+      svc7_f1: 'تدقيق SEO تقني وتحسين الصفحات والظهور المحلي', svc7_f2: 'بحث كلمات ومنافسين يغطي النتائج الطبيعية والمدفوعة', svc7_f3: 'إعداد الحملات وربط المكالمات والواتساب والتحويلات', svc7_f4: 'تحسين مستمر وتقرير شهري واضح للترتيب والتكلفة والنتائج',
+      svc7_p: '1,500 د.إ / شهرياً', svc7_tm: 'الخطة والحملة خلال 7 أيام — ميزانية الإعلان منفصلة',
+      seo_cap_t: 'SEO — مكانك الطبيعي', seo_cap_s: 'أساس تقني ومحتوى يبنيان حضوراً يتراكم',
+      ads_cap_t: 'Google Ads — وصول أسرع', ads_cap_s: 'استهداف أدق ونتائج قابلة للقياس',
+      seo_label: 'مساران، هدف واحد', seo_promise: 'تظهر الآن بالإعلان، وتبني مكانك الطبيعي للمستقبل.',
       svc_note: 'كل مشروع يشمل شهر دعم مجاني بعد التسليم وتعديلين مجانيين ضمن النطاق — والدفع 50% عند البدء و50% عند التسليم. عقود صيانة وتطوير مستمرة تبدأ من 250 د.إ شهرياً.',
       work_eyebrow: 'نماذج حية', work_h2: 'جرّب بنفسك قبل أن تقرر.',
       work_sub: 'نماذج تجريبية كاملة نبنيها لتختبر مستوى الجودة بيدك — نعرضها بصراحة كنماذج قدرات، لا كأعمال لعملاء.',
@@ -1747,18 +1827,18 @@
       f_email_l: 'البريد أو رقم الواتساب', f_email_ph: 'you@company.com',
       f_company_l: 'اسم النشاط التجاري', f_company_ph: 'اسم المحل أو الشركة',
       f_topic_l: 'أحتاج',
-      opt1: 'صفحة تعريفية احترافية', opt2: 'موقع شركة متكامل', opt3: 'متجر إلكتروني', opt4: 'نظام حجوزات وإدارة', opt5: 'تطبيق موبايل', opt6: 'أتمتة وذكاء اصطناعي',
+      opt1: 'صفحة تعريفية احترافية', opt2: 'موقع شركة متكامل', opt3: 'متجر إلكتروني', opt4: 'نظام حجوزات وإدارة', opt5: 'تطبيق موبايل', opt6: 'أتمتة وذكاء اصطناعي', opt7: 'SEO وإعلانات Google',
       f_msg_l: 'تفاصيل المشروع', f_msg_ph: 'صف نشاطك وما تحتاجه — وسنعود إليك بخطة وسعر واضحين.',
       f_send: 'أرسل الطلب',
       f_success: 'شكراً — وصلنا طلبك وسنرد عليك خلال ساعات العمل في نفس اليوم.',
       wa_msg: 'مرحباً! مهتم بخدمة من نايل سوفت',
-      foot_about: 'نايل سوفت — خدمات برمجية للأعمال في الإمارات والخليج: مواقع ومتاجر وأنظمة وتطبيقات وأتمتة بالذكاء الاصطناعي.',
+      foot_about: 'نايل سوفت — خدمات البرمجة والنمو عبر Google للأعمال في الإمارات والخليج: مواقع ومتاجر وأنظمة وتطبيقات وأتمتة وSEO وإعلانات Google.',
       foot_tag: 'NILESOFT — Software services, built right',
       foot_company: 'روابط', foot_about_l: 'من نحن', foot_how: 'كيف نعمل', foot_why: 'لماذا نايل سوفت', foot_demos: 'النماذج الحية',
-      foot_services: 'الخدمات', foot_s1: 'مواقع وصفحات تعريفية', foot_s2: 'متاجر إلكترونية', foot_s3: 'أنظمة وتطبيقات', foot_s4: 'أتمتة وذكاء اصطناعي',
+      foot_services: 'الخدمات', foot_s1: 'مواقع وصفحات تعريفية', foot_s2: 'متاجر إلكترونية', foot_s3: 'أنظمة وتطبيقات', foot_s4: 'أتمتة وذكاء اصطناعي', foot_s5: 'SEO وإعلانات Google',
       foot_contact: 'تواصل', foot_wa: 'واتساب مباشر', foot_addr: 'عجمان، الإمارات',
       foot_rights: '\u00a9 2026 نايل سوفت — جميع الحقوق محفوظة.',
-      ssn1: 'الخدمة ٠١', ssn2: 'الخدمة ٠٢', ssn3: 'الخدمة ٠٣', ssn4: 'الخدمة ٠٤', ssn5: 'الخدمة ٠٥', ssn6: 'الخدمة ٠٦',
+      ssn1: 'الخدمة ٠١', ssn2: 'الخدمة ٠٢', ssn3: 'الخدمة ٠٣', ssn4: 'الخدمة ٠٤', ssn5: 'الخدمة ٠٥', ssn6: 'الخدمة ٠٦', ssn7: 'الخدمة ٠٧',
       g1a_t: 'أكاديمية تدريب أونلاين', g1a_s: 'تسجيل الدفعة الجديدة · ٣ أيام تنفيذ',
       g1b_t: 'متجر ساعات فاخرة', g1b_s: 'عرض المنتجات والشراء المباشر',
       g1c_t: 'منصة حجوزات سياحية', g1c_s: 'رحلات وإقامات وحجز مباشر',
@@ -1768,7 +1848,7 @@
       st_t1: 'يعمل 24 ساعة', st_t2: 'دفع وفواتير آلية', st_t3: 'مخزون وشحن مربوط',
       j1_b: '١ · الأسبوع الأول', j1_t: 'نثبّت الفكرة', j1_s: 'شاشات ورقية + مسار المستخدم',
       j2_b: '٢ · الأسبوع الثاني', j2_t: 'نصمم ونراجع معك', j2_s: 'هوية تطبيقك على كل شاشة',
-      j3_b: '٣ · الأسبوع الثالث', j3_t: 'نطلق على المتجرين', j3_s: 'iOS وAndroid + تدريب كامل',
+      j3_b: '٣ · الأسبوع الثالث', j3_t: 'ننشره في المتجرين', j3_s: 'iOS وAndroid + تدريب كامل',
       ai_t: 'أتمتة تشتغل بدالك', ai_s: 'من الطلب للفاتورة للتقرير — بلا نسخ ولصق',
       ai_p1: 'البوت يرد خلال ثانية', ai_p2: 'حتى وأنت نايم',
       qr_open: 'افتح الديمو', swipe: 'اسحب لاستعراض الباقي',

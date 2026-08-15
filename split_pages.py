@@ -24,7 +24,7 @@ PAGES = {
         "name": "home",
         "title_key": "title_home",
         "title": "شركة برمجة في عجمان والإمارات | نايل سوفت",
-        "description": "نايل سوفت شركة برمجة في عجمان تخدم جميع الإمارات والخليج. نصمم مواقع ومتاجر إلكترونية وأنظمة أعمال وتطبيقات وحلول أتمتة وذكاء اصطناعي بأسعار واضحة.",
+        "description": "نايل سوفت شركة برمجة ونمو رقمي في عجمان تخدم جميع الإمارات والخليج. نصمم مواقع ومتاجر وأنظمة وتطبيقات، ونقدم SEO وإدارة إعلانات Google بأسعار واضحة.",
         "path": "",
         "schema_type": "WebPage",
         "sections": ["top", "cta"],
@@ -33,8 +33,8 @@ PAGES = {
     "services.html": {
         "name": "services",
         "title_key": "title_services",
-        "title": "خدمات برمجة المواقع والتطبيقات في الإمارات | نايل سوفت",
-        "description": "أسعار وخدمات تطوير المواقع والمتاجر الإلكترونية وأنظمة إدارة الأعمال وتطبيقات الجوال والأتمتة بالذكاء الاصطناعي في عجمان وجميع الإمارات.",
+        "title": "خدمات المواقع والتطبيقات وSEO وإعلانات Google | نايل سوفت",
+        "description": "خدمات تطوير المواقع والمتاجر والأنظمة والتطبيقات والأتمتة، مع تحسين محركات البحث وإدارة إعلانات Google في عجمان وجميع الإمارات.",
         "path": "services.html",
         "schema_type": "CollectionPage",
         "sections": ["services", "cta"],
@@ -64,7 +64,7 @@ PAGES = {
         "name": "contact",
         "title_key": "title_contact",
         "title": "تواصل مع نايل سوفت للبرمجة في عجمان والإمارات",
-        "description": "تواصل مع نايل سوفت عبر واتساب لطلب موقع أو متجر إلكتروني أو نظام أعمال أو تطبيق أو حل أتمتة. ننطلق من عجمان ونخدم جميع الإمارات والخليج.",
+        "description": "تواصل مع نايل سوفت عبر واتساب لطلب موقع أو متجر أو نظام أو تطبيق أو أتمتة أو خدمة SEO وإعلانات Google. ننطلق من عجمان ونخدم جميع الإمارات والخليج.",
         "path": "contact.html",
         "schema_type": "ContactPage",
         "sections": ["contact"],
@@ -210,7 +210,7 @@ def structured_data(page: dict[str, object]) -> str:
                 "height": 512,
             },
             "image": OG_IMAGE,
-            "description": "شركة تطوير برمجيات في عجمان تخدم الشركات في جميع الإمارات والخليج.",
+            "description": "شركة تطوير برمجيات ونمو عبر Google في عجمان تخدم الشركات في جميع الإمارات والخليج.",
             "email": "abubkr249@icloud.com",
             "telephone": "+971504494638",
             "areaServed": [
@@ -272,12 +272,25 @@ def structured_data(page: dict[str, object]) -> str:
         graph.append(
             {
                 "@type": "Service",
-                "@id": f"{canonical}#software-development",
-                "name": "خدمات تطوير البرمجيات للأعمال",
-                "serviceType": "تطوير مواقع ومتاجر إلكترونية وأنظمة أعمال وتطبيقات وأتمتة",
+                "@id": f"{canonical}#digital-services",
+                "name": "خدمات البرمجة والنمو عبر Google للأعمال",
+                "serviceType": "تطوير مواقع ومتاجر وأنظمة وتطبيقات وأتمتة وتحسين محركات البحث وإدارة إعلانات Google",
                 "provider": {"@id": organization_id},
                 "areaServed": {"@type": "Country", "name": "United Arab Emirates"},
                 "url": canonical,
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "خدمات نايل سوفت",
+                    "itemListElement": [
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "صفحة تعريفية احترافية"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "موقع شركة متكامل"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "متجر إلكتروني"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "نظام حجوزات وإدارة"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "تطبيق موبايل MVP"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "أتمتة وذكاء اصطناعي"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "SEO وإعلانات Google"}},
+                    ],
+                },
             }
         )
 
