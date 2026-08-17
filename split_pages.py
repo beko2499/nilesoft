@@ -148,6 +148,8 @@ def destination_for(target: str, current_file: str) -> str | None:
         return None
     if destination == current_file:
         return f"#{target}"
+    if destination == "index.html" and target == "top":
+        return "/"
     if ROOT_TARGETS[destination] == target:
         return destination
     return f"{destination}#{target}"
@@ -164,7 +166,7 @@ def rewrite_links(document: str, current_file: str) -> str:
 
 def add_navigation_home(chrome: str) -> str:
     home_link = (
-        '<a href="index.html"><span data-i18n="nav_home">الرئيسية</span> '
+        '<a href="/"><span data-i18n="nav_home">الرئيسية</span> '
         '<span class="k">00</span></a>'
     )
     return chrome.replace(
