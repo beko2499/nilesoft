@@ -7,14 +7,16 @@
   "theme_color": "#FAFAF8",
   "icons": [
     {
-      "src": "/favicon-192.png",
+      "src": "/nilesoft-favicon-v2-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/favicon-512.png",
+      "src": "/nilesoft-logo-v2-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
