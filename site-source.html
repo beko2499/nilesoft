@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
   (function(){
     try{
       document.documentElement.dataset.theme = 'light';
-      var l = localStorage.getItem('ns-lang') || 'ar';
+      var l = localStorage.getItem('ns-lang-v2') || 'en';
       document.documentElement.lang = l;
       document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
     }catch(e){}
@@ -1904,7 +1904,7 @@
     if (footTag){ footTag.lang = l === 'ar' ? 'en' : 'ar'; footTag.dir = l === 'ar' ? 'ltr' : 'rtl'; }
     document.getElementById('langBtn').textContent = l === 'ar' ? 'EN' : 'ع';
     if (!menuOpen) label.textContent = t('brand');
-    try { localStorage.setItem('ns-lang', l); } catch(e) {}
+    try { localStorage.setItem('ns-lang-v2', l); } catch(e) {}
   }
 
   document.getElementById('langBtn').addEventListener('click', () => {

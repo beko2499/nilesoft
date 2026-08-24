@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MYRTW6VKN8"></script>
@@ -45,7 +45,7 @@
   (function(){
     try{
       document.documentElement.dataset.theme = 'light';
-      var l = localStorage.getItem('ns-lang') || 'ar';
+      var l = localStorage.getItem('ns-lang-v2') || 'en';
       document.documentElement.lang = l;
       document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';
     }catch(e){}

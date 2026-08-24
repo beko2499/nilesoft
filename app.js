@@ -350,7 +350,7 @@
     if (footTag){ footTag.lang = l === 'ar' ? 'en' : 'ar'; footTag.dir = l === 'ar' ? 'ltr' : 'rtl'; }
     document.getElementById('langBtn').textContent = l === 'ar' ? 'EN' : 'ع';
     if (!menuOpen) label.textContent = t('brand');
-    try { localStorage.setItem('ns-lang', l); } catch(e) {}
+    try { localStorage.setItem('ns-lang-v2', l); } catch(e) {}
   }
 
   document.getElementById('langBtn').addEventListener('click', () => {
