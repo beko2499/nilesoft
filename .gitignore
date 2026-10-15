@@ -1,4 +1,6 @@
 .vendor/
+portfolio-app/node_modules/
+portfolio-app/.vite/
 __pycache__/
 *.py[cod]
 dist/

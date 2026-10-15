@@ -11,6 +11,7 @@ const publicFiles = [
   'contact.html',
   'services.html',
   'work.html',
+  'abubkr.html',
   'thank-you.html',
   'styles.css',
   'app.js',
@@ -35,7 +36,7 @@ const publicFiles = [
 
 const publicDirectories = ['assets', 'demos'];
 const forbiddenExtensions = new Set(['.zip', '.md', '.txt', '.py', '.ps1', '.bat']);
-const canonicalPages = ['index.html', 'about.html', 'contact.html', 'services.html', 'work.html'];
+const canonicalPages = ['index.html', 'about.html', 'contact.html', 'services.html', 'work.html', 'abubkr.html'];
 
 await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });

@@ -9,6 +9,7 @@ const pages = [
   ['contact.html', 'https://www.nilesoft.tech/contact.html'],
   ['services.html', 'https://www.nilesoft.tech/services.html'],
   ['work.html', 'https://www.nilesoft.tech/work.html'],
+  ['abubkr.html', 'https://www.nilesoft.tech/abubkr.html'],
 ];
 
 for (const [file, expectedCanonical] of pages) {

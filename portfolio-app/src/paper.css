@@ -1,0 +1,22 @@
+.spatial-card { backface-visibility: visible; transform-style: preserve-3d; }
+.project-surface.paper-button { position: relative; display: block; overflow: visible; transform-style: preserve-3d; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.project-surface.paper-button:hover { box-shadow: none; }
+.paper-strip { position: absolute; top: 0; height: 100%; transform-style: preserve-3d; transform-origin: 50% 50%; pointer-events: auto; }
+.paper-face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: #fffefb; }
+.paper-front { transform: translateZ(.35px); }
+.paper-back { transform: rotateY(180deg) translateZ(.35px); background: #ece5d8; }
+.paper-face::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: rgb(49 35 20 / var(--paper-shade, 0)); box-shadow: inset 0 1px #fff9, inset 0 -1px #4e382033; }
+.paper-print { position: absolute; top: 0; width: 280px; height: 100%; display: flex; flex-direction: column; }
+.paper-print > img { width: 100%; height: 0; min-height: 0; flex: 1; object-fit: cover; object-position: top; }
+.paper-print .card-caption > span:first-child > span { display: block; font-size: 8px; color: #797365; margin-top: 1px; }
+.paper-print .card-caption > span:first-child { color: var(--ink); font-size: inherit; }
+.paper-strip:first-child .paper-front, .paper-strip:last-child .paper-back { border-radius: 4px 0 0 4px; }
+.paper-strip:last-child .paper-front, .paper-strip:first-child .paper-back { border-radius: 0 4px 4px 0; }
+.paper-reverse { position: absolute; top: 0; width: 280px; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; padding: 18px; text-align: center; background: radial-gradient(ellipse at 30% 10%, #fffdf8, transparent 80%), #ece5d8; }
+.paper-back-mark { font: 500 24px Chakra, sans-serif; color: var(--copper); }
+.paper-back-mark span { font-size: 9px; letter-spacing: .15em; color: var(--ink); }
+.paper-reverse > strong { font: 500 16px Chakra, sans-serif; }
+.paper-reverse > span:not(.paper-back-mark) { font-size: 9px; color: var(--muted); }
+.paper-back-rule { width: 26px; height: 2px; background: var(--copper); }
+.paper-webgl { position: absolute; inset: 0; pointer-events: none; }
+.webgl-papers .paper-strip { visibility: hidden; }
